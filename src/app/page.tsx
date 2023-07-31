@@ -36,17 +36,17 @@ export default function Home() {
             text='Medlemskap'
           />
         </div>
-        <div className="w-full flex flex-col px-10 items-center mt-10">
+        <div className="w-full flex flex-col px-10 items-center mt-20">
           <h2 className="text-center text-3xl font-bold">Schema</h2>
-          <div className="flex flex-col w-screen">
+          <div className="flex flex-col w-screen items-center">
             <Image 
               src='/schedule-lg.jpg'
               alt='schema'
               quality={100}
-              sizes='100vw'
-              width={800}
-              height={414}   
+              width={1200}
+              height={622}   
             />
+            <a href="/schedule-lg.jpg" download="kampsportstadion-schema.jpg">Ladda ner schema</a>
           </div>
         </div>
       </div>

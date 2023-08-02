@@ -17,7 +17,7 @@ export default function SchemaPage() {
             width={1200}
             height={622}
           />
-          <a href="/schedule-lg.jpg" download="kampsportstadion-schema.jpg">Ladda ner schema</a>
+          <a href="/schedule-lg.jpg" download="kampsportstadion-schema.jpg" className="w-900:text-2xl">Ladda ner schema</a>
           <p className="px-5 mt-10 text-center text-xl">Vid aktuell förändring på enstaka pass informeras medlemmen via GymControl och e-mail!</p>
         </div>
       </div>

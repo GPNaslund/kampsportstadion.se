@@ -9,8 +9,8 @@ export default function SocialProjects() {
       <div className="w-full">
         <div className="w-full h-screen flex flex-col mt-40 items-center">
           <h2 className="text-center text-5xl font-bold mb-5">SOCIALA PROJEKT</h2>
-          <p className="text-lg text-center mt-5 px-5">Vill du vara med och sponsra våra sociala projekt?</p>
-          <p className="text-lg text-center mt-5 px-5">Vi som förening brinner för att barn och ungdomsidrott ska vara tillgängligt för alla oavsett bakgrund. Tyvärr har det för 
+          <p className="text-lg text-center mt-5 px-5 w-900:text-2xl">Vill du vara med och sponsra våra sociala projekt?</p>
+          <p className="text-lg text-center mt-5 px-5 w-900:text-2xl">Vi som förening brinner för att barn och ungdomsidrott ska vara tillgängligt för alla oavsett bakgrund. Tyvärr har det för 
             många familjer blivit en kostnadsfråga och med hjälp och stöd från våra sponsorer har vi möjlighet att jobba med olika typer av mentorsprogram, 
             sponsrade medlemskap och kostnadsfria lov-läger för barn och ungdomar från hela Stockholm.
             <br></br>

@@ -17,14 +17,14 @@ const MenuButton: React.FC<MenuButtonProps> = ({ forWhiteBg }) => {
 
   return (
     <div 
-      className={`w-40 h-12 z-10 rounded-full ${forWhiteBg ? 'bg-black' : 'bg-white'} flex flex-row items-center justify-center gap-4 justify-self-end cursor-pointer`}
+      className={`w-40 w-900:w-60 h-12 w-900:h-16 z-10 rounded-full ${forWhiteBg ? 'bg-black' : 'bg-white'} flex flex-row items-center justify-center gap-4 justify-self-end cursor-pointer`}
       onClick={handleClick}
       >
       <HamburgerMenu
         isOpen={isOpen}
         forWhiteBg={forWhiteBg}
       />
-      <div className={`text-xl ${forWhiteBg ? 'text-white' : 'text-black'}`}>{isOpen ? 'Stäng' : 'Meny'}</div>
+      <div className={`text-xl w-900:text-3xl ${forWhiteBg ? 'text-white' : 'text-black'}`}>{isOpen ? 'Stäng' : 'Meny'}</div>
     </div>
   )
 }

@@ -9,7 +9,7 @@ const BlackButton: React.FC<BlackButtonProps> = ({ text, href }) => {
 
   return (
     <Link href={href} className="text-white text-center text-lg">
-      <div className={`w-52 h-12 px-3 bg-black rounded-full flex items-center justify-center mt-5`}>
+      <div className={`w-52 w-900:w-72 w-900:text-2xl h-12 w-900:h-16 px-3 bg-black rounded-full flex items-center justify-center mt-5 w-900:mt-10`}>
         {text}
       </div>
     </Link>

@@ -36,9 +36,9 @@ export default function ClassesPage() {
         <div className="w-full h-screen mt-40 hidden w-900:grid w-900:grid-cols-2 gap-y-10">
           <h2 className="text-center text-5xl font-bold mb-5 col-span-2">KLASSER</h2>
           {classes.map((item, index) =>
-            <div className="text-center px-10">
-              <h3 className="font-bold underline">{item.header}</h3>
-              <p>{item.text}</p>
+            <div className="text-center px-10 w-900:text-xl w-900:px-28">
+              <h3 className="font-bold w-900:text-3xl">{item.header}</h3>
+              <p className="w-900:mt-5">{item.text}</p>
               <br></br>
               <p>{item.classLevels ? `Vi har klasser för ${item.classLevels}` : ''}</p>
               <br></br>

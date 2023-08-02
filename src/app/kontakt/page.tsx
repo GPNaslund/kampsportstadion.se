@@ -9,7 +9,7 @@ export default function ContactPage() {
       <div className="w-full">
         <div className="w-full h-screen flex flex-col mt-40 items-center text-center px-10">
           <h2 className="text-center text-5xl font-bold mb-5">KONTAKT</h2>
-          <p>
+          <p className="w-900:text-2xl">
             <span className="font-bold">info@kampsportstadion.se</span>
             <br></br>
             <br></br>

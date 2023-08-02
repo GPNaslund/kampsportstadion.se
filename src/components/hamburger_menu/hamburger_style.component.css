@@ -1,3 +1,4 @@
+
 .hamburger-menu {
   width: 20px;
   height: 16px;
@@ -32,4 +33,15 @@
 
 .hamburger-menu.open .hamburger-line:nth-child(2) {
   opacity: 0;
+}
+
+@media screen and (min-width: 900px) {
+  .hamburger-menu {
+    width: 30px; 
+    height: 23px;
+  }
+
+  .hamburger-line {
+    height: 4px; 
+  }
 }

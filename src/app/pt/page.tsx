@@ -9,7 +9,7 @@ export default function ContactPage() {
       <div className="w-full">
         <div className="w-full h-screen flex flex-col mt-40 items-center text-center px-10">
           <h2 className="text-center text-5xl font-bold mb-5">PERSONLIG TRÄNING</h2>
-          <p>
+          <p className="w-900:text-2xl w-900:px-20">
             Är du intresserad av PT har vi ett gäng duktiga, erfarna tränar som kan hjälpa dig. Både inom styrka, kondition, boxning, thaiboxning, MMA och BJJ.
             <br></br>
             <br></br>

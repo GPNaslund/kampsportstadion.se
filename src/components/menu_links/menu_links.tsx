@@ -52,7 +52,7 @@ export default function MenuLinks() {
       </>
       <li className="mt-32">
         <div className="grid grid-cols-3 justify-items-center">
-          <a href={InstagramLink('proaktividrottscenter')} target="_blank">
+          <a href={InstagramLink('kampsportstadion')} target="_blank">
             <Image 
               src="/instagram.svg"
               alt="instagram icon"
@@ -60,7 +60,7 @@ export default function MenuLinks() {
               height={50}
             />
           </a>
-          <a href={FacebookLink('proaktividrottscenter')} target="_blank">
+          <a href={FacebookLink('kampsportstadion')} target="_blank">
             <Image 
               src="/facebook.svg"
               alt="facebook icon"
@@ -68,7 +68,7 @@ export default function MenuLinks() {
               height={50}
             />
           </a>
-          <a href="https://goo.gl/maps/BVbHc4pMbpoWM4eq6" target="_blank">
+          <a href="https://goo.gl/maps/5ipnHxJKXbrAHLBw6" target="_blank">
             <Image 
               src="/googlemaps.svg"
               alt="google maps icon"

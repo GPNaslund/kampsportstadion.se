@@ -9,11 +9,11 @@ export default function MembershipPage() {
       <div className="w-full">
         <div className="w-full h-screen flex flex-col mt-40 items-center">
           <h2 className="text-center text-5xl font-bold mb-5">MEDLEMSKAP</h2>
-          <div className="grid grid-flow-row p-5">
+          <div className="grid grid-flow-row w-900:grid-cols-2 p-5">
 
-            <div className="grid grid-flow-row text-center">
+            <div className="flex flex-col text-center h-full">
               <h2 className="border-2 font-bold p-2">Årskort</h2>
-              <p className="border-2 p-2">599:-/månad autogiro
+              <p className="border-2 p-2 flex-grow">599:-/månad autogiro
                 <br></br>
                 8900:-/år kontant
                 <br></br>
@@ -23,9 +23,9 @@ export default function MembershipPage() {
               </p>
             </div>
 
-            <div className="grid grid-flow-row text-center">
+            <div className="flex flex-col text-center h-full">
               <h2 className="border-2 font-bold p-2">Årskort student</h2>
-              <p className="border-2 p-2">499:-/månad autogiro
+              <p className="border-2 p-2 flex-grow">499:-/månad autogiro
                 <br></br>
                 Träna så mycket du vill,
                 välj bland alla pass, tillgång till gymmet.
@@ -33,42 +33,42 @@ export default function MembershipPage() {
               </p>
             </div>
 
-            <div className="grid grid-flow-row text-center">
+            <div className="flex flex-col text-center h-full">
               <h2 className="border-2 font-bold p-2">Guld Medlemskap</h2>
-              <p className="border-2 p-2">1299:-/månad autogiro
+              <p className="border-2 p-2 flex-grow">1299:-/månad autogiro
                 <br></br>
                 Träna så mycket du vill. Välj bland alla pass. Tillgång till gymmet. <span className="font-bold">Medlemskapet inkluderar även en 50 min behandling hos Proaktiv Idrottscenter varje månad.</span>
                 Behandlingen måste nyttjas månaden dragningen gäller och kan inte sparas. 6 månaders bindningstid.
               </p>
             </div>
 
-            <div className="grid grid-flow-row text-center">
+            <div className="flex flex-col text-center h-full">
               <h2 className="border-2 font-bold p-2">Halvår</h2>
-              <p className="border-2 p-2">4800:-/halvår
+              <p className="border-2 p-2 flex-grow">4800:-/halvår
               <br></br>
               6 månaders bindningstid.
               </p>
             </div>
 
-            <div className="grid grid-flow-row text-center">
+            <div className="flex flex-col text-center h-full">
               <h2 className="border-2 font-bold p-2">Halvår student</h2>
-              <p className="border-2 p-2">3800:-/halvår
+              <p className="border-2 p-2 flex-grow">3800:-/halvår
               <br></br>
               6 månaders bindningstid.
               </p>
             </div>
 
-            <div className="grid grid-flow-row text-center">
+            <div className="flex flex-col text-center h-full">
               <h2 className="border-2 font-bold p-2">Kvartal</h2>
-              <p className="border-2 p-2">3000:-/kvartal
+              <p className="border-2 p-2 flex-grow">3000:-/kvartal
               <br></br>
               3 månaders bindningstid.
               </p>
             </div>
 
-            <div className="grid grid-flow-row text-center">
+            <div className="flex flex-col text-center h-full">
               <h2 className="border-2 font-bold p-2">Thaiboxning ungdom 12-16 år</h2>
-              <p className="border-2 p-2">399:-/månad autogiro
+              <p className="border-2 p-2 flex-grow">399:-/månad autogiro
               <br></br>
               2800:-/halvår kontant
               <br></br>
@@ -78,17 +78,17 @@ export default function MembershipPage() {
               </p>
             </div>
 
-            <div className="grid grid-flow-row text-center">
+            <div className="flex flex-col text-center h-full">
               <h2 className="border-2 font-bold p-2">Kampsport Barngrupp 7-11 år</h2>
-              <p className="border-2 p-2">399:-/månad autogiro
+              <p className="border-2 p-2 flex-grow">399:-/månad autogiro
               <br></br>
               3 pass/v, uppehåll juni-augusti & december.
               </p>
             </div>
 
-            <div className="grid grid-flow-row text-center">
+            <div className="flex flex-col text-center h-full">
               <h2 className="border-2 font-bold p-2">Kampsport Barngrupp 4-6 år</h2>
-              <p className="border-2 p-2">299:-/månad autogiro
+              <p className="border-2 p-2 flex-grow">299:-/månad autogiro
               <br></br>
               1 pass/v, uppehåll juni-augusti & december.
               <br></br>
@@ -96,9 +96,9 @@ export default function MembershipPage() {
               </p>
             </div>
 
-            <div className="grid grid-flow-row text-center">
+            <div className="flex flex-col text-center h-full">
               <h2 className="border-2 font-bold p-2">Prova på engångspass</h2>
-              <p className="border-2 p-2">200:-
+              <p className="border-2 p-2 flex-grow">200:-
               <br></br>
               Ingen drop in
               <br></br>
@@ -107,9 +107,9 @@ export default function MembershipPage() {
               </p>
             </div>
 
-            <div className="grid grid-flow-row text-center">
+            <div className="flex flex-col text-center h-full">
               <h2 className="border-2 font-bold p-2">Prova på en vecka</h2>
-              <p className="border-2 p-2">500:-
+              <p className="border-2 p-2 flex-grow">500:-
               <br></br>
               Ingen drop in
               <br></br>

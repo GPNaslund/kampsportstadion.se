@@ -17,7 +17,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({ forWhiteBg }) => {
 
   return (
     <div 
-      className={`w-2/6 h-12 z-10 rounded-full ${forWhiteBg ? 'bg-black' : 'bg-white'} flex flex-row items-center justify-center gap-4 justify-self-end cursor-pointer`}
+      className={`w-40 h-12 z-10 rounded-full ${forWhiteBg ? 'bg-black' : 'bg-white'} flex flex-row items-center justify-center gap-4 justify-self-end cursor-pointer`}
       onClick={handleClick}
       >
       <HamburgerMenu

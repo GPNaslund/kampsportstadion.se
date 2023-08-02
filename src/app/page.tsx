@@ -19,21 +19,46 @@ export default function Home() {
             style={{
               objectFit: 'cover',
             }}
+            className="w-625:hidden"
+          />
+          <Image
+            alt="Thaiboxing background"
+            src='/fighter-faded-md.jpg'
+            quality={100}
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: 'cover',
+            }}
+            className="hidden w-625:block w-900:hidden"
+          />
+          <Image
+            alt="Thaiboxing background"
+            src='/fighter-faded-lg.jpg'
+            quality={100}
+            fill
+            sizes="100vw"
+            style={{
+              objectFit: 'cover',
+            }}
+            className="hidden w-900:block"
           />
           <div className="w-full z-10 -mt-52">
             <h2 className="text-white text-center text-5xl font-bold ">KAMPSPORT <br></br>FÖR ALLA</h2>
             <p className="text-white text-center text-2xl px-12 mt-2">Hos oss är alla välkomna, motionär som proffs.</p>
           </div>
         </div>
-        <div className="w-full flex flex-col px-10 items-center">
+        <div className="w-full flex flex-col px-10 items-center mt-20 w-900:px-40">
           <h2 className="text-center text-3xl font-bold">Kampsport på Stockholm Stadion</h2>
           <p className="text-center text-lg mt-4">I fina lokaler inne på Stockholm Stadion hittar du Kampsportstadion. Med 400 kvm sal med och fantastiska tränare har vi kampsport för alla. Som medlem hos oss kan du köra alla pass på schemat och du har fri tillgång till gymmet.</p>
           <p className="text-center text-lg mt-2">Vi har klasser i Kampsportfys, Cirkelträning, Muay Thai, MMA, SW , Barnträning, Yoga och BJJ.</p>
           <BlackButton
             text='Se alla klasser'
+            href="/klasser"
           />
           <BlackButton
             text='Medlemskap'
+            href="/medlemskap"
           />
         </div>
         <div className="w-full flex flex-col px-10 items-center mt-20">

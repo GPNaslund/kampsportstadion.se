@@ -9,7 +9,7 @@ export default function ClassesPage() {
         forWhiteBg={true}
       />
       <div className="w-full">
-        <div className="w-full h-screen flex flex-col mt-40 items-center">
+        <div className="w-full h-screen flex flex-col mt-40 items-center w-900:hidden">
           <h2 className="text-center text-5xl font-bold mb-5">KLASSER</h2>
           {classes.map((item, index) =>
             item.classLevels ?
@@ -31,6 +31,19 @@ export default function ClassesPage() {
                   header={item.header}
                   dropdownText={item.text}
                 />
+          )}
+        </div>
+        <div className="w-full h-screen mt-40 hidden w-900:grid w-900:grid-cols-2 gap-y-10">
+          <h2 className="text-center text-5xl font-bold mb-5 col-span-2">KLASSER</h2>
+          {classes.map((item, index) =>
+            <div className="text-center px-10">
+              <h3 className="font-bold underline">{item.header}</h3>
+              <p>{item.text}</p>
+              <br></br>
+              <p>{item.classLevels ? `Vi har klasser för ${item.classLevels}` : ''}</p>
+              <br></br>
+              <p>{item.coaches ? `Tränare: ${item.coaches}` : ''}</p>
+            </div>
           )}
         </div>
       </div>

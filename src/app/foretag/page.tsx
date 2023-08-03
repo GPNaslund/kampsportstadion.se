@@ -7,9 +7,9 @@ export default function ContactPage() {
         forWhiteBg={true}
       />
       <div className="w-full">
-        <div className="w-full h-screen flex flex-col mt-40 items-center text-center px-10">
+        <div className="w-full h-screen flex flex-col mt-40 items-center text-center px-10 w-900:px-40">
           <h2 className="text-center text-3xl font-bold mb-5 w-900:text-5xl">FÖRETAGSTRÄNING</h2>
-          <p className="w-900:text-2xl">
+          <p className="w-900:text-3xl">
             Vi håller även i företagsträning. Investera i din personal och få tillbaka friskare, gladare personal. En fantastik möjlighet att skapa en bra sammanhållning på arbetsplatsen samt sänka sjukfrånvaron.
             <br></br>
             <br></br>
@@ -24,7 +24,7 @@ export default function ContactPage() {
           </p>
 
           <h2 className="text-center text-3xl font-bold mb-5 mt-10 w-900:text-5xl">AW/AFTER WORK</h2>
-          <p className="w-900:text-2xl">
+          <p className="w-900:text-3xl">
             Byt ut ölen med en Nocco och dra med kollegor på ett After Workout    pass! 60 min grym träning med dryck och snacks till. Bästa sättet att bygga teamkänsla och skapa sammanhållning i gruppen. Omklädningsrum med bastu finns.
             <br></br>
             <br></br>

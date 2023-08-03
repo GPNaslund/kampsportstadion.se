@@ -45,7 +45,7 @@ export default function Home() {
           />
           <div className="w-full z-10 -mt-52">
             <h2 className="text-white text-center text-5xl w-900:text-7xl font-bold ">KAMPSPORT <br></br>FÖR ALLA</h2>
-            <p className="text-white text-center text-2xl w-900:text-4xl px-12 mt-2">Hos oss är alla välkomna, motionär som proffs.</p>
+            <p className="text-white text-center text-2xl w-900:text-5xl px-12 mt-2">Hos oss är alla välkomna, motionär som proffs.</p>
           </div>
         </div>
         <div className="w-full flex flex-col px-10 items-center mt-20 w-900:px-40">

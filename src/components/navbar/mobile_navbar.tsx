@@ -29,10 +29,10 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({ forWhiteBg }) => {
           src={imgSrc}
           alt="Kampsportstadion logo"
           style={{
-            width: "300px",
-            height: "300px",
+            width: "200px",
+            height: "200px",
           }}
-          className="hidden w-900:block relative bottom-16 left-0"
+          className="hidden w-900:block relative bottom-12 left-0"
         />
         <MenuContext.Provider value={{ isOpen, setIsOpen }}>
           <MenuButton

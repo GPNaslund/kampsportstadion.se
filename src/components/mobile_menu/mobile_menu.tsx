@@ -20,8 +20,8 @@ export default function MobileMenu() {
           src="/ks-logo-black.svg"
           alt="Kampsportstadion logo"
           style={{
-            width: "125px",
-            height: "125px",
+            width: "200px",
+            height: "200px",
           }}
         />
       </div>

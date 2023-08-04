@@ -62,7 +62,17 @@ export default function Home() {
           <h2 className="text-center text-2xl w-900:text-4xl font-bold">Schema</h2>
           <div className="flex flex-col w-screen items-center">
             <img
-              src="/schedule-lg.jpg"
+              src="/schedule-fall-lg.jpg"
+              className="w-900:hidden"
+              alt="schema"
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
+            />
+            <img
+              src="/schedule-fall-xl.jpg"
+              className="hidden w-900:block"
               alt="schema"
               style={{
                 width: "100%",

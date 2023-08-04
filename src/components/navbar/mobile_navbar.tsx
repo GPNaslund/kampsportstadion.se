@@ -23,7 +23,7 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({ forWhiteBg }) => {
             width: "125px",
             height: "125px",
           }}
-          className="w-900:hidden relative bottom-7 left-0"
+          className="block w-900:hidden relative bottom-7 left-0"
         />
         <img
           src={imgSrc}

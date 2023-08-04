@@ -79,7 +79,7 @@ export default function Home() {
                 height: "auto",
               }}
             />
-            <a href="/schedule-lg.jpg" download="kampsportstadion-schema.jpg" className="text-lg w-900:text-2xl">Ladda ner schema</a>
+            <a href="/schedule-fall-lg.jpg" download="kampsportstadion-schema.jpg" className="text-lg w-900:text-2xl">Ladda ner schema</a>
           </div>
         </div>
       </div>

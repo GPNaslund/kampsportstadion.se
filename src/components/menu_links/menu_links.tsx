@@ -23,7 +23,7 @@ export default function MenuLinks() {
 
 
   return (
-    <ul className="text-center text-2xl">
+    <ul className="text-center text-2xl mt-28">
       <>
         {links.map((link, index) => {
           const isActive = pathname === link.href

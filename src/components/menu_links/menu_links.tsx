@@ -8,72 +8,79 @@ import { usePathname } from 'next/navigation'
 
 export default function MenuLinks() {
   const pathname = usePathname()
-  
+
   const links = [
     { href: "/", text: "Hem" },
     { href: "/klasser", text: "Klasser" },
     { href: "/schema", text: "Schema" },
     { href: "/medlemskap", text: "Medlemskap" },
-    { href: "/pt", text: "Personlig träning"},
-    { href: "/foretag", text: "Företag"},
+    { href: "/pt", text: "Personlig träning" },
+    { href: "/foretag", text: "Företag" },
     { href: "/sociala-projekt", text: "Sociala Projekt" },
     { href: "/kontakt", text: "Kontakt" },
   ]
 
 
-  
+
   return (
-    <ul className="text-center text-3xl">
+    <ul className="text-center text-2xl">
       <>
         {links.map((link, index) => {
           const isActive = pathname === link.href
           if (isActive) {
             return (
               <li className={index !== 0 ? "mt-5" : ""} key={link.href}>
-              <p 
-                className='text-gray-500 user-select-none'
-              >
-                {link.text}
-              </p>
-            </li>
+                <p
+                  className='text-gray-500 user-select-none'
+                >
+                  {link.text}
+                </p>
+              </li>
             )
           } else {
             return (
               <li className={index !== 0 ? "mt-5" : ""} key={link.href}>
-                <Link 
+                <Link
                   className={isActive ? 'text-blue-500' : 'text-black'}
                   href={link.href}
                 >
                   {link.text}
                 </Link>
               </li>
-        )}
+            )
+          }
         })}
       </>
       <li className="mt-32">
         <div className="grid grid-cols-3 justify-items-center">
           <a href={InstagramLink('kampsportstadion')} target="_blank">
-            <Image 
+            <img
               src="/instagram.svg"
               alt="instagram icon"
-              width={50}
-              height={50}
+              style={{
+                width: "50px",
+                height: "50px",
+              }}
             />
           </a>
           <a href={FacebookLink('kampsportstadion')} target="_blank">
-            <Image 
+            <img
               src="/facebook.svg"
               alt="facebook icon"
-              width={50}
-              height={50}
+              style={{
+                width: "50px",
+                height: "50px",
+              }}
             />
           </a>
           <a href="https://goo.gl/maps/5ipnHxJKXbrAHLBw6" target="_blank">
-            <Image 
+            <img
               src="/googlemaps.svg"
               alt="google maps icon"
-              width={50}
-              height={50}
+              style={{
+                width: "50px",
+                height: "50px",
+              }}
             />
           </a>
         </div>
@@ -84,5 +91,5 @@ export default function MenuLinks() {
         <p>Lidingövägen 1, 11433 Stockholm</p>
       </li>
     </ul>
-  )  
+  )
 }

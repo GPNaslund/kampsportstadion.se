@@ -7,7 +7,7 @@ export default function MobileMenu() {
   const { isOpen } = useContext(MenuContext);
 
   useEffect(() => {
-    if(isOpen) {
+    if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -15,13 +15,14 @@ export default function MobileMenu() {
   })
   return (
     <div className={`${isOpen ? 'translate-y-0' : '-translate-y-full'} fixed top-0 left-0 w-screen h-screen bg-white transition-all duration-500 ease-in-out transform flex items-center justify-center`}>
-      <div className="absolute top-0 left-0 p-2">
-        <Image 
+      <div className="absolute -top-5 left-2">
+        <img
           src="/ks-logo-black.svg"
           alt="Kampsportstadion logo"
-          width={125}
-          height={125}
-          quality={100}
+          style={{
+            width: "125px",
+            height: "125px",
+          }}
         />
       </div>
       <MenuLinks />

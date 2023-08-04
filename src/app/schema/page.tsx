@@ -9,16 +9,17 @@ export default function SchemaPage() {
       />
       <div className="w-full">
         <div className="w-full h-screen flex flex-col mt-40 items-center">
-          <h2 className="text-center text-5xl font-bold mb-5">SCHEMA</h2>
-          <Image
-            src='/schedule-lg.jpg'
-            alt='schema'
-            quality={100}
-            width={1200}
-            height={622}
+          <h2 className="text-center text-4xl font-bold mb-5">SCHEMA</h2>
+          <img
+            src="/schedule-lg.jpg"
+            alt="schema"
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
           />
-          <a href="/schedule-lg.jpg" download="kampsportstadion-schema.jpg" className="w-900:text-3xl">Ladda ner schema</a>
-          <p className="px-5 mt-10 text-center text-xl w-900:text-3xl">Vid aktuell förändring på enstaka pass informeras medlemmen via GymControl och e-mail!</p>
+          <a href="/schedule-lg.jpg" download="kampsportstadion-schema.jpg" className="w-900:text-2xl">Ladda ner schema</a>
+          <p className="px-5 mt-10 text-center text-xl w-900:text-2xl">Vid aktuell förändring på enstaka pass informeras medlemmen via GymControl och e-mail!</p>
         </div>
       </div>
     </main>

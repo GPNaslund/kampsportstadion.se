@@ -16,29 +16,31 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({ forWhiteBg }) => {
   return (
     <nav>
       <div className="z-20 w-full absolute top-0 left-0 p-2 flex flex-row place-content-between">
-        <Image
+        <img
           src={imgSrc}
           alt="Kampsportstadion logo"
-          width={125}
-          height={125}
-          quality={100}
-          className="w-900:hidden"
+          style={{
+            width: "125px",
+            height: "125px",
+          }}
+          className="w-900:hidden relative bottom-7 left-0"
         />
-        <Image
+        <img
           src={imgSrc}
           alt="Kampsportstadion logo"
-          width={300}
-          height={300}
-          quality={100}
-          className="hidden w-900:block"
+          style={{
+            width: "300px",
+            height: "300px",
+          }}
+          className="hidden w-900:block relative bottom-16 left-0"
         />
-        <MenuContext.Provider value={{isOpen, setIsOpen }}>
+        <MenuContext.Provider value={{ isOpen, setIsOpen }}>
           <MenuButton
             forWhiteBg={forWhiteBg}
           />
           <MobileMenu />
         </MenuContext.Provider>
-        
+
       </div>
     </nav>
   )

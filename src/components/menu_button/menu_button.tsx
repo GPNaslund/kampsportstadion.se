@@ -24,7 +24,7 @@ const MenuButton: React.FC<MenuButtonProps> = ({ forWhiteBg }) => {
         isOpen={isOpen}
         forWhiteBg={forWhiteBg}
       />
-      <div className={`text-xl w-900:text-3xl ${forWhiteBg ? 'text-white' : 'text-black'}`}>{isOpen ? 'Stäng' : 'Meny'}</div>
+      <div className={`text-xl w-900:text-2xl ${forWhiteBg ? 'text-white' : 'text-black'}`}>{isOpen ? 'Stäng' : 'Meny'}</div>
     </div>
   )
 }

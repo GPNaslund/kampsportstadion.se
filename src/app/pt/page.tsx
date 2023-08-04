@@ -9,8 +9,8 @@ export default function ContactPage() {
       />
       <div className="w-full">
         <div className="w-full h-screen flex flex-col mt-40 items-center text-center px-10 w-900:px-40">
-          <h2 className="text-center text-5xl font-bold mb-5">PERSONLIG TRÄNING</h2>
-          <p className="w-900:text-3xl w-900:px-20 mb-20">Är du intresserad av PT har vi ett gäng duktiga, erfarna tränar som kan hjälpa dig.<br></br> Både inom styrka, kondition, boxning, thaiboxning, MMA och BJJ.</p>
+          <h2 className="text-center text-4xl font-bold mb-5">PERSONLIG TRÄNING</h2>
+          <p className="w-900:text-2xl w-900:px-20 mb-20">Är du intresserad av PT har vi ett gäng duktiga, erfarna tränar som kan hjälpa dig.<br></br> Både inom styrka, kondition, boxning, thaiboxning, MMA och BJJ.</p>
           <StaffCard 
             name="Rickard Nordstrand"
             description="Världsmästare i thaiboxning. Vill du slipa dina tekniker eller jobba styrka i gymmet? Rickard är en all around tränare som kan hjälpa dig med det mesta. Thaiboxning är dock hans specialitet."
@@ -58,9 +58,9 @@ export default function ContactPage() {
             email="synove@kampsportstadion.se"
             phoneNumber='0723055301'
           />
-          <p className="w-900:text-3xl w-900:px-20 mt-20">Pris: 900kr per PT-timme. Rabatterat pris om du är medlem på Kampsportstadion.</p>
-          <p className="w-900:text-3xl w-900:px-20 ">(Rickard Nodstrand har egen prislista)</p>
-          <p className="w-900:text-3xl w-900:px-20 pb-20">Kontakta oss på <a href="mailto:info@kampsportstadion.se">info@kampsportstadion.se</a> för mer information</p>
+          <p className="w-900:text-2xl w-900:px-20 mt-20">Pris: 900kr per PT-timme. Rabatterat pris om du är medlem på Kampsportstadion.</p>
+          <p className="w-900:text-2xl w-900:px-20 ">(Rickard Nodstrand har egen prislista)</p>
+          <p className="w-900:text-2xl w-900:px-20 pb-20">Kontakta oss på <a href="mailto:info@kampsportstadion.se">info@kampsportstadion.se</a> för mer information</p>
         </div>
       </div>
     </main>

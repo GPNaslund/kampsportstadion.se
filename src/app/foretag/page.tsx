@@ -7,7 +7,7 @@ export default function ContactPage() {
         forWhiteBg={true}
       />
       <div className="w-full">
-        <div className="w-full h-screen flex flex-col mt-40 items-center text-center px-10 w-900:px-40">
+        <div className="w-full h-screen flex flex-col mt-40 mb-20 items-center text-center px-10 w-900:px-40">
           <h2 className="text-center text-2xl font-bold mb-5 w-900:text-4xl">FÖRETAGSTRÄNING</h2>
           <p className="w-900:text-2xl">
             Vi håller även i företagsträning. Investera i din personal och få tillbaka friskare, gladare personal. En fantastik möjlighet att skapa en bra sammanhållning på arbetsplatsen samt sänka sjukfrånvaron.

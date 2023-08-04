@@ -12,8 +12,8 @@ export default function MembershipPage() {
           <div className="grid grid-flow-row w-900:grid-cols-2 p-5">
 
             <div className="flex flex-col text-center h-full w-900:text-2xl">
-              <h2 className="border-2 font-bold p-2 w-900:text-2xl">Årskort</h2>
-              <p className="border-2 p-2 flex-grow w-900:px-20">599:-/månad autogiro
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Årskort</h2>
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">599:-/månad autogiro
                 <br></br>
                 8900:-/år kontant
                 <br></br>
@@ -24,8 +24,8 @@ export default function MembershipPage() {
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl">
-              <h2 className="border-2 font-bold p-2 w-900:text-2xl">Årskort student</h2>
-              <p className="border-2 p-2 flex-grow w-900:px-20">499:-/månad autogiro
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Årskort student</h2>
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">499:-/månad autogiro
                 <br></br>
                 Träna så mycket du vill,
                 välj bland alla pass, tillgång till gymmet.
@@ -34,8 +34,8 @@ export default function MembershipPage() {
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl">
-              <h2 className="border-2 font-bold p-2 w-900:text-2xl">Guld Medlemskap</h2>
-              <p className="border-2 p-2 flex-grow w-900:px-20">1299:-/månad autogiro
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Guld Medlemskap</h2>
+              <p className="border-2 p-2 border-t-0 flex-grow w-900:px-20">1299:-/månad autogiro
                 <br></br>
                 Träna så mycket du vill. Välj bland alla pass. Tillgång till gymmet. <span className="font-bold">Medlemskapet inkluderar även en 50 min behandling hos Proaktiv Idrottscenter varje månad.</span>
                 Behandlingen måste nyttjas månaden dragningen gäller och kan inte sparas. 6 månaders bindningstid.
@@ -43,32 +43,32 @@ export default function MembershipPage() {
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl">
-              <h2 className="border-2 font-bold p-2 w-900:text-2xl">Halvår</h2>
-              <p className="border-2 p-2 flex-grow w-900:px-20">4800:-/halvår
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Halvår</h2>
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">4800:-/halvår
               <br></br>
               6 månaders bindningstid.
               </p>
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl">
-              <h2 className="border-2 font-bold p-2 w-900:text-2xl">Halvår student</h2>
-              <p className="border-2 p-2 flex-grow w-900:px-20">3800:-/halvår
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Halvår student</h2>
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">3800:-/halvår
               <br></br>
               6 månaders bindningstid.
               </p>
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl">
-              <h2 className="border-2 font-bold p-2 w-900:text-2xl">Kvartal</h2>
-              <p className="border-2 p-2 flex-grow w-900:px-20">3000:-/kvartal
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kvartal</h2>
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">3000:-/kvartal
               <br></br>
               3 månaders bindningstid.
               </p>
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl">
-              <h2 className="border-2 font-bold p-2 w-900:text-2xl">Thaiboxning ungdom 12-16 år</h2>
-              <p className="border-2 p-2 flex-grow w-900:px-20">399:-/månad autogiro
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Thaiboxning ungdom 12-16 år</h2>
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">399:-/månad autogiro
               <br></br>
               2800:-/halvår kontant
               <br></br>
@@ -79,16 +79,16 @@ export default function MembershipPage() {
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl">
-              <h2 className="border-2 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 7-11 år</h2>
-              <p className="border-2 p-2 flex-grow w-900:px-20">399:-/månad autogiro
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 7-11 år</h2>
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">399:-/månad autogiro
               <br></br>
               3 pass/v, uppehåll juni-augusti & december.
               </p>
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl">
-              <h2 className="border-2 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 4-6 år</h2>
-              <p className="border-2 p-2 flex-grow w-900:px-20">299:-/månad autogiro
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 4-6 år</h2>
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">299:-/månad autogiro
               <br></br>
               1 pass/v, uppehåll juni-augusti & december.
               <br></br>
@@ -97,8 +97,8 @@ export default function MembershipPage() {
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl">
-              <h2 className="border-2 font-bold p-2 w-900:text-2xl">Prova på engångspass</h2>
-              <p className="border-2 p-2 flex-grow w-900:px-20">200:-
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Prova på engångspass</h2>
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">200:-
               <br></br>
               Ingen drop in
               <br></br>
@@ -108,8 +108,8 @@ export default function MembershipPage() {
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl">
-              <h2 className="border-2 font-bold p-2 w-900:text-2xl">Prova på en vecka</h2>
-              <p className="border-2 p-2 flex-grow w-900:px-20">500:-
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Prova på en vecka</h2>
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">500:-
               <br></br>
               Ingen drop in
               <br></br>
@@ -118,8 +118,8 @@ export default function MembershipPage() {
             </div>
 
             <div className="grid grid-flow-row text-center w-900:text-2xl">
-              <h2 className="border-2 font-bold p-2 w-900:text-2xl">Villkor</h2>
-              <p className="border-2 p-2 w-900:px-20">Medlemsavgift om 500:-/år är obligatorisk, inkluderar
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Villkor</h2>
+              <p className="border-2 border-t-0 p-2 w-900:px-20">Medlemsavgift om 500:-/år är obligatorisk, inkluderar
               idrottsförsäkring hos Folksam. Betalas på plats alt läggs till på första autogirodragningen.
               <br></br>
               <br></br>

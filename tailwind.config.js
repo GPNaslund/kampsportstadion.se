@@ -7,9 +7,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      translate: {
+        '-150': '-150%',
+        '150': '150%',
+      },
       screens: {
         'w-625': {'raw': '(min-width: 625px)'},
-        'w-900': {'raw': '(min-width: 900px)'}
+        'w-900': {'raw': '(min-width: 900px)'},
+        'h-500': {'raw': '(max-height: 500px)'},
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

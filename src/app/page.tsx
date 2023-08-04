@@ -48,7 +48,7 @@ export default function Home() {
         <div className="w-full flex flex-col px-10 items-center w-900:mt-[80vh] w-900:px-40">
           <h2 className="text-center text-2xl w-900:text-4xl font-bold">Kampsport på Stockholm Stadion</h2>
           <p className="text-center text-lg w-900:text-2xl mt-4">I fina lokaler inne på Stockholm Stadion hittar du Kampsportstadion. Med 400 kvm sal med och fantastiska tränare har vi kampsport för alla. Som medlem hos oss kan du köra alla pass på schemat och du har fri tillgång till gymmet.</p>
-          <p className="text-center text-lg w-900:text-2xl mt-2">Vi har klasser i Kampsportfys, Cirkelträning, Muay Thai, MMA, SW , Barnträning, Yoga och BJJ.</p>
+          <p className="text-center text-lg w-900:text-2xl mt-2">Vi har klasser i <span className="font-bold">Kampsportfys, Cirkelträning, Muay Thai, MMA, SW, Barnträning, Yoga och BJJ.</span></p>
           <BlackButton
             text='Se alla klasser'
             href="/klasser"
@@ -79,7 +79,7 @@ export default function Home() {
                 height: "auto",
               }}
             />
-            <a href="/schedule-fall-lg.jpg" download="kampsportstadion-schema.jpg" className="text-lg w-900:text-2xl">Ladda ner schema</a>
+            <a href="/schedule-fall-lg.jpg" download="kampsportstadion-schema.jpg" className="text-lg w-900:text-2xl underline">Ladda ner schema</a>
           </div>
         </div>
       </div>

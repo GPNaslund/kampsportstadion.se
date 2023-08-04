@@ -9,7 +9,7 @@ export default function ClassesPage() {
         forWhiteBg={true}
       />
       <div className="w-full">
-        <div className="w-full h-screen flex flex-col mt-40 items-center w-900:hidden">
+        <div className="w-full h-screen flex flex-col mt-40 mb-20 items-center w-900:hidden">
           <h2 className="text-center text-4xl font-bold mb-5">KLASSER</h2>
           {classes.map((item, index) =>
             item.classLevels ?

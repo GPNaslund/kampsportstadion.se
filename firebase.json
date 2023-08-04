@@ -8,9 +8,38 @@
     ],
     "rewrites": [
       {
+        "source": "/klasser",
+        "destination": "/klasser.html"
+      },
+      {
+        "source": "/schema",
+        "destination": "/schema.html"
+      },
+      {
+        "source": "/medlemskap",
+        "destination": "/medlemskap.html"
+      },
+      {
+        "source": "/pt",
+        "destination": "/pt.html"
+      },
+      {
+        "source": "/foretag",
+        "destination": "/foretag.html"
+      },
+      {
+        "source": "/sociala-projekt",
+        "destination": "/sociala-projekt.html"
+      },
+      {
+        "source": "/kontakt",
+        "destination": "/kontakt.html"
+      },
+      {
         "source": "**",
-        "function": "nextServer"
+        "destination": "/index.html"
       }
     ]
   }
 }
+

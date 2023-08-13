@@ -1,3 +1,4 @@
+import BlackButton from "@/components/black_button/black_button";
 import MobileNavbar from "@/components/navbar/mobile_navbar";
 
 export default function MembershipPage() {
@@ -8,7 +9,8 @@ export default function MembershipPage() {
       />
       <div className="w-full">
         <div className="w-full h-screen flex flex-col mt-40 items-center">
-          <h2 className="text-center text-4xl font-bold mb-5">MEDLEMSKAP</h2>
+          <h2 className="text-center text-4xl font-bold">MEDLEMSKAP</h2>
+          <BlackButton text={"KÖP HÄR"} href={""} />
           <div className="grid grid-flow-row w-900:grid-cols-2 p-5">
 
             <div className="flex flex-col text-center h-full w-900:text-2xl">

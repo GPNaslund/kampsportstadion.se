@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import MenuButton from '../menu_button/menu_button'
 import { useState } from 'react'
 import MenuContext from '../menu_context/menu_context';
@@ -42,7 +41,6 @@ const MobileNavbar: React.FC<MobileNavbarProps> = ({ forWhiteBg }) => {
           />
           <MobileMenu />
         </MenuContext.Provider>
-
       </div>
     </nav>
   )

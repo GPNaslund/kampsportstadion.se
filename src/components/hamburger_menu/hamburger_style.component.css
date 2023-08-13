@@ -35,13 +35,3 @@
   opacity: 0;
 }
 
-@media screen and (min-width: 900px) {
-  .hamburger-menu {
-    width: 30px; 
-    height: 23px;
-  }
-
-  .hamburger-line {
-    height: 4px; 
-  }
-}

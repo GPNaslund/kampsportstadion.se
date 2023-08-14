@@ -19,8 +19,7 @@ const classes = [
   Här hittar man det man behöver för att lyfta och bli stärk. Här finns även roddmaskiner, cyklar, yoga-matta och pilatesboll. 
   Allt man behöver för att komplettera kampsporten på bästa möjliga sätt.`, 
   classLevels:``, coaches:``},
-  {header: `Kampsport Barngrupp`, text:`Barnen kommer lära sig brottning, slag och sparkar under kontrollerade, lekfulla former. Vi blandar teknik, fys och kroppskontroll.
-  Rekommenderad ålder är ca 7 till 11 år. Måndagar BJJ 17.00-17.55, Thaiboxning: Onsdagar 17.00-17.45, Lördagar 12.00-13.00, Kampsportlek 4-6 år: Lördagar 12.00-12.45, 
+  {header: `Kampsport Barngrupp`, text:`Rekommenderad ålder är ca 7 till 11 år. BJJ: Brottning med GI-dräkt, Måndagar 17.00-17.55. Thaiboxning: Blandning av tekniker som slag och sparkar med fys och kroppskontroll, Onsdagar 17.00-17.45 + Lördagar 12.00-13.00. Kampsportlek: Kampsport för dom minsta. Barnen kommer lära sig brottning slag och sparkar under kontrollerade lekfulla former, 4-6 år: Lördagar 12.00-12.45, 
   Föräldrarna til dom minsta behöver vara med och hjälpa till att assistera under passen. Inga pass under skolloven.`, 
   classLevels:``, coaches:`Ash Byrne (lördagar, pratar engelska & förstår svenska), Erik Veas, Semlan Edemyr, Christoffer Nyström, Anna Stoltz & Oscar Svedman.`},
   {header: `AW/After work`, text:`Byt ut ölen med en Nocco och dra med kollegor och vänner på ett After Workout pass! 60 minuters grym träning!

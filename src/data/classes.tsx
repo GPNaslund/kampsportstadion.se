@@ -11,8 +11,6 @@ const classes = [
   kontrollera honom/henne där och med hjälp av ledlås och strypningar tvinga denne att ge upp. Bjj är den kampsport där en mindre utövare har störst möjlighet att övermanna en större och starkare motståndare. 
   Detta för att teknik alltid går före fysiska egenskapar. Fokus på teknik och att kampen huvudsaklig pågår på marken gör att detta är en sport som passar alla. Killar som tjejer, små som stora och unga som gamla.`, 
   classLevels:`barn, nybörjare & avancerad.`, coaches:`Rodrigo Gonzalez, Reza Sadeghi, Erik Veas (barngrupp)`},
-  {header: `Submission Wrestling`, text:`Här lär man sig grepp, kast, brottning, strypningar och lås.`, 
-  classLevels:``, coaches:`Pejman Parchami`},
   {header: `Kampsportsfys`, text:`Funktionell styrka med kampsportsmoment. Effektiv och rolig träning. Utmanande utan att man behöver slåss med någon. Passar för alla och inga förkunskaper krävs.`, 
   classLevels:``, coaches:`Rickard Nordstrand, Matias Sylvan, Petter Ingmarsson, Patrik Asplund, Synøve Asplund, Sabina Dalfjäll Vassiliou & Theres Bäckgren.`},
   {header: `Dunkardax/Cirkelfys`, text:`90 minuter cirkelträning med kampsport moment. Ett fyspass med högt tempo, styrka och flås! Passar för alla och inga förkunskaper krävs.`, 
@@ -21,9 +19,9 @@ const classes = [
   Här hittar man det man behöver för att lyfta och bli stärk. Här finns även roddmaskiner, cyklar, yoga-matta och pilatesboll. 
   Allt man behöver för att komplettera kampsporten på bästa möjliga sätt.`, 
   classLevels:``, coaches:``},
-  {header: `Kampsport Barngrupp`, text:`Barnen kommer lära sig brottning ,slag och sparkar under kontrollerade, lekfulla former. Vi blandar teknik, fys och kroppskontroll.
+  {header: `Kampsport Barngrupp`, text:`Barnen kommer lära sig brottning, slag och sparkar under kontrollerade, lekfulla former. Vi blandar teknik, fys och kroppskontroll.
   Rekommenderad ålder är ca 7 till 11 år. Måndagar BJJ 17.00-17.55, Thaiboxning: Onsdagar 17.00-17.45, Lördagar 12.00-13.00, Kampsportlek 4-6 år: Lördagar 12.00-12.45, 
-  Föräldrarna til dom mista behöver vara med och hjälpa till att assistera under passen. Inga pass under skolloven.`, 
+  Föräldrarna til dom minsta behöver vara med och hjälpa till att assistera under passen. Inga pass under skolloven.`, 
   classLevels:``, coaches:`Ash Byrne (lördagar, pratar engelska & förstår svenska), Erik Veas, Semlan Edemyr, Christoffer Nyström, Anna Stoltz & Oscar Svedman.`},
   {header: `AW/After work`, text:`Byt ut ölen med en Nocco och dra med kollegor och vänner på ett After Workout pass! 60 minuters grym träning!
   Vill ditt företag köra en After Workout:maila till info@kampsportstadion.se`, 

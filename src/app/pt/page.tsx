@@ -3,12 +3,12 @@ import StaffCard from "@/components/staff_card/staff_card";
 
 export default function ContactPage() {
   return (
-    <main className="flex min-h-screen min-w-screen flex-col items-center justify-between">
+    <main className="flex min-h-full min-w-full flex-col items-center justify-between">
       <MobileNavbar
         forWhiteBg={true}
       />
       <div className="w-full">
-        <div className="w-full h-screen flex flex-col mt-40 items-center text-center px-10 w-900:px-40">
+        <div className="w-full h-full flex flex-col mt-40 items-center text-center px-10 w-900:px-40">
           <h2 className="text-center text-4xl font-bold mb-5">PERSONLIG TRÄNING</h2>
           <p className="w-900:text-2xl w-900:px-20 mb-10">Är du intresserad av PT har vi ett gäng duktiga, erfarna tränar som kan hjälpa dig.<br></br> Både inom styrka, kondition, boxning, thaiboxning, MMA och BJJ.</p>
           <StaffCard 

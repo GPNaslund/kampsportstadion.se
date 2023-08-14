@@ -1,3 +1,4 @@
+import Footer from "@/components/footer/footer";
 import MobileNavbar from "@/components/navbar/mobile_navbar";
 
 export default function SocialProjects() {

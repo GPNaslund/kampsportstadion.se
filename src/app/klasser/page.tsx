@@ -33,7 +33,7 @@ export default function ClassesPage() {
                 />
           )}
         </div>
-        <div className="w-full h-screen mt-40 hidden w-900:grid w-900:grid-cols-2 gap-y-10">
+        <div className="w-full h-full mt-40 hidden w-900:grid w-900:grid-cols-2 gap-y-10">
           <h2 className="text-center text-4xl font-bold mb-5 col-span-2">KLASSER</h2>
           {classes.map((item, index) =>
             <div className="text-center px-10 w-900:text-xl w-900:px-28" key={index}>
@@ -48,5 +48,6 @@ export default function ClassesPage() {
         </div>
       </div>
     </main>
+    
   )
 }

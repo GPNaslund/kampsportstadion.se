@@ -3,21 +3,21 @@ import MobileNavbar from "@/components/navbar/mobile_navbar";
 
 export default function MembershipPage() {
   return (
-    <main className="flex min-h-screen min-w-screen flex-col items-center justify-between">
+    <main className="flex min-h-full min-w-full flex-col items-center justify-between">
       <MobileNavbar
         forWhiteBg={true}
       />
       <div className="w-full">
-        <div className="w-full h-screen flex flex-col mt-40 items-center">
+        <div className="w-full h-full flex flex-col mt-40 items-center">
           <h2 className="text-center text-4xl font-bold">MEDLEMSKAP</h2>
           <BlackButton text={"KÖP HÄR"} href={""} />
           <div className="grid grid-flow-row w-900:grid-cols-2 p-5">
 
-            <div className="flex flex-col text-center h-full w-900:text-2xl">
+            <div className="flex flex-col text-center h-full w-900:text-2xl col-start-1">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Årskort</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">599:-/månad autogiro
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">699:-/månad autogiro
                 <br></br>
-                8900:-/år kontant
+                9800:-/år kontant
                 <br></br>
                 Träna så mycket du vill,
                 välj bland alla pass, tillgång till gymmet.
@@ -25,9 +25,9 @@ export default function MembershipPage() {
               </p>
             </div>
 
-            <div className="flex flex-col text-center h-full w-900:text-2xl">
+            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Årskort student</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">499:-/månad autogiro
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">550:-/månad autogiro
                 <br></br>
                 Träna så mycket du vill,
                 välj bland alla pass, tillgång till gymmet.
@@ -35,7 +35,7 @@ export default function MembershipPage() {
               </p>
             </div>
 
-            <div className="flex flex-col text-center h-full w-900:text-2xl">
+            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1 w-900:row-start-4">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Guld Medlemskap</h2>
               <p className="border-2 p-2 border-t-0 flex-grow w-900:px-20">1299:-/månad autogiro
                 <br></br>
@@ -44,23 +44,23 @@ export default function MembershipPage() {
               </p>
             </div>
 
-            <div className="flex flex-col text-center h-full w-900:text-2xl">
+            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Halvår</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">4800:-/halvår
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">5400:-/halvår
               <br></br>
               6 månaders bindningstid.
               </p>
             </div>
 
-            <div className="flex flex-col text-center h-full w-900:text-2xl">
+            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Halvår student</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">3800:-/halvår
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">3900:-/halvår
               <br></br>
               6 månaders bindningstid.
               </p>
             </div>
 
-            <div className="flex flex-col text-center h-full w-900:text-2xl">
+            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kvartal</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">3000:-/kvartal
               <br></br>
@@ -68,27 +68,29 @@ export default function MembershipPage() {
               </p>
             </div>
 
-            <div className="flex flex-col text-center h-full w-900:text-2xl">
+            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Thaiboxning ungdom 12-16 år</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">399:-/månad autogiro
               <br></br>
               2800:-/halvår kontant
               <br></br>
-              Gäller tisdag & torsdags  17.30-18.30
+              Gäller tisdag & torsdag 17.00-18.00
               <br></br>
               6 månaders bindningstid
               </p>
             </div>
 
-            <div className="flex flex-col text-center h-full w-900:text-2xl">
+            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 7-11 år</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">399:-/månad autogiro
               <br></br>
               3 pass/v, uppehåll juni-augusti & december.
+              <br></br>
+              Man har automatisk plats i gruppen kommande termin om man inte säger upp sitt medlemskap. Vill du säga upp ditt barns medlemskap gör man det innan nästa terminstart.
               </p>
             </div>
 
-            <div className="flex flex-col text-center h-full w-900:text-2xl">
+            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 4-6 år</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">299:-/månad autogiro
               <br></br>
@@ -98,7 +100,7 @@ export default function MembershipPage() {
               </p>
             </div>
 
-            <div className="flex flex-col text-center h-full w-900:text-2xl">
+            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1 w-900:row-start-5">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Prova på engångspass</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">200:-
               <br></br>
@@ -109,7 +111,7 @@ export default function MembershipPage() {
               </p>
             </div>
 
-            <div className="flex flex-col text-center h-full w-900:text-2xl">
+            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Prova på en vecka</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">500:-
               <br></br>
@@ -142,6 +144,10 @@ export default function MembershipPage() {
               <br></br>
               <br></br>
               Vid uppsägning av medlemskap, maila ditt namn, personnummer och kortnummer till info@kampsportstadion.se
+              <br></br>
+              Vi skickar alltid en bekräftelse på din uppsägelse, ifall du har sagt upp ditt medlemskap men inte erhåller en bekräftelse
+              på uppsägningen så kontakta oss snarast. Återbetalning av medlemsavgifter som uppstått pga bristande förfarande vid uppsägning
+              återbetalas ej. 
               <br></br>
               Lämna in ditt medlemskort efter sista passet för avslutande av medlemskap. Gäller alla medlemskap.
               </p>

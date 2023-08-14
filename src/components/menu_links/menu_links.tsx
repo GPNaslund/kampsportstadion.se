@@ -18,7 +18,7 @@ export default function MenuLinks() {
 
 
   return (
-    <div className="overflow-y-auto h-full w-full mt-52 h-500:mt-10">
+    <div className="overflow-y-auto h-full w-full">
       <ul className="text-center text-2xl">
         <>
           {links.map((link, index) => {

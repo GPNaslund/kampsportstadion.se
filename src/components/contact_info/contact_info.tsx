@@ -34,7 +34,7 @@ export default function ContactInfo() {
           }}
         />
       </a>
-      <a href="https://goo.gl/maps/5ipnHxJKXbrAHLBw6" target="_blank">
+      <a href="https://www.gymcontrol.se/global/webshop/index.php?uid=8975&action=home" target="_blank">
         <img
           src="/shopping_cart_icon.svg"
           alt="shopping cart icon"

@@ -42,7 +42,6 @@ export default function ClassesPage() {
               <br></br>
               <p>{item.classLevels ? `Vi har klasser för ${item.classLevels}` : ''}</p>
               <br></br>
-              <p>{item.coaches ? `Tränare: ${item.coaches}` : ''}</p>
             </div>
           )}
         </div>

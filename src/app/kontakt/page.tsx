@@ -24,12 +24,18 @@ export default function ContactPage() {
             <br></br>
             Tel: 076-625-91 83 
             <br></br>
-            Måndag-torsdag 17.00-20.00 (vi har ofta svårt att svara i telefonen då man håller pass så lättas är att maila (info@kampsportstadion.se) eller skicka sms så ringer vi upp er i mån av tid!).
+            <br></br>
+            Öppettider:
+            <br></br>
+            Måndag-torsdag 16.30 - 17.30
+            <br></br>
+            Lördag 09.30 - 13.30
+            <br></br>
+            Söndag 10.30 - 13.30
+            <br></br>
+            (Stängt alla röda dagar samt under sommar + jul)
             <br></br>
             <br></br>
-            Receptionen är bemannad måndag till torsdag 16.30-20.00 och lördag 10.00-12.00.
-            <br></br>
-            Under sommaren och julen har vi stängt. Kolla schemat för info om sommarträning och julträning.
           </p>
         </div>
       </div>

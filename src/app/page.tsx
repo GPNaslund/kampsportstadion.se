@@ -22,7 +22,7 @@ export default function Home() {
         </div>
         <div className="w-full flex flex-col px-10 items-center w-900:px-40 mt-40">
           <h2 className="text-center text-2xl w-900:text-4xl font-bold">Kampsport på Stockholm Stadion</h2>
-          <p className="text-center text-lg w-900:text-2xl mt-4">I fina lokaler inne på Stockholm Stadion hittar du Kampsportstadion. Med 400 kvm sal med och fantastiska tränare har vi kampsport för alla. Som medlem hos oss kan du köra alla pass på schemat och du har fri tillgång till gymmet.</p>
+          <p className="text-center text-lg w-900:text-2xl mt-4">I fina lokaler inne på Stockholm Stadion hittar du Kampsportstadion. Med en 400 kvm stor sal och fantastiska tränare kan vi erbjuda kampsport för alla. Som medlem hos oss kan du köra alla pass på schemat och du har fri tillgång till gymmet.</p>
           <p className="text-center text-lg w-900:text-2xl mt-2">Vi har klasser i <span className="font-bold">Kampsportfys, Cirkelträning, Muay Thai, MMA, Barnträning, Yoga och BJJ.</span></p>
           <BlackButton text='Se alla klasser' href="/klasser" />
           <BlackButton text='Medlemskap' href="/medlemskap" />

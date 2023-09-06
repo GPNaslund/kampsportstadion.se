@@ -26,6 +26,13 @@ export default function ContactPage() {
             phoneNumber='0723055301'
           />
           <StaffCard 
+            name="Therese Bäckgren"
+            description="Vill du få bättre kondition eller bygga en stark och stabil fysik hjälper jag dig gärna. Tillsammans utgår vi från vart du är idag och vart du vill komma. Med min bakgrund inom fitness och styrketräning har jag verktygen för att du ska kunna nå dina mål."
+            instagramHandle="synove_asplund"
+            email="synove@kampsportstadion.se"
+            phoneNumber='0723055301'
+          />
+          <StaffCard 
             name="Jimmie Jensen"
             description="Som huvudcoach för vår elitgrupp med bland annat UFC fighters och landslags-fighters kan Jimmie ta din fighting till en ny nivå. Nybörjare som proffs spelar ingen roll-tillsammans lägger vi upp en plan för att ge dig den personliga utvecklingen och resultat du vill åt. Teknik, styrka  kondition för att bygga en stark, hållbar kropp och ett bra fighting game."
             instagramHandle="jimmie_jensen"

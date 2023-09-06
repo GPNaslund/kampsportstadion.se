@@ -9,7 +9,7 @@ export default function SchemaPage() {
         forWhiteBg={true}
       />
       <div className="w-full">
-        <div className="w-full h-screen flex flex-col mt-40 items-center">
+        <div className="w-full h-full flex flex-col mt-40 items-center">
           <h2 className="text-center text-4xl font-bold mb-5">SCHEMA</h2>
           <img
               src="/schedule-fall-lg.jpg"

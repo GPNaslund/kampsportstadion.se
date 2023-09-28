@@ -27,7 +27,9 @@ export default function MembershipPage() {
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Årskort student</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">8000:-/år
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">550:-/månad autogiro
+                <br></br>
+                8000:-/år kontant
                 <br></br>
                 Träna så mycket du vill,
                 välj bland alla pass, tillgång till gymmet.
@@ -46,7 +48,7 @@ export default function MembershipPage() {
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Halvår</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">5400:-/halvår
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">5400:-/halvår kontant
               <br></br>
               6 månaders bindningstid.
               </p>
@@ -54,7 +56,7 @@ export default function MembershipPage() {
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Halvår student</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">4500:-/halvår
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">4500:-/halvår kontant
               <br></br>
               6 månaders bindningstid.
               </p>
@@ -62,7 +64,7 @@ export default function MembershipPage() {
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kvartal</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">3000:-/kvartal
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">3000:-/kvartal kontant
               <br></br>
               3 månaders bindningstid.
               </p>
@@ -84,7 +86,7 @@ export default function MembershipPage() {
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 7-11 år</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">399:-/månad autogiro
               <br></br>
-              3 pass/v, uppehåll juni-augusti & december.
+              3 pass/v, uppehåll juni-augusti & januari.
               <br></br>
               Man har automatisk plats i gruppen kommande termin om man inte säger upp sitt medlemskap. Vill du säga upp ditt barns medlemskap gör man det innan nästa terminstart.
               </p>
@@ -94,7 +96,7 @@ export default function MembershipPage() {
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 4-6 år</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">299:-/månad autogiro
               <br></br>
-              1 pass/v, uppehåll juni-augusti & december.
+              1 pass/v, uppehåll juni-augusti & januari.
               <br></br>
               Man har automatisk plats i gruppen kommande termin om man inte säger upp sitt medlemskap. Vill du säga upp ditt barns medlemskap gör man det innan nästa terminstart.
               </p>
@@ -102,7 +104,7 @@ export default function MembershipPage() {
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1 w-900:row-start-5">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Prova på engångspass</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">200:-
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">200:- kontant
               <br></br>
               Ingen drop in
               <br></br>
@@ -113,7 +115,7 @@ export default function MembershipPage() {
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Prova på en vecka</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">500:-
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">500:- kontant
               </p>
             </div>
 

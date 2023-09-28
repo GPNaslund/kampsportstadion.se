@@ -27,7 +27,7 @@ export default function ContactPage() {
             <br></br>
             Öppettider:
             <br></br>
-            Måndag-torsdag 16.30 - 17.30
+            Måndag-torsdag 16.30 - 19.30
             <br></br>
             Lördag 09.30 - 13.30
             <br></br>

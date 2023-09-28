@@ -14,56 +14,44 @@ export default function ContactPage() {
           <StaffCard 
             name="Rickard Nordstrand"
             description="Världsmästare i thaiboxning. Vill du slipa dina tekniker eller jobba styrka i gymmet? Rickard är en all around tränare som kan hjälpa dig med det mesta. Thaiboxning är dock hans specialitet."
-            instagramHandle="rickardnordstrand"
-            email="rickard@kampsportstadion.se"
-            phoneNumber='0723055301'
+            email="rickard@goodsport.se"
+            phoneNumber='0707122201'
           />
           <StaffCard 
             name="Synøve Asplund"
             description="Personlig träning med mål att motivera och inspirera till fysisk aktivitet och rörelse. Att starka individen och möta personen just där den är för att maximera den personliga utvecklingen. Älskar funktionell styrka, thaiboxning och gym. Vi sätter i hop en plan utifrån dina mål och förutsättningar."
-            instagramHandle="synove_asplund"
-            email="synove@kampsportstadion.se"
-            phoneNumber='0723055301'
+            email="info@kampsportstadion.se"
+            phoneNumber='0707943873'
           />
           <StaffCard 
-            name="Therese Bäckgren"
+            name="Tessan"
             description="Vill du få bättre kondition eller bygga en stark och stabil fysik hjälper jag dig gärna. Tillsammans utgår vi från vart du är idag och vart du vill komma. Med min bakgrund inom fitness och styrketräning har jag verktygen för att du ska kunna nå dina mål."
-            instagramHandle="synove_asplund"
-            email="synove@kampsportstadion.se"
-            phoneNumber='0723055301'
+            email="theresebackgren@gmail.com"
+            phoneNumber='0737070809'
           />
           <StaffCard 
             name="Jimmie Jensen"
             description="Som huvudcoach för vår elitgrupp med bland annat UFC fighters och landslags-fighters kan Jimmie ta din fighting till en ny nivå. Nybörjare som proffs spelar ingen roll-tillsammans lägger vi upp en plan för att ge dig den personliga utvecklingen och resultat du vill åt. Teknik, styrka  kondition för att bygga en stark, hållbar kropp och ett bra fighting game."
-            instagramHandle="jimmie_jensen"
-            email="synove@kampsportstadion.se"
-            phoneNumber='0723055301'
+            email="jimmie@murarfirma.se"
+            phoneNumber='0732034060'
           />
           <StaffCard 
-            name="Markku Hakala"
+            name="Markku Eide"
             description="Har du ett viktmål eller vill du förbättra din kondition, bygga en starkare kropp eller ta din thaiboxning till högre höjder? Med 15 års erfarenhet av kampsport och som licensierad PT och löpcoach skräddarsyr jag ett program till dig. "
-            email="synove@kampsportstadion.se"
-            phoneNumber='0723055301'
+            email="mh.ptcoachning@gmail.com"
+            phoneNumber='0707158607'
           />
           <StaffCard 
-            name="Ash Byrne"
-            description="Vill du förbättra dina tekniker är eller lära dig grunder i fighting? Med över 50 fighter inom boxning, thaiboxning, MMA, Allstyle och Bareknuckle har Ash samlat på sig en hel del kunskap inom fighting."
-            instagramHandle="jimmie_jensen"
-            email="synove@kampsportstadion.se"
-          />
-          <StaffCard 
-            name="Niklas Karlsson"
+            name="Niklas Messing"
             description="Vill du komma i form eller behöver jobba på dina tekniker i thaiboxning kan Niklas hjälpa dig."
-            instagramHandle="jimmie_jensen"
-            email="synove@kampsportstadion.se"
-            phoneNumber='0723055301'
+            email="niklas.messing@outlook.com"
+            phoneNumber='0707866055'
           />
           <StaffCard 
             name="Antoine Constantinedes"
             description="Strength & condition huvud coach för våra fighters. Jobbar mycket med individuella programmeringar för att hjälpa dig att nå ditt bästa potential inom din fighting och en stark och hållbar kropp!"
-            instagramHandle="jimmie_jensen"
-            email="synove@kampsportstadion.se"
-            phoneNumber='0723055301'
+            email="antonyc19@hotmail.com"
+            phoneNumber='0765633111'
           />
           <p className="w-900:text-2xl w-900:px-20 mt-20">Pris: 900kr per PT-timme. Rabatterat pris om du är medlem på Kampsportstadion.</p>
           <p className="w-900:text-2xl w-900:px-20 ">(Rickard Nodstrand har egen prislista)</p>

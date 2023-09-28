@@ -30,9 +30,9 @@ export default function Home() {
         <div className="w-full flex flex-col px-10 items-center mt-40">
           <h2 className="text-center text-2xl w-900:text-4xl font-bold">Schema</h2>
           <div className="flex flex-col w-screen items-center w-900:w-4/5">
-            <img src="/schedule-fall-lg.jpg" className="w-900:hidden" alt="schema" style={{ width: "100%", height: "auto" }} />
-            <img src="/schedule-fall-xl.jpg" className="hidden w-900:block" alt="schema" style={{ width: "100%", height: "auto" }} />
-            <a href="/schedule-fall-lg.jpg" download="kampsportstadion-schema.jpg" className="text-lg w-900:text-2xl underline">Ladda ner schema</a>
+            <img src="/schedule-fall.jpeg" className="w-900:hidden" alt="schema" style={{ width: "80%", height: "auto" }} />
+            <img src="/schedule-fall.jpeg" className="hidden w-900:block" alt="schema" style={{ width: "80%", height: "auto" }} />
+            <a href="/schedule-fall.jpeg" download="kampsportstadion-schema.jpg" className="text-lg w-900:text-2xl underline">Ladda ner schema</a>
           </div>
         </div>
         <div className="mt-40">

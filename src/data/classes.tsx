@@ -53,7 +53,7 @@ const classes = [
     header: `Barnkalas`, text: `Vill ni ha ett barnkalas mer riktat mot hälsa, rörelseglädje och bus så har ni nu möjlighet att boka vår sal.
 Längd på kalaset och vad ni vill att det innehåller kommer vi gemensamt fram till, och priset läggs upp utefter vad ni har för önskemål (Längd på kalaset, om instruktör ska ingå, mat/dryck till gästerna, eventuella övriga önskemål)
 Vi rekommenderar 90 min där ca 45min är aktivitet och 45 min fika/fri lek.
-Grundpris utan instruktör 3500, med instruktör 4500. Maila info@kampsportstadion.se för mer info och bokning`, classLevels: ``, coaches: ``
+Grundpris utan instruktör 3500, med instruktör 4500/timme. Vid 90min 4500 utan instruktör och 5500 med. Maila info@kampsportstadion.se för mer info och bokning`, classLevels: ``, coaches: ``
   }
 ]
 

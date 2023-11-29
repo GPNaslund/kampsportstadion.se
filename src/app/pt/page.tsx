@@ -53,6 +53,12 @@ export default function ContactPage() {
             email="antonyc19@hotmail.com"
             phoneNumber='0765633111'
           />
+          <StaffCard 
+            name="Christoffer Nyström"
+            description="Bygg styrka och stabilitet genom hela rörelsebanan. Maximera explosivitet och uthållighet för att utvecklas i din sport.
+            Som blivande fysioterapeut med över 15 års erfarenhet av boxning/träning kan jag hjälpa dig att nå dina mål och bygga en kropp som håller livet ut"
+            email="chris.allen.nystrom@gmail.com"
+          />
           <p className="w-900:text-2xl w-900:px-20 mt-20">Pris: 900kr per PT-timme. Rabatterat pris om du är medlem på Kampsportstadion.</p>
           <p className="w-900:text-2xl w-900:px-20 ">(Rickard Nodstrand har egen prislista)</p>
           <p className="w-900:text-2xl w-900:px-20 pb-20">Kontakta oss på <a href="mailto:info@kampsportstadion.se">info@kampsportstadion.se</a> för mer information</p>

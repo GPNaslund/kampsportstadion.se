@@ -28,8 +28,8 @@ const classes = [
     classLevels: ``, coaches: ``
   },
   {
-    header: `Kampsport Barngrupp`, text: `Rekommenderad ålder är ca 7 till 11 år. BJJ: Brottning med GI-dräkt, Måndagar 17.00-17.55. Thaiboxning: Blandning av tekniker som slag och sparkar med fys och kroppskontroll, Onsdagar 17.00-17.45 + Lördagar 12.00-13.00. Kampsportlek: Kampsport för dom minsta. Barnen kommer lära sig brottning slag och sparkar under kontrollerade lekfulla former, 4-6 år: Lördagar 12.00-12.45, 
-  Föräldrarna til dom minsta behöver vara med och hjälpa till att assistera under passen. Inga pass under skolloven.`,
+    header: `Kampsport Barngrupp`, text: `Brasiliansk jiu-jitsu (BJJ) 8-11 år : Brottning/grappling med GI-dräkt. Thaiboxning 8-11 år : Blandning av tekniker som slag och sparkar med fys och kroppskontroll. Kampsportlek 4-7 år : Kampsport för dom minsta. Barnen kommer lära sig brottning slag och sparkar under kontrollerade lekfulla former. 
+    Föräldrarna till dom minsta kan behöva med och hjälpa till att assistera under passen. Inga pass under skolloven.`,
     classLevels: ``, coaches: ``
   },
   {
@@ -50,10 +50,7 @@ const classes = [
     classLevels: ``, coaches: ``
   },
   {
-    header: `Barnkalas`, text: `Vill ni ha ett barnkalas mer riktat mot hälsa, rörelseglädje och bus så har ni nu möjlighet att boka vår sal.
-Längd på kalaset och vad ni vill att det innehåller kommer vi gemensamt fram till, och priset läggs upp utefter vad ni har för önskemål (Längd på kalaset, om instruktör ska ingå, mat/dryck till gästerna, eventuella övriga önskemål)
-Vi rekommenderar 90 min där ca 45min är aktivitet och 45 min fika/fri lek.
-Grundpris utan instruktör 3500, med instruktör 4500/timme. Vid 90min 4500 utan instruktör och 5500 med. Maila info@kampsportstadion.se för mer info och bokning`, classLevels: ``, coaches: ``
+    header: `Barnkalas`, text: `2500 kr för en timme i salen. Instruktör från Kampsportstadion kommer hålla ett 45 minuters pass för barnen. Godis och fika tar man med själva. Maila info@kampsportstadion.se för mera information.`, classLevels: ``, coaches: ``
   }
 ]
 

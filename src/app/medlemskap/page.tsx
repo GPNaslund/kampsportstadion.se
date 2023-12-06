@@ -49,67 +49,75 @@ export default function MembershipPage() {
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Halvår</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">5400:-/halvår kontant
-              <br></br>
-              6 månaders bindningstid.
+                <br></br>
+                6 månaders bindningstid.
               </p>
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Halvår student</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">4500:-/halvår kontant
-              <br></br>
-              6 månaders bindningstid.
+                <br></br>
+                6 månaders bindningstid.
               </p>
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kvartal</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">3000:-/kvartal kontant
-              <br></br>
-              3 månaders bindningstid.
+                <br></br>
+                3 månaders bindningstid.
               </p>
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Thaiboxning ungdom 12-16 år</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">399:-/månad autogiro
-              <br></br>
-              2800:-/termin kontant
-              <br></br>
-              Gäller tisdag & torsdag 17.00-18.00
-              <br></br>
-              6 månaders bindningstid
+                <br></br>
+                2800:-/termin kontant
+                <br></br>
+                Gäller tisdag & torsdag 17.00-18.00
+                <br></br>
+                6 månaders bindningstid
               </p>
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 7-11 år</h2>
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 8-11 år</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">399:-/månad autogiro
-              <br></br>
-              3 pass/v, uppehåll juni-augusti & januari.
-              <br></br>
-              Man har automatisk plats i gruppen kommande termin om man inte säger upp sitt medlemskap. Vill du säga upp ditt barns medlemskap gör man det innan nästa terminstart.
+                <br></br>
+                Välj grupp:
+                <br></br>
+                1. Brasiliansk jiu-jitsu (BJJ) 2 pass i veckan.
+                <br></br>
+                2. Thaiboxning 2 pass i veckan.
+                <br></br>
+                Uppehåll juni-augusti & januari.
+                <br></br>
+                Man har automatisk plats i gruppen kommande termin om man inte säger upp sitt medlemskap.
+                Vill du säga upp ditt barns medlemskap gör man det innan nästa terminstart.
+                Maila namn och uppsägning till info@kampsportstadion.se
               </p>
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 4-6 år</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">299:-/månad autogiro
-              <br></br>
-              1 pass/v, uppehåll juni-augusti & januari.
-              <br></br>
-              Man har automatisk plats i gruppen kommande termin om man inte säger upp sitt medlemskap. Vill du säga upp ditt barns medlemskap gör man det innan nästa terminstart.
+                <br></br>
+                1 pass/v, uppehåll juni-augusti & januari.
+                <br></br>
+                Man har automatisk plats i gruppen kommande termin om man inte säger upp sitt medlemskap. Vill du säga upp ditt barns medlemskap gör man det innan nästa terminstart.
               </p>
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1 w-900:row-start-5">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Prova på engångspass</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">200:- kontant
-              <br></br>
-              Ingen drop in
-              <br></br>
-              Vill du prova så maila ditt namn till info@kampsportstadion.se, så skriver vi upp ditt
-              namn i receptionen.
+                <br></br>
+                Ingen drop in
+                <br></br>
+                Vill du prova så maila ditt namn till info@kampsportstadion.se, så skriver vi upp ditt
+                namn i receptionen.
               </p>
             </div>
 
@@ -122,32 +130,32 @@ export default function MembershipPage() {
             <div className="grid grid-flow-row text-center w-900:text-2xl">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Villkor</h2>
               <p className="border-2 border-t-0 p-2 w-900:px-20">Medlemsavgift om 500:-/år är obligatorisk oavsett medlemskap, inkluderar
-              idrottsförsäkring hos Folksam. Betalas på plats alt läggs till på första autogirodragningen.
-              <br></br>
-              <br></br>
-              Vid uppsägning gäller 3 månaders uppsägningstid. Kontant betalning återbetalas ej vid avslut
-              av medlemskapet innan köpt period löper ut.
-              <br></br>
-              Vid uppstart av ett tidigare avslutat medlemskap tas en administrativ avgift ut på 300:-
-              <br></br>
-              <br></br>
-              Vi har två terminer; Januari - Maj/Juni samt Augusti - December. Autogiro är en delbetalning
-              av terminsavgiften, vilket innebär att autogirot forlöper även då det inte är termin. Det går därför
-              inte att frysa medlemskapet under sommaren.
-              <br></br>
-              Bindningstiden för autogiro är 12 månader för vuxna och 6 månader för ungdom/student upp till 18 år.
-              <br></br>
-              Kampsport barngrupper binder sig för en termin. Vill man avsluta sitt barns medlemskap meddelar man detta innan 
-              nästa termins uppstart (gäller barngrupp 4-11 år)
-              <br></br>
-              <br></br>
-              Vid uppsägning av medlemskap, maila ditt namn, personnummer och kortnummer till info@kampsportstadion.se
-              <br></br>
-              Vi skickar alltid en bekräftelse på din uppsägelse, ifall du har sagt upp ditt medlemskap men inte erhåller en bekräftelse
-              på uppsägningen så kontakta oss snarast. Återbetalning av medlemsavgifter som uppstått pga bristande förfarande vid uppsägning
-              återbetalas ej. 
-              <br></br>
-              Lämna in ditt medlemskort efter sista passet för avslutande av medlemskap. Gäller alla medlemskap.
+                idrottsförsäkring hos Folksam. Betalas på plats alt läggs till på första autogirodragningen.
+                <br></br>
+                <br></br>
+                Vid uppsägning gäller 3 månaders uppsägningstid. Kontant betalning återbetalas ej vid avslut
+                av medlemskapet innan köpt period löper ut.
+                <br></br>
+                Vid uppstart av ett tidigare avslutat medlemskap tas en administrativ avgift ut på 300:-
+                <br></br>
+                <br></br>
+                Vi har två terminer; Januari - Maj/Juni samt Augusti - December. Autogiro är en delbetalning
+                av terminsavgiften, vilket innebär att autogirot forlöper även då det inte är termin. Det går därför
+                inte att frysa medlemskapet under sommaren.
+                <br></br>
+                Bindningstiden för autogiro är 12 månader för vuxna och 6 månader för ungdom/student upp till 18 år.
+                <br></br>
+                Kampsport barngrupper binder sig för en termin. Vill man avsluta sitt barns medlemskap meddelar man detta innan
+                nästa termins uppstart (gäller barngrupp 4-11 år)
+                <br></br>
+                <br></br>
+                Vid uppsägning av medlemskap, maila ditt namn, personnummer och kortnummer till info@kampsportstadion.se
+                <br></br>
+                Vi skickar alltid en bekräftelse på din uppsägelse, ifall du har sagt upp ditt medlemskap men inte erhåller en bekräftelse
+                på uppsägningen så kontakta oss snarast. Återbetalning av medlemsavgifter som uppstått pga bristande förfarande vid uppsägning
+                återbetalas ej.
+                <br></br>
+                Lämna in ditt medlemskort efter sista passet för avslutande av medlemskap. Gäller alla medlemskap.
               </p>
             </div>
 

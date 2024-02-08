@@ -16,6 +16,11 @@ const classes = [
     classLevels: `Barn (7-12 år), ungdomar (12-16år), nybörjare, fortsättning & avancerad.`, coaches: ``
   },
   {
+    header: `Submission wrestling (SW)`, text: `Submission wrestling (SW) är en modern, hybridkampsport. Förenklat går sporten ut på att tvinga sin motståndare till att ge upp utan att använda sparkar eller slag. 
+    Grepp, kast, brottning, strypningar och lås är tillåtna.`,
+    classLevels: ``, coaches: ``
+  },
+  {
     header: `Kampsportsfys`, text: `Funktionell styrka med kampsportsmoment. Effektiv och rolig träning. Utmanande utan att man behöver slåss med någon. Passar för alla och inga förkunskaper krävs.`,
     classLevels: ``, coaches: ``
   },

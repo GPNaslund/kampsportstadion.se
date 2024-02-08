@@ -17,7 +17,7 @@ export default function MembershipPage() {
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Årskort</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">699:-/månad autogiro
                 <br></br>
-                9800:-/år kontant
+                9800:-/år swish eller kort
                 <br></br>
                 Träna så mycket du vill,
                 välj bland alla pass, tillgång till gymmet.
@@ -29,7 +29,7 @@ export default function MembershipPage() {
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Årskort student</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">550:-/månad autogiro
                 <br></br>
-                8000:-/år kontant
+                8000:-/år swish eller kort
                 <br></br>
                 Träna så mycket du vill,
                 välj bland alla pass, tillgång till gymmet.
@@ -48,7 +48,7 @@ export default function MembershipPage() {
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Halvår</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">5400:-/halvår kontant
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">5400:-/halvår swish eller kort
                 <br></br>
                 6 månaders bindningstid.
               </p>
@@ -56,7 +56,7 @@ export default function MembershipPage() {
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Halvår student</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">4500:-/halvår kontant
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">4500:-/halvår swish eller kort
                 <br></br>
                 6 månaders bindningstid.
               </p>
@@ -64,7 +64,7 @@ export default function MembershipPage() {
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kvartal</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">3000:-/kvartal kontant
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">3000:-/kvartal swish eller kort
                 <br></br>
                 3 månaders bindningstid.
               </p>
@@ -74,7 +74,7 @@ export default function MembershipPage() {
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Thaiboxning ungdom 12-16 år</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">399:-/månad autogiro
                 <br></br>
-                2800:-/termin kontant
+                2800:-/termin swish eller kort
                 <br></br>
                 Gäller tisdag & torsdag 17.00-18.00
                 <br></br>
@@ -112,7 +112,7 @@ export default function MembershipPage() {
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1 w-900:row-start-5">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Prova på engångspass</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">200:- kontant
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">200:- swish eller kort
                 <br></br>
                 Ingen drop in
                 <br></br>
@@ -123,7 +123,13 @@ export default function MembershipPage() {
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Prova på en vecka</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">500:- kontant
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">500:- swish eller kort
+              </p>
+            </div>
+
+            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1">
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Klippkort 10 gånger</h2>
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">2000:- swish eller kort
               </p>
             </div>
 
@@ -133,7 +139,7 @@ export default function MembershipPage() {
                 idrottsförsäkring hos Folksam. Betalas på plats alt läggs till på första autogirodragningen.
                 <br></br>
                 <br></br>
-                Vid uppsägning gäller 3 månaders uppsägningstid. Kontant betalning återbetalas ej vid avslut
+                Vid uppsägning gäller 3 månaders uppsägningstid. swish eller kort betalning återbetalas ej vid avslut
                 av medlemskapet innan köpt period löper ut.
                 <br></br>
                 Vid uppstart av ett tidigare avslutat medlemskap tas en administrativ avgift ut på 300:-

@@ -30,9 +30,9 @@ export default function Home() {
         <div className="w-full flex flex-col px-10 items-center mt-40">
           <h2 className="text-center text-2xl w-900:text-4xl font-bold">Schema</h2>
           <div className="flex flex-col w-screen items-center w-900:w-4/5">
-            <img src="/schedule_spring_v4.jpeg" className="w-900:hidden" alt="schema" style={{ width: "80%", height: "auto" }} />
-            <img src="/schedule_spring_v4.jpeg" className="hidden w-900:block" alt="schema" style={{ width: "80%", height: "auto" }} />
-            <a href="/schedule_spring_v4.jpeg" download="/schedule_spring_v4.jpg" className="text-lg w-900:text-2xl underline">Ladda ner schema</a>
+            <img src="/schedule_spring_v5.jpeg" className="w-900:hidden" alt="schema" style={{ width: "80%", height: "auto" }} />
+            <img src="/schedule_spring_v5.jpeg" className="hidden w-900:block" alt="schema" style={{ width: "80%", height: "auto" }} />
+            <a href="/schedule_spring_v5.jpeg" download="/schedule_spring_v5.jpg" className="text-lg w-900:text-2xl underline">Ladda ner schema</a>
             <p className="text-lg mt-10 w-900:text-2xl">Gäller v.3 - v.20</p>
             <p className="text-lg w-900:text-2xl">(Barngrupp v.5 - v.20)</p>
           </div>

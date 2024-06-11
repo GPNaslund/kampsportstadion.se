@@ -46,7 +46,6 @@ export default function ContactInfo() {
       </a>
       <div className="flex flex-col text-xs col-start-2 col-span-2 mt-5 text-center">
         <a href="mailto:info@kampsportstadion.se">info@kampsportstadion.se</a>
-        <a href="tel:0766259183">076-6259183</a>
         <p>Lidingövägen 1, 11433 Stockholm</p>
       </div>
     </div>

@@ -22,9 +22,6 @@ export default function ContactPage() {
             Ledamöter: Tommy Jacobson, Rickard Nordstrand & Synøve Asplund
             <br></br>
             <br></br>
-            Tel: 076-625-91 83 
-            <br></br>
-            <br></br>
             Öppettider:
             <br></br>
             Måndag-torsdag 16.30 - 19.30

@@ -12,6 +12,7 @@ module.exports = {
         '150': '150%',
       },
       screens: {
+        'w-450': {'raw': '(min-width: 450px)'},
         'w-625': {'raw': '(min-width: 625px)'},
         'w-900': {'raw': '(min-width: 900px)'},
         'h-500': {'raw': '(max-height: 500px)'},

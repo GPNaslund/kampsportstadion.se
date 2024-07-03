@@ -11,7 +11,7 @@ export default function MembershipPage() {
         <div className="w-full h-full flex flex-col mt-40 items-center">
           <h2 className="text-center text-4xl font-bold">MEDLEMSKAP</h2>
           <BlackButton text={"KÖP HÄR"} href={"https://www.gymcontrol.se/global/webshop/index.php?uid=8975&action=home"} />
-          <div className="grid grid-flow-row w-900:grid-cols-2 p-5">
+          <div className="grid grid-flow-row w-900:grid-cols-2 w-450:p-5">
 
             <div className="flex flex-col text-center h-full w-900:text-2xl col-start-1">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Årskort</h2>

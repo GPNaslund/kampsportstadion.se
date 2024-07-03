@@ -71,7 +71,7 @@ export default function MembershipPage() {
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Thaiboxning ungdom 12-16 år</h2>
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Thaiboxning ungdom 13-16 år</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">399:-/månad autogiro
                 <br></br>
                 2800:-/termin swish eller kort
@@ -83,8 +83,10 @@ export default function MembershipPage() {
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 8-11 år</h2>
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 7-12 år</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">399:-/månad autogiro
+                <br></br>
+                2800:- / termin swish eller kort
                 <br></br>
                 Välj grupp:
                 <br></br>
@@ -127,13 +129,13 @@ export default function MembershipPage() {
               </p>
             </div>
 
-            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1">
+            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Klippkort 10 gånger</h2>
               <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">2000:- swish eller kort
               </p>
             </div>
 
-            <div className="grid grid-flow-row text-center w-900:text-2xl">
+            <div className="grid grid-flow-row text-center w-900:text-2xl col-span-2">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Villkor</h2>
               <p className="border-2 border-t-0 p-2 w-900:px-20">Medlemsavgift om 500:-/år är obligatorisk oavsett medlemskap, inkluderar
                 idrottsförsäkring hos Folksam. Betalas på plats alt läggs till på första autogirodragningen.
@@ -151,8 +153,10 @@ export default function MembershipPage() {
                 <br></br>
                 Bindningstiden för autogiro är 12 månader för vuxna och 6 månader för ungdom/student upp till 18 år.
                 <br></br>
-                Kampsport barngrupper binder sig för en termin. Vill man avsluta sitt barns medlemskap meddelar man detta innan
-                nästa termins uppstart (gäller barngrupp 4-11 år)
+                Vi har stängt under sommaren men erbjuder träning på annan plats.
+                <br></br>
+                <br></br>
+                Kampsport barngrupper binder sig för en termin. Ingen betalning dras under sommaren för barngruppen. Vill man avsluta sitt barns medlemskap meddelar man detta innan nästa termins uppstart (gäller barngrupp 4-11 år)
                 <br></br>
                 <br></br>
                 Vid uppsägning av medlemskap, maila ditt namn, personnummer och kortnummer till info@kampsportstadion.se

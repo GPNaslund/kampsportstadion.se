@@ -11,6 +11,7 @@ export default function ClassesPage() {
       <div className="w-full">
         <div className="w-full h-full flex flex-col mt-40 mb-20 items-center w-900:hidden">
           <h2 className="text-center text-4xl font-bold mb-5">KLASSER</h2>
+          <h2 className="text-center text-xl mb-5 px-14">Vi har klasser för Barn 7-9år & 9-12 år ungdomar 13-16år, nybörjare, fortsättning & avancerad</h2>
           {classes.map((item, index) =>
             item.classLevels ?
               item.coaches ? <DropdownButton
@@ -34,7 +35,10 @@ export default function ClassesPage() {
           )}
         </div>
         <div className="w-full h-full mt-40 hidden w-900:grid w-900:grid-cols-2 gap-y-10">
-          <h2 className="text-center text-4xl font-bold mb-5 col-span-2">KLASSER</h2>
+          <div className="col-span-2">
+            <h2 className="text-center text-4xl font-bold mb-5">KLASSER</h2>
+            <h3 className="text-center text-2xl px-14">Vi har klasser för Barn 7-9år & 9-12 år ungdomar 13-16år, nybörjare, fortsättning & avancerad</h3>
+          </div>
           {classes.map((item, index) =>
             <div className="text-center px-10 w-900:text-xl w-900:px-28" key={index}>
               <h3 className="font-bold w-900:text-2xl">{item.header}</h3>

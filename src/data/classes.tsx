@@ -25,6 +25,9 @@ const classes = [
     classLevels: ``, coaches: ``
   },
   {
+    header: `BOOTCAMP`, text: `En härlig blandning av fys, funktionell, box och styrketräning. Rolig och utmanande och alla kan vara med-inga förkunskaper krävs. Man behöver inte vara medlem för att delta! Maila till info@kampsportstadion.se och skriv Bootcamp för mera information!`, classLevels: ``, coaches: ``
+  },
+  {
     header: `Dunkardax/Cirkelfys`, text: `90 minuter cirkelträning med kampsport moment. Ett fyspass med högt tempo, styrka och flås! Passar för alla och inga förkunskaper krävs.`,
     classLevels: ``, coaches: ``
   },
@@ -33,7 +36,7 @@ const classes = [
     classLevels: ``, coaches: ``
   },
   {
-    header: `Kampsport Barngrupp`, text: `Brasiliansk jiu-jitsu (BJJ) 8-11 år : Brottning/grappling med GI-dräkt. Thaiboxning 8-11 år : Blandning av tekniker som slag och sparkar med fys och kroppskontroll. Kampsportlek 4-7 år : Kampsport för dom minsta. Barnen kommer lära sig brottning slag och sparkar under kontrollerade lekfulla former. 
+    header: `Kampsport Barngrupp`, text: `Brasiliansk jiu-jitsu (BJJ) 8-11 år : Brottning/grappling med GI-dräkt. Thaiboxning 7-9 år & 9-12 år : Blandning av tekniker som slag och sparkar med fys och kroppskontroll. Kampsportlek 4-6 år : Kampsport för dom minsta. Barnen kommer lära sig brottning slag och sparkar under kontrollerade lekfulla former. 
     Föräldrarna till dom minsta kan behöva med och hjälpa till att assistera under passen. Inga pass under skolloven.`,
     classLevels: ``, coaches: ``
   },
@@ -45,13 +48,6 @@ const classes = [
   {
     header: `Small Group`, text: `Vill ni köra i en ännu mindre grupp och mer personligt anpassad träning kan vi även erbjuda detta. Ni kör med en PT i en grupp upp till 4pers, där ni har chans att påverka varje pass utefter era önskemål.
   Det kostar 1800kr per tillfälle och intresseanmälan görs till info@kampsportstadion.se`,
-    classLevels: ``, coaches: ``
-  },
-  {
-    header: `Strong Mama`, text: `Här är du som har en bebis hemma från 0-6mån välkommen att delta tillsammans med ditt lilla mirakel och andra mammor.
-  Vi kommer jobba utifrån ditt utgångsläge, men tillsammans med andra mammor för att skapa en liten exklusiv grupp för nyblivna mammor med samma intresse.
-  Fokus ligger här på att få tillbaka core-stabilitet och succesivt jobba upp din styrka och kondition.
-  Vi kommer jobba tillsammans 2ggr/vecka i 4-8veckor och detta pass ligger utanför ordinare medlemskap - För mer info och pris maila info@kampsportstadion.se och skriv StrongMama i ämnesfältet.`,
     classLevels: ``, coaches: ``
   },
   {

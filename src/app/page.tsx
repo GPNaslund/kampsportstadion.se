@@ -1,7 +1,7 @@
-import MobileNavbar from '@/components/navbar/mobile_navbar'
-import BlackButton from '@/components/black_button/black_button'
-import ImageGrid from '@/components/image_grid/image_grid'
-import Footer from '@/components/footer/footer'
+import MobileNavbar from "@/components/navbar/mobile_navbar";
+import BlackButton from "@/components/black_button/black_button";
+import ImageGrid from "@/components/image_grid/image_grid";
+import Footer from "@/components/footer/footer";
 
 export default function Home() {
   return (
@@ -10,37 +10,98 @@ export default function Home() {
       <div className="w-full">
         <div className="w-full flex flex-col items-center justify-center relative">
           <div className="w-full relative flex flex-col items-center justify-center">
-            <img alt="Thaiboxing background" src='/bg-sm.jpg' style={{ width: '100%', height: 'auto', objectFit: 'cover' }} className="w-625:hidden" />
-            <img alt="Thaiboxing background" src='/bg-md.jpg' style={{ width: '100%', height: 'auto', objectFit: 'cover' }} className="hidden w-625:block w-900:hidden" />
-            <img alt="Thaiboxing background" src='/bg-lg.jpg' style={{ width: '100%', height: 'auto', objectFit: 'cover' }} className="hidden w-900:block" />
+            <img
+              alt="Thaiboxing background"
+              src="/bg-sm.jpg"
+              style={{ width: "100%", height: "auto", objectFit: "cover" }}
+              className="w-625:hidden"
+            />
+            <img
+              alt="Thaiboxing background"
+              src="/bg-md.jpg"
+              style={{ width: "100%", height: "auto", objectFit: "cover" }}
+              className="hidden w-625:block w-900:hidden"
+            />
+            <img
+              alt="Thaiboxing background"
+              src="/bg-lg.jpg"
+              style={{ width: "100%", height: "auto", objectFit: "cover" }}
+              className="hidden w-900:block"
+            />
             <div className="bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-white to-transparent absolute"></div>
             <div className="absolute z-10 top-1/3 transform -translate-y-1/2 w-full">
-              <h2 className="text-white text-center text-4xl w-900:text-7xl font-bold">KAMPSPORT <br />FÖR ALLA</h2>
-              <p className="text-white text-center text-2xl w-900:text-2xl px-12 mt-2">Välkommen till DIF Kampsportsförening. Vi är en ideell idrottsförening som brinner för kampsport för både stora och små, erfarna som nybörjare.</p>
+              <h2 className="text-white text-center text-4xl w-900:text-7xl font-bold">
+                KAMPSPORT <br />
+                FÖR ALLA
+              </h2>
+              <p className="text-white text-center text-2xl w-900:text-2xl px-12 mt-2">
+                Välkommen till DIF Kampsportsförening. Vi är en ideell
+                idrottsförening som brinner för kampsport för både stora och
+                små, erfarna som nybörjare.
+              </p>
             </div>
           </div>
         </div>
         <div className="w-full flex flex-col px-10 items-center w-900:px-40 mt-40">
-          <h2 className="text-center text-2xl w-900:text-4xl font-bold">Kampsport på Stockholm Stadion</h2>
-          <p className="text-center text-lg w-900:text-2xl mt-4">I fina lokaler inne på Stockholm Stadion hittar du Kampsportstadion. Med en 400 kvm stor sal och fantastiska tränare kan vi erbjuda kampsport för alla. Som medlem hos oss kan du köra alla pass på schemat och du har fri tillgång till gymmet 06.30-20.00 vardagar och 09.00-13.00 på helgen.</p>
-          <p className="text-center text-lg w-900:text-2xl mt-2">Vi har klasser i <span className="font-bold">Kampsportfys, Cirkelträning, Muay Thai, MMA, Barnträning, Yoga och BJJ.</span></p>
-          <BlackButton text='Se alla klasser' href="/klasser" />
-          <BlackButton text='Medlemskap' href="/medlemskap" />
+          <h2 className="text-center text-2xl w-900:text-4xl font-bold">
+            Kampsport på Stockholm Stadion
+          </h2>
+          <p className="text-center text-lg w-900:text-2xl mt-4">
+            I fina lokaler inne på Stockholm Stadion hittar du Kampsportstadion.
+            Med en 400 kvm stor sal och fantastiska tränare kan vi erbjuda
+            kampsport för alla. Som medlem hos oss kan du köra alla pass på
+            schemat och du har fri tillgång till gymmet 06.30-20.00 vardagar och
+            09.00-13.00 på helgen.
+          </p>
+          <p className="text-center text-lg w-900:text-2xl mt-2">
+            Vi har klasser i{" "}
+            <span className="font-bold">
+              Kampsportfys, Cirkelträning, Muay Thai, MMA, Barnträning, Yoga och
+              BJJ.
+            </span>
+          </p>
+          <BlackButton text="Se alla klasser" href="/klasser" />
+          <BlackButton text="Medlemskap" href="/medlemskap" />
         </div>
         <div className="w-full flex flex-col px-10 items-center mt-40">
-          <h2 className="text-center text-2xl w-900:text-4xl font-bold">Schema</h2>
+          <h2 className="text-center text-2xl w-900:text-4xl font-bold">
+            Schema
+          </h2>
           <div className="flex flex-col w-screen items-center w-900:w-4/5">
-            <img src="/schedule_spring_v5.jpeg" className="w-900:hidden" alt="schema" style={{ width: "80%", height: "auto" }} />
-            <img src="/schedule_spring_v5.jpeg" className="hidden w-900:block" alt="schema" style={{ width: "80%", height: "auto" }} />
-            <a href="/schedule_spring_v5.jpeg" download="/schedule_spring_v5.jpg" className="text-lg w-900:text-2xl underline">Ladda ner schema</a>
+            <img
+              src="/schema-ht24.jpg"
+              className="w-900:hidden"
+              alt="schema"
+              style={{ width: "80%", height: "auto" }}
+            />
+            <img
+              src="/schema-ht24.jpg"
+              className="hidden w-900:block"
+              alt="schema"
+              style={{ width: "80%", height: "auto" }}
+            />
+            <a
+              href="/schema-ht24.jpg"
+              download="/schedule_spring_v5.jpg"
+              className="text-lg w-900:text-2xl underline"
+            >
+              Ladda ner schema
+            </a>
             <p className="text-lg mt-10 w-900:text-2xl">Gäller v.3 - v.20</p>
             <p className="text-lg w-900:text-2xl">(Barngrupp v.5 - v.20)</p>
           </div>
         </div>
         <div className="mt-40">
-          <ImageGrid srcs={['./grid_image1.jpg', './grid_image2.jpg', './grid_image3.jpg', './grid_image4.jpg']} />
+          <ImageGrid
+            srcs={[
+              "./grid_image1.jpg",
+              "./grid_image2.jpg",
+              "./grid_image3.jpg",
+              "./grid_image4.jpg",
+            ]}
+          />
         </div>
       </div>
     </main>
-  )
+  );
 }

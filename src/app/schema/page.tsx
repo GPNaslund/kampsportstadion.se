@@ -33,33 +33,7 @@ export default function SchemaPage() {
             Ladda ner schema
           </a>
           <p className="px-5 mt-10 text-center text-xl w-900:text-2xl">
-            Gäller v.3 - v.20
-          </p>
-          <p className="px-5 text-center text-xl w-900:text-2xl">
-            (Barngrupp v.5 - v.20)
-          </p>
-          <p className="px-5 text-center text-xl w-900:text-2xl">
-            Sommarschemat börjar vecka 21
-          </p>
-          <p className="px-5 mt-10 text-center text-xl w-900:text-2xl">
-            Ny termin start vecka 34!
-          </p>
-          <p className="px-5 text-center text-xl w-900:text-2xl">
-            Sommarschema gäller för alla våra medlemmar fram till vecka 33
-          </p>
-          <p className="px-5 text-center text-xl w-900:text-2xl">
-            Thaiboxning måndag och onsdag 17.30 - 18.30 (alla nivåer +
-            ungdomsgrupp)
-          </p>
-          <p className="px-5 text-center text-xl w-900:text-2xl">
-            Kampsportsfys tisdag och torsdag 17.30 - 18.30 (alla nivåer +
-            ungdomsgrupp)
-          </p>
-          <p className="px-5 text-center text-xl w-900:text-2xl">
-            Vi kör på Östermalms IP / Brinkens träningsanläggning!
-          </p>
-          <p className="px-5 text-center text-xl w-900:text-2xl">
-            BJJ gruppen kör på Kampsportshuset
+            Höstterminen start vecka 34!
           </p>
           <p className="px-5 mt-10 text-center text-xl w-900:text-2xl">
             Vid aktuell förändring på enstaka pass informeras medlemmen via

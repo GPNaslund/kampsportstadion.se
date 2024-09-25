@@ -13,6 +13,7 @@ export default function MenuLinks() {
     { href: "/foretag", text: "Företag" },
     { href: "/sociala-projekt", text: "Sociala Projekt" },
     { href: "/kontakt", text: "Kontakt" },
+    { href: "https://kampsportstadion-online.se/", text: "Online Coachning"}
   ]
 
 

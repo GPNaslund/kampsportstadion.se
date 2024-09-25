@@ -62,6 +62,7 @@ export default function Home() {
           </p>
           <BlackButton text="Se alla klasser" href="/klasser" />
           <BlackButton text="Medlemskap" href="/medlemskap" />
+          <BlackButton text="Online coachning" href="https://kampsportstadion-online.se/"/>
         </div>
         <div className="w-full flex flex-col px-10 items-center mt-40">
           <h2 className="text-center text-2xl w-900:text-4xl font-bold">
@@ -69,26 +70,24 @@ export default function Home() {
           </h2>
           <div className="flex flex-col w-screen items-center w-900:w-4/5">
             <img
-              src="/schema-ht24.jpg"
+              src="/schema-ht24-2.jpg"
               className="w-900:hidden"
               alt="schema"
               style={{ width: "80%", height: "auto" }}
             />
             <img
-              src="/schema-ht24.jpg"
+              src="/schema-ht24-2.jpg"
               className="hidden w-900:block"
               alt="schema"
               style={{ width: "80%", height: "auto" }}
             />
             <a
-              href="/schema-ht24.jpg"
-              download="/schedule_spring_v5.jpg"
+              href="/schema-ht24-2.jpg"
+              download="/schema-ht24-2.jpg"
               className="text-lg w-900:text-2xl underline"
             >
               Ladda ner schema
             </a>
-            <p className="text-lg mt-10 w-900:text-2xl">Gäller v.3 - v.20</p>
-            <p className="text-lg w-900:text-2xl">(Barngrupp v.5 - v.20)</p>
           </div>
         </div>
         <div className="mt-40">

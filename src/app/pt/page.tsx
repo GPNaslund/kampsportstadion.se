@@ -36,12 +36,6 @@ export default function ContactPage() {
             phoneNumber='0732034060'
           />
           <StaffCard 
-            name="Markku Eide"
-            description="Har du ett viktmål eller vill du förbättra din kondition, bygga en starkare kropp eller ta din thaiboxning till högre höjder? Med 15 års erfarenhet av kampsport och som licensierad PT och löpcoach skräddarsyr jag ett program till dig. "
-            email="mh.ptcoachning@gmail.com"
-            phoneNumber='0707158607'
-          />
-          <StaffCard 
             name="Niklas Messing"
             description="Vill du komma i form eller behöver jobba på dina tekniker i thaiboxning kan Niklas hjälpa dig."
             email="niklas.messing@outlook.com"

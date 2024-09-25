@@ -13,25 +13,13 @@ export default function ClassesPage() {
           <h2 className="text-center text-4xl font-bold mb-5">KLASSER</h2>
           <h2 className="text-center text-xl mb-5 px-14">Vi har klasser för Barn 7-9år & 9-12 år ungdomar 13-16år, nybörjare, fortsättning & avancerad</h2>
           {classes.map((item, index) =>
-            item.classLevels ?
-              item.coaches ? <DropdownButton
+              <DropdownButton
                 header={item.header}
                 dropdownText={item.text}
                 classLevels={item.classLevels}
                 coaches={item.coaches}
-              /> : <DropdownButton
-                header={item.header}
-                dropdownText={item.text}
-                classLevels={item.classLevels}
-              /> : item.coaches ? <DropdownButton
-                header={item.header}
-                dropdownText={item.text}
-                coaches={item.coaches}
-              /> :
-                <DropdownButton
-                  header={item.header}
-                  dropdownText={item.text}
-                />
+                rawHtml={item.rawHtml}
+              /> 
           )}
         </div>
         <div className="w-full h-full mt-40 hidden w-900:grid w-900:grid-cols-2 gap-y-10">
@@ -46,6 +34,7 @@ export default function ClassesPage() {
               <br></br>
               <p>{item.classLevels ? `Vi har klasser för ${item.classLevels}` : ''}</p>
               <br></br>
+              <div className="-mt-5" dangerouslySetInnerHTML={{ __html: item.rawHtml }}/>
             </div>
           )}
         </div>

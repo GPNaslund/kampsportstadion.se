@@ -19,6 +19,7 @@ export default function ClassesPage() {
                 classLevels={item.classLevels}
                 coaches={item.coaches}
                 rawHtml={item.rawHtml}
+                key={index}
               /> 
           )}
         </div>

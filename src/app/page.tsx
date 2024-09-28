@@ -70,20 +70,20 @@ export default function Home() {
           </h2>
           <div className="flex flex-col w-screen items-center w-900:w-4/5">
             <img
-              src="/schema-ht24-2.jpg"
+              src="/schema-ht24-3.jpg"
               className="w-900:hidden"
               alt="schema"
               style={{ width: "80%", height: "auto" }}
             />
             <img
-              src="/schema-ht24-2.jpg"
+              src="/schema-ht24-3.jpg"
               className="hidden w-900:block"
               alt="schema"
               style={{ width: "80%", height: "auto" }}
             />
             <a
-              href="/schema-ht24-2.jpg"
-              download="/schema-ht24-2.jpg"
+              href="/schema-ht24-3.jpg"
+              download="/schema-ht24-3.jpg"
               className="text-lg w-900:text-2xl underline"
             >
               Ladda ner schema

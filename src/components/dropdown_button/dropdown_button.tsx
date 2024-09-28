@@ -6,6 +6,7 @@ interface DropdownButtonProps {
   dropdownText: string;
   classLevels?: string;
   coaches?: string;
+  rawHtml?: string;
 }
 
 const DropdownButton: React.FC<DropdownButtonProps> = ({ header, dropdownText, classLevels = '', coaches = '', rawHtml = '' }) => {

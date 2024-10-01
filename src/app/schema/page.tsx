@@ -8,7 +8,7 @@ export default function SchemaPage() {
         <div className="w-full h-full flex flex-col mt-32 items-center">
           <h2 className="text-center text-4xl font-bold mb-5">SCHEMA</h2>
           <img
-            src="/schema-ht24-3.jpg"
+            src="/schema-ht24-5.jpg"
             className="w-900:hidden"
             alt="schema"
             style={{
@@ -17,7 +17,7 @@ export default function SchemaPage() {
             }}
           />
           <img
-            src="/schema-ht24-3.jpg"
+            src="/schema-ht24-5.jpg"
             className="hidden w-900:block"
             alt="schema"
             style={{
@@ -26,8 +26,8 @@ export default function SchemaPage() {
             }}
           />
           <a
-            href="/schema-ht24-3.jpg"
-            download="/schema-ht24-3.jpg"
+            href="/schema-ht24-5.jpg"
+            download="/schema-ht24-5.jpg"
             className="w-900:text-2xl underline"
           >
             Ladda ner schema

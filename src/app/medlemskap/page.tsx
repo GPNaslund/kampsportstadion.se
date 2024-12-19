@@ -15,7 +15,7 @@ export default function MembershipPage() {
 
             <div className="flex flex-col text-center h-full w-900:text-2xl col-start-1">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Årskort</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">699:-/månad autogiro
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">799:-/månad autogiro
                 <br></br>
                 9800:-/år swish eller kort
                 <br></br>
@@ -27,7 +27,7 @@ export default function MembershipPage() {
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Årskort student</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">550:-/månad autogiro
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">649:-/månad autogiro
                 <br></br>
                 8000:-/år swish eller kort
                 <br></br>
@@ -71,10 +71,10 @@ export default function MembershipPage() {
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Thaiboxning ungdom 13-16 år</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">399:-/månad autogiro
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Ungdomsgrupp 13-16 år</h2>
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">499:-/månad autogiro
                 <br></br>
-                2800:-/termin swish eller kort
+                3200:-/termin swish eller kort
                 <br></br>
                 Gäller tisdag & torsdag 17.00-18.00
                 <br></br>
@@ -83,10 +83,10 @@ export default function MembershipPage() {
             </div>
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 7-12 år</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">399:-/månad autogiro
+              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 7-9 år & 9-12 år</h2>
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">499:-/månad autogiro
                 <br></br>
-                2800:- / termin swish eller kort
+                3200:- / termin swish eller kort
                 <br></br>
                 Välj grupp:
                 <br></br>
@@ -104,7 +104,9 @@ export default function MembershipPage() {
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 4-6 år</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">299:-/månad autogiro
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">399:-/månad autogiro
+                <br></br>
+                2600:- / termin swish eller kort
                 <br></br>
                 1 pass/v, uppehåll juni-augusti & januari.
                 <br></br>

@@ -12,6 +12,8 @@ export default function ContactPage() {
           <p className="w-900:text-2xl">
             <span className="font-bold">info@kampsportstadion.se</span>
             <br></br>
+            <span className="font-bold">076-6082803</span>
+            <br></br>
             <br></br>
             Djurgårdens IF Kampsport
             <br></br>

@@ -1,46 +1,56 @@
 import DropdownButton from "@/components/dropdown_button/dropdown_button";
 import MobileNavbar from "@/components/navbar/mobile_navbar";
-import classes from "@/data/classes";
+import classes, { WorkoutClass } from "@/data/classes";
 
 export default function ClassesPage() {
   return (
-    <main className="flex min-h-screen min-w-screen flex-col items-center justify-between">
-      <MobileNavbar
-        forWhiteBg={true}
-      />
-      <div className="w-full">
-        <div className="w-full h-full flex flex-col mt-40 mb-20 items-center w-900:hidden">
+    <main className="flex min-h-screen w-full flex-col items-center bg-white">
+      <MobileNavbar forWhiteBg={true} />
+      
+      <div className="w-full max-w-7xl mx-auto px-4">
+        {/* Mobile View */}
+        <div className="w-full h-full flex flex-col pt-40 pb-20 items-center w-900:hidden">
           <h2 className="text-center text-4xl font-bold mb-5">KLASSER</h2>
-          <h2 className="text-center text-xl mb-5 px-14">Vi har klasser för Barn 7-9år & 9-12 år ungdomar 13-16år, nybörjare, fortsättning & avancerad</h2>
-          {classes.map((item, index) =>
-              <DropdownButton
-                header={item.header}
-                dropdownText={item.text}
-                classLevels={item.classLevels}
-                coaches={item.coaches}
-                rawHtml={item.rawHtml}
-                key={index}
-              /> 
+          <h3 className="text-center text-xl mb-5 px-4">Vi har klasser för Barn 7-9år & 9-12 år ungdomar 13-16år, nybörjare, fortsättning & avancerad</h3>
+          {classes.map((item: WorkoutClass, index: number) =>
+            <DropdownButton
+              key={index}
+              item={item} // Pass the whole object
+            />
           )}
         </div>
-        <div className="w-full h-full mt-40 hidden w-900:grid w-900:grid-cols-2 gap-y-10">
-          <div className="col-span-2">
-            <h2 className="text-center text-4xl font-bold mb-5">KLASSER</h2>
-            <h3 className="text-center text-2xl px-14">Vi har klasser för Barn 7-9år & 9-12 år ungdomar 13-16år, nybörjare, fortsättning & avancerad</h3>
+
+        {/* Desktop View */}
+        <div className="w-full h-full pt-40 pb-20 hidden w-900:grid w-900:grid-cols-2 gap-x-12 gap-y-16">
+          <div className="col-span-2 text-center">
+            <h2 className="text-4xl font-bold mb-5">KLASSER</h2>
+            <h3 className="text-2xl">Vi har klasser för Barn 7-9år & 9-12 år ungdomar 13-16år, nybörjare, fortsättning & avancerad</h3>
           </div>
-          {classes.map((item, index) =>
-            <div className="text-center px-10 w-900:text-xl w-900:px-28" key={index}>
-              <h3 className="font-bold w-900:text-2xl">{item.header}</h3>
-              <p className="w-900:mt-5">{item.text}</p>
-              <br></br>
-              <p>{item.classLevels ? `Vi har klasser för ${item.classLevels}` : ''}</p>
-              <br></br>
-              <div className="-mt-5" dangerouslySetInnerHTML={{ __html: item.rawHtml }}/>
+          
+          {classes.map((item: WorkoutClass, index: number) =>
+            <div className="flex flex-col text-left bg-white p-6 rounded-lg shadow-lg border border-black" key={index}>
+              <h3 className="font-bold text-2xl mb-3">{item.header}</h3>
+              <p className="text-base">{item.description}</p>
+              
+              {item.levels && item.levels.length > 0 && (
+                <div className="mt-4 space-y-3">
+                  {item.levels.map((level, levelIndex) => (
+                    <div key={levelIndex} className="border-t pt-3">
+                      <h4 className="font-bold text-lg">{level.header}</h4>
+                      <p className="text-base">{level.description}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {item.rawHtml && (
+                <div className="mt-4 text-base border-t pt-3" dangerouslySetInnerHTML={{ __html: item.rawHtml }} />
+              )}
             </div>
           )}
         </div>
       </div>
     </main>
-    
-  )
+  );
 }
+

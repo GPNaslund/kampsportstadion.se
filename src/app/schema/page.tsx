@@ -8,7 +8,7 @@ export default function SchemaPage() {
         <div className="w-full h-full flex flex-col mt-32 items-center">
           <h2 className="text-center text-4xl font-bold mb-5">SCHEMA</h2>
           <img
-            src="/schema-ht24-5.jpg"
+            src="/schema-ht25.jpeg"
             className="w-900:hidden"
             alt="schema"
             style={{
@@ -17,7 +17,7 @@ export default function SchemaPage() {
             }}
           />
           <img
-            src="/schema-ht24-5.jpg"
+            src="/schema-ht25.jpeg"
             className="hidden w-900:block"
             alt="schema"
             style={{
@@ -26,8 +26,8 @@ export default function SchemaPage() {
             }}
           />
           <a
-            href="/schema-ht24-5.jpg"
-            download="/schema-ht24-5.jpg"
+            href="/schema-ht25.jpeg"
+            download="/schema-ht25.jpeg"
             className="w-900:text-2xl underline"
           >
             Ladda ner schema
@@ -35,6 +35,9 @@ export default function SchemaPage() {
           <p className="px-5 mt-10 text-center text-xl w-900:text-2xl">
             Vid aktuell förändring på enstaka pass informeras medlemmen via
             GymControl och e-mail!
+          </p>
+          <p className="px-5 text-center text-xl w-900:text-2xl">
+            Inga pass under skollov!
           </p>
         </div>
       </div>

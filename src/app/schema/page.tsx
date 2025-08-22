@@ -6,7 +6,10 @@ export default function SchemaPage() {
       <MobileNavbar forWhiteBg={true} />
       <div className="w-full">
         <div className="w-full h-full flex flex-col mt-32 items-center">
-          <h2 className="text-center text-4xl font-bold mb-5">SCHEMA</h2>
+          <h2 className="text-center text-4xl font-bold">SCHEMA</h2>
+          <p className="px-5 mb-5 text-center text-xl w-900:text-2xl">
+            Gäller från v38
+          </p>
           <img
             src="/schema-ht25.jpeg"
             className="w-900:hidden"

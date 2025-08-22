@@ -112,6 +112,9 @@ export default function Home() {
           <h2 className="text-center text-3xl md:text-4xl font-bold">
             Schema
           </h2>
+          <p className="px-5 text-center text-lg md:text-xl">
+            Gäller från v38
+          </p>
           <div className="flex flex-col w-full items-center mt-6">
             {/* Adjusted schema image width to be larger */}
             <img

@@ -36,7 +36,7 @@ export default function Home() {
 
             {/* Centered hero content container - Adjusted to be higher */}
             <div className="absolute inset-0 flex flex-col items-center justify-start pt-32 md:pt-40 px-4 text-center">
-              
+
 
               <div>
                 <h2 className="text-white text-4xl md:text-7xl font-bold">
@@ -118,12 +118,12 @@ export default function Home() {
           <div className="flex flex-col w-full items-center mt-6">
             {/* Adjusted schema image width to be larger */}
             <img
-              src="/schema-ht25.jpeg"
+              src="/schema-ht25-2.jpeg"
               className="w-full md:w-11/12 lg:w-4/5 h-auto"
               alt="schema"
             />
             <a
-              href="/schema-ht25.jpeg"
+              href="/schema-ht25-2.jpeg"
               download
               className="text-lg md:text-xl underline mt-4"
             >

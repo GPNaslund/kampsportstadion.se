@@ -11,7 +11,7 @@ export default function SchemaPage() {
             Gäller från v38
           </p>
           <img
-            src="/schema-ht25.jpeg"
+            src="/schema-ht25-2.jpeg"
             className="w-900:hidden"
             alt="schema"
             style={{
@@ -20,7 +20,7 @@ export default function SchemaPage() {
             }}
           />
           <img
-            src="/schema-ht25.jpeg"
+            src="/schema-ht25-2.jpeg"
             className="hidden w-900:block"
             alt="schema"
             style={{
@@ -29,8 +29,8 @@ export default function SchemaPage() {
             }}
           />
           <a
-            href="/schema-ht25.jpeg"
-            download="/schema-ht25.jpeg"
+            href="/schema-ht25-2.jpeg"
+            download="/schema-ht25-2.jpeg"
             className="w-900:text-2xl underline"
           >
             Ladda ner schema

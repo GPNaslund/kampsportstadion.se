@@ -15,7 +15,7 @@ export default function MembershipPage() {
 
             <div className="flex flex-col text-center h-full w-900:text-2xl col-start-1">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Årskort</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">799:-/månad autogiro
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">699:-/månad autogiro
                 <br></br>
                 9800:-/år swish eller kort
                 <br></br>
@@ -27,7 +27,7 @@ export default function MembershipPage() {
 
             <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
               <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Årskort student</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">649:-/månad autogiro
+              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">599:-/månad autogiro
                 <br></br>
                 8000:-/år swish eller kort
                 <br></br>

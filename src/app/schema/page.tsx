@@ -8,10 +8,10 @@ export default function SchemaPage() {
         <div className="w-full h-full flex flex-col mt-32 items-center">
           <h2 className="text-center text-4xl font-bold">SCHEMA</h2>
           <p className="px-5 mb-5 text-center text-xl w-900:text-2xl">
-            Gäller från v38
+            Gäller från v2
           </p>
           <img
-            src="/schema-ht25-2.jpeg"
+            src="/schema-vt26.jpg"
             className="w-900:hidden"
             alt="schema"
             style={{
@@ -20,7 +20,7 @@ export default function SchemaPage() {
             }}
           />
           <img
-            src="/schema-ht25-2.jpeg"
+            src="/schema-vt26.jpg"
             className="hidden w-900:block"
             alt="schema"
             style={{
@@ -29,8 +29,8 @@ export default function SchemaPage() {
             }}
           />
           <a
-            href="/schema-ht25-2.jpeg"
-            download="/schema-ht25-2.jpeg"
+            href="/schema-vt26.jpg"
+            download="/schema-vt26.jpg"
             className="w-900:text-2xl underline"
           >
             Ladda ner schema
@@ -40,7 +40,7 @@ export default function SchemaPage() {
             GymControl och e-mail!
           </p>
           <p className="px-5 text-center text-xl w-900:text-2xl">
-            Inga pass under skollov!
+            Inga pass under skollov för barngrupperna!
           </p>
         </div>
       </div>

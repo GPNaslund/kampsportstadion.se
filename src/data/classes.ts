@@ -62,6 +62,10 @@ const mmaSw: WorkoutClass = {
       header: "MMA Tävling",
       description: "Denna grupp är för dig som har tränat minst 3 terminer MMA eller motsvarande pass mark/stående och behärskar alla tekniker väl. En grupp för dig som tävlar eller ska tävla aktivt i fullkontakt. För att träna i denna gruppen måste du ha blivit flyttad upp av din tränare.",
     },
+    {
+      header: "MMA mixgrupp",
+      description: "MMA mixgrupp är öppen för alla utövare på steg 1, steg 2 samt tävlingsaktiva. Här tränar alla nivåer tillsammans i en trygg och utvecklande miljö, där passen anpassas så att både nybörjare och mer erfarna får rätt utmaning."
+    }
   ],
   rawHtml: null,
 };

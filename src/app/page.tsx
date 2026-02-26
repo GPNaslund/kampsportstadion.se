@@ -113,24 +113,24 @@ export default function Home() {
             Schema
           </h2>
           <p className="px-5 text-center text-lg md:text-xl">
-            Gäller från v38
+            Gäller från v2
           </p>
           <div className="flex flex-col w-full items-center mt-6">
             {/* Adjusted schema image width to be larger */}
             <img
-              src="/schema-ht25-2.jpeg"
+              src="/schema-vt26.jpg"
               className="w-full md:w-11/12 lg:w-4/5 h-auto"
               alt="schema"
             />
             <a
-              href="/schema-ht25-2.jpeg"
+              href="/schema-vt26.jpg"
               download
               className="text-lg md:text-xl underline mt-4"
             >
               Ladda ner schema
             </a>
             <p className="px-5 text-center text-lg md:text-xl mt-4">
-              Inga pass under skollov!
+              Inga pass under skollov för barngrupperna!
             </p>
           </div>
         </div>

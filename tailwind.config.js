@@ -31,7 +31,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        display: ['var(--font-fraunces)', 'Fraunces', 'Times New Roman', 'serif'],
+        display: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
         sans:    ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {

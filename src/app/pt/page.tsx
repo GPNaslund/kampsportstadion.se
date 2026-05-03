@@ -39,11 +39,8 @@ export default function PTPage() {
             <div className="grid w-900:grid-cols-12 gap-8">
               <div className="w-900:col-span-6">
                 <p className="eyebrow">Pris</p>
-                <p
-                  className="font-display mt-3 text-[2rem] w-900:text-[2.75rem] leading-none tracking-[-0.025em] tabular"
-                  style={{ fontVariationSettings: '"opsz" 144, "SOFT" 0' }}
-                >
-                  900:- <span className="text-ink-soft text-[1.25rem]">/ PT-timme</span>
+                <p className="font-display font-extrabold mt-3 text-[2rem] w-900:text-[2.75rem] leading-none tracking-[-0.04em] tabular">
+                  900:- <span className="text-ink-soft text-[1.25rem] font-medium tracking-normal">/ PT-timme</span>
                 </p>
                 <p className="mt-4 text-[15px] text-ink-soft max-w-prose">
                   Rabatterat pris om du är medlem på Kampsportstadion.<br />

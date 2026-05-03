@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Container from '@/components/ui/container';
 import Section from '@/components/ui/section';
 import Heading from '@/components/ui/heading';
@@ -51,55 +50,72 @@ const CLASS_FAMILIES = [
 export default function Home() {
   return (
     <>
-      <Navbar overImage />
+      <Navbar />
       <main>
-        {/* ─────────────────────────────────  Hero */}
-        <section className="relative">
-          <div className="relative w-full h-[88vh] min-h-[600px] max-h-[860px] overflow-hidden">
-            <picture>
-              <source media="(min-width: 900px)" srcSet="/bg-lg.jpg" />
-              <source media="(min-width: 625px)" srcSet="/bg-md.jpg" />
-              <img
-                src="/bg-sm.jpg"
-                alt=""
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </picture>
-            {/* Dark veil for legibility, top-down + bottom-up */}
-            <div className="absolute inset-0 bg-gradient-to-b from-ink/35 via-transparent to-ink/75 pointer-events-none" />
-            {/* Bottom-aligned editorial text */}
-            <div className="absolute inset-x-0 bottom-0">
-              <Container variant="wide">
-                <div className="pb-12 w-900:pb-20 max-w-3xl">
-                  <p className="eyebrow text-paper/80 mb-4">
-                    Djurgårdens IF Kampsport · Stockholm Stadion sedan 1912
-                  </p>
-                  <h1
-                    className="font-display font-semibold text-paper text-[2.75rem] w-625:text-[3.75rem] w-900:text-[5.5rem] leading-[0.95] tracking-[-0.03em]"
-                    style={{ fontVariationSettings: '"opsz" 144, "SOFT" 0' }}
-                  >
-                    Kampsport <br />för alla.
+        {/* ─────────────────────────────────  Hero — split panel */}
+        <section className="pt-16 w-900:pt-20 border-b border-graphite-300">
+          <div className="grid w-900:grid-cols-12 min-h-[calc(100vh-5rem)]">
+            {/* Text panel */}
+            <div className="w-900:col-span-5 w-1280:col-span-5 bg-paper flex flex-col">
+              <Container variant="standard" as="div" className="flex-1 flex flex-col justify-between py-12 w-900:py-16">
+                <div className="flex items-center gap-2 text-[11px] tabular text-graphite-500">
+                  <span className="block w-2 h-2 bg-ink" aria-hidden="true" />
+                  <span className="uppercase tracking-[0.18em]">Est. 1912 · Stockholm Stadion</span>
+                </div>
+
+                <div className="my-12 w-900:my-0">
+                  <p className="eyebrow mb-6">Djurgårdens IF Kampsport</p>
+                  <h1 className="font-display font-black text-ink text-[3.25rem] w-625:text-[4rem] w-900:text-[5.25rem] leading-[0.92] tracking-[-0.05em] uppercase">
+                    Kampsport<br />
+                    <span className="text-graphite-500">för</span> alla.
                   </h1>
-                  <p className="mt-6 max-w-xl text-[16px] w-900:text-[19px] text-paper/85 leading-relaxed">
+                  <p className="mt-7 max-w-md text-[16px] w-900:text-[18px] text-ink-soft leading-relaxed">
                     En ideell idrottsförening som brinner för kampsport, för
-                    både stora och små, erfarna som nybörjare. På Stockholm
+                    både stora och små, erfarna som nybörjare. Inne på Stockholm
                     Stadion, mitt i staden.
                   </p>
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    <Button href="/schema" variant="primary" size="lg" className="bg-paper text-ink border-paper hover:bg-accent hover:border-accent hover:text-paper">
+                  <div className="mt-9 flex flex-wrap gap-3">
+                    <Button href="/schema" variant="primary" size="lg">
                       Se schema
                     </Button>
-                    <Button
-                      href="mailto:info@kampsportstadion.se"
-                      variant="ghost"
-                      size="lg"
-                      className="text-paper border-paper/50 hover:bg-paper hover:text-ink hover:border-paper"
-                    >
+                    <Button href="mailto:info@kampsportstadion.se" variant="ghost" size="lg">
                       Boka prova på
                     </Button>
                   </div>
                 </div>
+
+                {/* Bottom stats strip */}
+                <dl className="hidden w-900:grid grid-cols-3 gap-6 pt-8 border-t border-graphite-300">
+                  <HeroStat k="40+"     v="pass i veckan" />
+                  <HeroStat k="400 m²"  v="dedikerad sal" />
+                  <HeroStat k="4 → 60+" v="åldersspann" />
+                </dl>
               </Container>
+            </div>
+
+            {/* Image panel */}
+            <div className="w-900:col-span-7 relative bg-ink min-h-[60vh] w-900:min-h-0">
+              <picture>
+                <source media="(min-width: 900px)" srcSet="/bg-lg.jpg" />
+                <source media="(min-width: 625px)" srcSet="/bg-md.jpg" />
+                <img
+                  src="/bg-sm.jpg"
+                  alt="Träning på Kampsportstadion"
+                  className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.05]"
+                />
+              </picture>
+              {/* Subtle inset border for editorial frame */}
+              <div className="absolute inset-0 ring-1 ring-inset ring-ink/10 pointer-events-none" />
+
+              {/* Caption — bottom-left */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 w-900:p-8 flex items-end justify-between gap-6 bg-gradient-to-t from-ink/80 to-transparent">
+                <p className="text-[12px] text-paper/85 tabular tracking-[0.04em] max-w-xs leading-snug">
+                  Tävlingsgruppen, tisdag kväll. Foto från salen, Stockholm Stadion.
+                </p>
+                <p className="text-[10px] text-paper/60 uppercase tracking-[0.2em]">
+                  KS · 01
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -111,7 +127,7 @@ export default function Home() {
               <div className="w-900:col-span-7">
                 <Eyebrow>Om Kampsportstadion</Eyebrow>
                 <Heading size="lg" level={2} className="mt-4 max-w-2xl">
-                  Kampsport på Stockholm Stadion.
+                  Kampsport på<br />Stockholm Stadion.
                 </Heading>
                 <p className="mt-6 text-[17px] w-900:text-[20px] leading-relaxed text-ink-soft max-w-prose">
                   I fina lokaler inne på Stockholm Stadion hittar du
@@ -172,7 +188,7 @@ export default function Home() {
                     <span className={`block w-2.5 h-2.5 ${c.color}`} aria-hidden="true" />
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <h3 className="w-900:col-span-3 font-display text-[1.6rem] w-900:text-[2.1rem] tracking-[-0.025em] leading-[1.05]">
+                  <h3 className="w-900:col-span-3 font-display font-extrabold text-[1.5rem] w-900:text-[1.85rem] tracking-[-0.035em] leading-[1.05]">
                     {c.family}
                   </h3>
                   <p className="w-900:col-span-5 text-[15px] w-900:text-[16px] text-ink-soft leading-relaxed">
@@ -194,7 +210,7 @@ export default function Home() {
               <div>
                 <Eyebrow>Veckoschema</Eyebrow>
                 <Heading size="lg" level={2} className="mt-4">
-                  Varje pass, varje dag.
+                  Varje pass,<br />varje dag.
                 </Heading>
               </div>
               <Button href="/schema" variant="link">
@@ -210,11 +226,11 @@ export default function Home() {
           <Container variant="wide">
             <div className="grid grid-cols-2 w-900:grid-cols-4 gap-3 w-900:gap-4">
               {[1, 2, 3, 4].map((n) => (
-                <figure key={n} className="aspect-[4/5] overflow-hidden bg-paper">
+                <figure key={n} className="aspect-[4/5] overflow-hidden bg-ink">
                   <img
                     src={`/grid_image${n}.jpg`}
                     alt=""
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out-quint hover:scale-[1.04]"
+                    className="w-full h-full object-cover grayscale transition-transform duration-700 ease-out-quint hover:scale-[1.04]"
                   />
                 </figure>
               ))}
@@ -253,14 +269,24 @@ export default function Home() {
   );
 }
 
+function HeroStat({ k, v }: { k: string; v: string }) {
+  return (
+    <div>
+      <dt className="font-display font-extrabold text-[1.25rem] tracking-[-0.04em] tabular text-ink leading-none">
+        {k}
+      </dt>
+      <dd className="mt-1.5 text-[11.5px] text-ink-soft uppercase tracking-[0.12em]">
+        {v}
+      </dd>
+    </div>
+  );
+}
+
 function Stat({ label, value, sub }: { label: string; value: string; sub: string }) {
   return (
     <div>
       <p className="eyebrow">{label}</p>
-      <p
-        className="font-display text-[2.5rem] w-900:text-[3.5rem] tracking-[-0.03em] leading-none mt-2 tabular"
-        style={{ fontVariationSettings: '"opsz" 144, "SOFT" 0' }}
-      >
+      <p className="font-display font-extrabold text-[2.5rem] w-900:text-[3.25rem] tracking-[-0.05em] leading-none mt-2 tabular">
         {value}
       </p>
       <p className="mt-2 text-[14px] text-ink-soft">{sub}</p>

@@ -6,21 +6,21 @@ The visual system. Tokens, type, spacing, motion. Update this file when tokens c
 
 **Strategy:** *Restrained*. Tinted neutrals plus one deep ink accent ≤5% of surface.
 
-All colors expressed in OKLCH. No `#000`. No `#fff`. Every neutral is tinted toward the cool axis (250°) for paper/ink coherence.
+All colors expressed in OKLCH. No `#000`. No `#fff`. Every neutral is tinted toward the cool axis (250°) for paper/ink coherence — neutral cool, never warm/cream.
 
 ### Tokens
 
 | Token | OKLCH | Use |
 |---|---|---|
-| `--paper` | `oklch(0.985 0.004 80)` | Page background. Warm-cast near-white — paper, not screen. |
-| `--paper-dim` | `oklch(0.965 0.004 80)` | Recessed surfaces (cards if used, inputs). |
-| `--ink` | `oklch(0.18 0.012 250)` | Primary text, primary surfaces in inverse. Cool near-black. |
-| `--ink-soft` | `oklch(0.30 0.010 250)` | Secondary text. |
-| `--graphite-300` | `oklch(0.78 0.006 250)` | Hairline borders, dividers. |
-| `--graphite-500` | `oklch(0.55 0.008 250)` | Tertiary text, captions. |
-| `--graphite-700` | `oklch(0.40 0.010 250)` | Strong borders, secondary fills on inverse. |
-| `--accent` | `oklch(0.40 0.085 248)` | Single editorial accent. Deep ink-blue. Used on focus rings, hover, one emphasis per page. |
-| `--accent-soft` | `oklch(0.94 0.025 248)` | Selection background, soft highlights. |
+| `--paper` | `oklch(0.985 0.002 250)` | Page background. Cool near-white — neutral, no cream. |
+| `--paper-dim` | `oklch(0.96 0.003 250)` | Recessed surfaces (sections, soft contrast bands). |
+| `--ink` | `oklch(0.16 0.008 250)` | Primary text, primary surfaces in inverse. Cool near-black. |
+| `--ink-soft` | `oklch(0.32 0.006 250)` | Secondary text. |
+| `--graphite-300` | `oklch(0.80 0.005 250)` | Hairline borders, dividers. |
+| `--graphite-500` | `oklch(0.56 0.006 250)` | Tertiary text, captions. |
+| `--graphite-700` | `oklch(0.40 0.007 250)` | Strong borders, secondary fills on inverse. |
+| `--accent` | `oklch(0.42 0.060 248)` | Restrained cool-blue accent. Hover, focus rings, single emphasis per page. |
+| `--accent-soft` | `oklch(0.94 0.018 248)` | Selection background only. |
 
 ### Schedule class-family colors
 
@@ -38,23 +38,23 @@ Muted, brand-coherent. All similar lightness for visual rhythm; hue separation f
 
 ## Typography
 
-**Two families.** Inter (already loaded) for body and UI. Fraunces variable serif for display — chosen for civic gravitas, athletic confidence, distinct from any combat-sport cliché.
+**One family: Inter.** Display weight (extrabold/black) with very tight tracking handles all headline duty — no serif, no second face. Reads athletic, civic, restrained. Closer to stadium signage than to magazine.
 
-| Style | Family | Weight | Size (mobile / desktop) | Letter-spacing | Line-height |
-|---|---|---|---|---|---|
-| `display-xl` | Fraunces | 700 (opsz 144, SOFT 0) | 56 / 96 px | -0.03em | 0.95 |
-| `display-lg` | Fraunces | 700 | 40 / 64 px | -0.025em | 1.0 |
-| `display-md` | Fraunces | 600 | 28 / 40 px | -0.02em | 1.1 |
-| `eyebrow` | Inter | 600 | 11 / 12 px | +0.18em UPPERCASE | 1.0 |
-| `body-lg` | Inter | 400 | 18 / 20 px | -0.005em | 1.55 |
-| `body` | Inter | 400 | 16 / 17 px | 0 | 1.6 |
-| `body-sm` | Inter | 400 | 14 / 14 px | 0 | 1.5 |
-| `label` | Inter | 600 | 13 / 14 px | +0.02em | 1.3 |
-| `numeric` | Inter (tabular nums) | 500 | inherit | 0 | inherit |
+| Style | Weight | Size (mobile / desktop) | Letter-spacing | Line-height |
+|---|---|---|---|---|
+| `display-xl` | 800/900 | 52 / 84 px | -0.05em | 0.92 |
+| `display-lg` | 800 | 36 / 56 px | -0.04em | 1.0 |
+| `display-md` | 700 | 24 / 32 px | -0.025em | 1.1 |
+| `eyebrow` | 600 | 11 / 12 px | +0.18em UPPERCASE | 1.0 |
+| `body-lg` | 400 | 18 / 20 px | -0.005em | 1.55 |
+| `body` | 400 | 16 / 17 px | 0 | 1.6 |
+| `body-sm` | 400 | 14 / 14 px | 0 | 1.5 |
+| `label` | 600 | 13 / 14 px | +0.02em | 1.3 |
+| `numeric` | 500 | inherit | 0 (tabular) | inherit |
 
-Body line length capped at 65–72ch. Headline line length 18–28ch.
+Body line length capped at 65–72ch. Headline line length 12–22ch (display weight needs less).
 
-**Headlines: Fraunces. Everything else: Inter.** No third family.
+**One family. All weights from 400 to 900.**
 
 ## Spacing scale
 

@@ -9,19 +9,21 @@
    ---------------------------------------------------------------------------- */
 
 :root {
-  --paper: oklch(0.985 0.004 80);
-  --paper-dim: oklch(0.965 0.004 80);
+  /* Cool, near-neutral paper. No cream. Faintest cool tint to match ink. */
+  --paper: oklch(0.985 0.002 250);
+  --paper-dim: oklch(0.96 0.003 250);
 
-  --ink: oklch(0.18 0.012 250);
-  --ink-soft: oklch(0.30 0.010 250);
+  --ink: oklch(0.16 0.008 250);
+  --ink-soft: oklch(0.32 0.006 250);
 
-  --graphite-100: oklch(0.93 0.005 250);
-  --graphite-300: oklch(0.78 0.006 250);
-  --graphite-500: oklch(0.55 0.008 250);
-  --graphite-700: oklch(0.40 0.010 250);
+  --graphite-100: oklch(0.93 0.004 250);
+  --graphite-300: oklch(0.80 0.005 250);
+  --graphite-500: oklch(0.56 0.006 250);
+  --graphite-700: oklch(0.40 0.007 250);
 
-  --accent: oklch(0.40 0.085 248);
-  --accent-soft: oklch(0.94 0.025 248);
+  /* Accent kept restrained and cool — used sparingly for hover/focus only. */
+  --accent: oklch(0.42 0.060 248);
+  --accent-soft: oklch(0.94 0.018 248);
 
   --cls-fys:  oklch(0.62 0.012 250);
   --cls-thai: oklch(0.55 0.085 145);
@@ -77,11 +79,10 @@ button:focus-visible,
   font-feature-settings: "tnum" 1;
 }
 
-/* Display type — Fraunces */
+/* Display type — Inter, tight tracking. Weight chosen per usage. */
 .font-display {
-  font-family: var(--font-fraunces), "Fraunces", "Times New Roman", serif;
-  font-feature-settings: "ss01" 1, "ss02" 1;
-  font-variation-settings: "opsz" 144, "SOFT" 0;
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+  letter-spacing: -0.035em;
 }
 
 /* Eyebrow label */

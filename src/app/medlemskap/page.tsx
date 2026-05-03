@@ -1,179 +1,158 @@
-import BlackButton from "@/components/black_button/black_button";
-import MobileNavbar from "@/components/navbar/mobile_navbar";
+import Container from '@/components/ui/container';
+import Section from '@/components/ui/section';
+import Navbar from '@/components/ui/navbar';
+import Footer from '@/components/ui/footer';
+import PageHeader from '@/components/ui/page-header';
+import Button from '@/components/ui/button';
+import Eyebrow from '@/components/ui/eyebrow';
+import {
+  MEMBERSHIP_PLANS,
+  MEMBERSHIP_TERMS,
+  MEMBERSHIP_URL,
+  PLAN_GROUP_LABELS,
+  PlanGroup,
+  MembershipPlan,
+} from '@/data/membership';
+
+export const metadata = {
+  title: 'Medlemskap — Kampsportstadion',
+  description:
+    'Medlemskap, priser och villkor för Kampsportstadion. Vuxen, ungdom, student, barn och prova på.',
+};
+
+const GROUPS: PlanGroup[] = ['voksen', 'ungdom', 'barn', 'prova'];
 
 export default function MembershipPage() {
+  const grouped = GROUPS.map((g) => ({
+    group: g,
+    plans: MEMBERSHIP_PLANS.filter((p) => p.group === g),
+  }));
+
   return (
-    <main className="flex min-h-full min-w-full flex-col items-center justify-between">
-      <MobileNavbar
-        forWhiteBg={true}
-      />
-      <div className="w-full">
-        <div className="w-full h-full flex flex-col mt-40 items-center">
-          <h2 className="text-center text-4xl font-bold">MEDLEMSKAP</h2>
-          <BlackButton text={"KÖP HÄR"} href={"https://www.gymcontrol.se/global/webshop/index.php?uid=8975&action=home"} />
-          <div className="grid grid-flow-row w-900:grid-cols-2 w-450:p-5">
+    <>
+      <Navbar />
+      <main>
+        <PageHeader
+          eyebrow="Bli medlem"
+          title="Medlemskap"
+          description="Välj det medlemskap som passar dig. Alla aktiva medlemmar får tillgång till hela schemat och vårt gym."
+          actions={
+            <Button href={MEMBERSHIP_URL} external variant="primary" size="lg">
+              Köp medlemskap
+            </Button>
+          }
+        />
 
-            <div className="flex flex-col text-center h-full w-900:text-2xl col-start-1">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Årskort</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">699:-/månad autogiro
-                <br></br>
-                9800:-/år swish eller kort
-                <br></br>
-                Träna så mycket du vill,
-                välj bland alla pass, tillgång till gymmet.
-                12 månaders bindningstid.
-              </p>
+        <Section pad="default" className="border-t border-graphite-300">
+          <Container variant="wide">
+            <div className="flex flex-col gap-16 w-900:gap-24">
+              {grouped.map(({ group, plans }) => (
+                <PlanGroupBlock
+                  key={group}
+                  groupLabel={PLAN_GROUP_LABELS[group]}
+                  plans={plans}
+                />
+              ))}
             </div>
+          </Container>
+        </Section>
 
-            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Årskort student</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">599:-/månad autogiro
-                <br></br>
-                8000:-/år swish eller kort
-                <br></br>
-                Träna så mycket du vill,
-                välj bland alla pass, tillgång till gymmet.
-                Giltigt CSN-kort krävs. 12 månaders bindningstid.
-              </p>
+        <Section pad="marquee" className="bg-paper-dim border-t border-graphite-300">
+          <Container variant="wide">
+            <div className="grid w-900:grid-cols-12 gap-10 w-900:gap-16">
+              <div className="w-900:col-span-4">
+                <Eyebrow>Villkor</Eyebrow>
+                <h2 className="mt-4 font-display text-[2rem] w-900:text-[2.75rem] leading-[1.05] tracking-[-0.025em]">
+                  Det finstilta,<br />i klartext.
+                </h2>
+                <p className="mt-5 max-w-prose text-[15px] text-ink-soft leading-relaxed">
+                  Vi vill att det ska vara tydligt vad som gäller, oavsett om
+                  du är på gång att skriva på eller redan är medlem.
+                </p>
+              </div>
+              <div className="w-900:col-span-8">
+                <dl className="border-t border-graphite-300">
+                  {MEMBERSHIP_TERMS.map((t) => (
+                    <div
+                      key={t.heading}
+                      className="grid w-625:grid-cols-12 gap-2 w-625:gap-6 py-6 border-b border-graphite-300"
+                    >
+                      <dt className="w-625:col-span-4 font-medium text-[15px] w-900:text-[16px] text-ink">
+                        {t.heading}
+                      </dt>
+                      <dd className="w-625:col-span-8 text-[14.5px] w-900:text-[15px] text-ink-soft leading-relaxed">
+                        {t.body}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
             </div>
+          </Container>
+        </Section>
+      </main>
+      <Footer />
+    </>
+  );
+}
 
-            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1 w-900:row-start-4">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Guld Medlemskap</h2>
-              <p className="border-2 p-2 border-t-0 flex-grow w-900:px-20">1499:-/månad autogiro
-                <br></br>
-                Träna så mycket du vill. Välj bland alla pass. Tillgång till gymmet. <span className="font-bold">Medlemskapet inkluderar även en 50 min behandling hos Proaktiv Idrottscenter varje månad.</span>
-                Behandlingen måste nyttjas månaden dragningen gäller och kan inte sparas. 6 månaders bindningstid.
-              </p>
-            </div>
+function PlanGroupBlock({ groupLabel, plans }: { groupLabel: string; plans: MembershipPlan[] }) {
+  return (
+    <section>
+      <Eyebrow>{groupLabel}</Eyebrow>
+      <ul className="mt-6 grid w-625:grid-cols-2 w-900:grid-cols-3 gap-px bg-graphite-300 border border-graphite-300">
+        {plans.map((p) => (
+          <li key={p.title} className="bg-paper">
+            <PlanCard plan={p} />
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
 
-            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Halvår</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">5400:-/halvår swish eller kort
-                <br></br>
-                6 månaders bindningstid.
-              </p>
-            </div>
+function PlanCard({ plan }: { plan: MembershipPlan }) {
+  const accent = plan.highlight;
+  return (
+    <article className={`relative h-full p-6 w-900:p-7 flex flex-col ${accent ? 'bg-ink text-paper' : ''}`}>
+      {accent && (
+        <span className="eyebrow mb-3 text-paper/70">Mest valda</span>
+      )}
+      <h3 className={`font-display text-[1.4rem] w-900:text-[1.6rem] leading-[1.1] tracking-[-0.02em] ${accent ? 'text-paper' : 'text-ink'}`}>
+        {plan.title}
+      </h3>
 
-            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Halvår student</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">4500:-/halvår swish eller kort
-                <br></br>
-                6 månaders bindningstid.
-              </p>
-            </div>
-
-            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kvartal</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">3000:-/kvartal swish eller kort
-                <br></br>
-                3 månaders bindningstid.
-              </p>
-            </div>
-
-            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Ungdomsgrupp 13-16 år</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">499:-/månad autogiro
-                <br></br>
-                3200:-/termin swish eller kort
-                <br></br>
-                Gäller tisdag & torsdag 17.00-18.00
-                <br></br>
-                6 månaders bindningstid
-              </p>
-            </div>
-
-            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 7-9 år & 9-12 år</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">499:-/månad autogiro
-                <br></br>
-                3200:- / termin swish eller kort
-                <br></br>
-                Välj grupp:
-                <br></br>
-                1. Brasiliansk jiu-jitsu (BJJ) 2 pass i veckan.
-                <br></br>
-                2. Thaiboxning 2 pass i veckan.
-                <br></br>
-                Uppehåll juni-augusti & januari.
-                <br></br>
-                Man har automatisk plats i gruppen kommande termin om man inte säger upp sitt medlemskap.
-                Vill du säga upp ditt barns medlemskap gör man det innan nästa terminstart.
-                Maila namn och uppsägning till info@kampsportstadion.se
-              </p>
-            </div>
-
-            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Kampsport Barngrupp 4-6 år</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">399:-/månad autogiro
-                <br></br>
-                2600:- / termin swish eller kort
-                <br></br>
-                1 pass/v, uppehåll juni-augusti & januari.
-                <br></br>
-                Man har automatisk plats i gruppen kommande termin om man inte säger upp sitt medlemskap. Vill du säga upp ditt barns medlemskap gör man det innan nästa terminstart.
-              </p>
-            </div>
-
-            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1 w-900:row-start-5">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Prova på engångspass</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">200:- swish eller kort
-                <br></br>
-                Ingen drop in
-                <br></br>
-                Vill du prova så maila ditt namn till info@kampsportstadion.se, så skriver vi upp ditt
-                namn i receptionen.
-              </p>
-            </div>
-
-            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-1">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Prova på en vecka</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">500:- swish eller kort
-              </p>
-            </div>
-
-            <div className="flex flex-col text-center h-full w-900:text-2xl w-900:col-start-2">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Klippkort 10 gånger</h2>
-              <p className="border-2 border-t-0 p-2 flex-grow w-900:px-20">2000:- swish eller kort
-              </p>
-            </div>
-
-            <div className="grid grid-flow-row text-center w-900:text-2xl col-span-2">
-              <h2 className="border-2 border-b-0 font-bold p-2 w-900:text-2xl">Villkor</h2>
-              <p className="border-2 border-t-0 p-2 w-900:px-20">Medlemsavgift om 500:-/år är obligatorisk oavsett medlemskap, inkluderar
-                idrottsförsäkring hos Folksam. Betalas på plats alt läggs till på första autogirodragningen.
-                <br></br>
-                <br></br>
-                Vid uppsägning gäller 3 månaders uppsägningstid. swish eller kort betalning återbetalas ej vid avslut
-                av medlemskapet innan köpt period löper ut.
-                <br></br>
-                Vid uppstart av ett tidigare avslutat medlemskap tas en administrativ avgift ut på 300:-
-                <br></br>
-                <br></br>
-                Vi har två terminer; Januari - Maj/Juni samt Augusti - December. Autogiro är en delbetalning
-                av terminsavgiften, vilket innebär att autogirot forlöper även då det inte är termin. Det går därför
-                inte att frysa medlemskapet under sommaren.
-                <br></br>
-                Bindningstiden för autogiro är 12 månader för vuxna och 6 månader för ungdom/student upp till 18 år.
-                <br></br>
-                Vi har stängt under sommaren men erbjuder träning på annan plats.
-                <br></br>
-                <br></br>
-                Kampsport barngrupper binder sig för en termin. Ingen betalning dras under sommaren för barngruppen. Vill man avsluta sitt barns medlemskap meddelar man detta innan nästa termins uppstart (gäller barngrupp 4-11 år)
-                <br></br>
-                <br></br>
-                Vid uppsägning av medlemskap, maila ditt namn, personnummer och kortnummer till info@kampsportstadion.se
-                <br></br>
-                Vi skickar alltid en bekräftelse på din uppsägelse, ifall du har sagt upp ditt medlemskap men inte erhåller en bekräftelse
-                på uppsägningen så kontakta oss snarast. Återbetalning av medlemsavgifter som uppstått pga bristande förfarande vid uppsägning
-                återbetalas ej.
-                <br></br>
-                Lämna in ditt medlemskort efter sista passet för avslutande av medlemskap. Gäller alla medlemskap.
-              </p>
-            </div>
-
-          </div>
-        </div>
+      <div className="mt-5 flex flex-col gap-1.5">
+        {plan.prices.map((p, i) => (
+          <p key={i} className="flex items-baseline gap-1.5 tabular">
+            <span className={`font-display text-[1.65rem] leading-none ${accent ? 'text-paper' : 'text-ink'}`}>
+              {p.amount}
+            </span>
+            <span className={`text-[12.5px] ${accent ? 'text-paper/70' : 'text-ink-soft'}`}>
+              {p.cadence}
+            </span>
+          </p>
+        ))}
       </div>
-    </main>
-  )
+
+      {plan.body.length > 0 && (
+        <ul className={`mt-6 space-y-2 text-[13.5px] leading-relaxed ${accent ? 'text-paper/80' : 'text-ink-soft'}`}>
+          {plan.body.map((b, i) => (
+            <li key={i}>{b}</li>
+          ))}
+        </ul>
+      )}
+
+      <div className="mt-auto pt-6">
+        <a
+          href={MEMBERSHIP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`inline-flex items-center gap-1 text-[13px] font-medium underline underline-offset-4 ${accent ? 'text-paper decoration-paper/40 hover:decoration-paper' : 'text-ink decoration-graphite-300 hover:decoration-accent hover:text-accent'}`}
+        >
+          Köp →
+        </a>
+      </div>
+    </article>
+  );
 }

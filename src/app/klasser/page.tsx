@@ -1,56 +1,107 @@
-import DropdownButton from "@/components/dropdown_button/dropdown_button";
-import MobileNavbar from "@/components/navbar/mobile_navbar";
-import classes, { WorkoutClass } from "@/data/classes";
+import Container from '@/components/ui/container';
+import Section from '@/components/ui/section';
+import Navbar from '@/components/ui/navbar';
+import Footer from '@/components/ui/footer';
+import PageHeader from '@/components/ui/page-header';
+import classes, { WorkoutClass } from '@/data/classes';
+
+export const metadata = {
+  title: 'Klasser — Kampsportstadion',
+  description:
+    'Alla klasser på Kampsportstadion. Thaiboxning, BJJ, MMA, fys, barngrupper och mer.',
+};
 
 export default function ClassesPage() {
+  const total = classes.length;
   return (
-    <main className="flex min-h-screen w-full flex-col items-center bg-white">
-      <MobileNavbar forWhiteBg={true} />
-      
-      <div className="w-full max-w-7xl mx-auto px-4">
-        {/* Mobile View */}
-        <div className="w-full h-full flex flex-col pt-40 pb-20 items-center w-900:hidden">
-          <h2 className="text-center text-4xl font-bold mb-5">KLASSER</h2>
-          <h3 className="text-center text-xl mb-5 px-4">Vi har klasser för Barn 7-9år & 9-12 år ungdomar 13-16år, nybörjare, fortsättning & avancerad</h3>
-          {classes.map((item: WorkoutClass, index: number) =>
-            <DropdownButton
-              key={index}
-              item={item} // Pass the whole object
-            />
-          )}
-        </div>
+    <>
+      <Navbar />
+      <main>
+        <PageHeader
+          eyebrow="Träningsutbud"
+          title="Klasser"
+          description="Vi har klasser för Barn 7–9 år & 9–12 år, ungdomar 13–16 år, nybörjare, fortsättning & avancerad."
+        />
 
-        {/* Desktop View */}
-        <div className="w-full h-full pt-40 pb-20 hidden w-900:grid w-900:grid-cols-2 gap-x-12 gap-y-16">
-          <div className="col-span-2 text-center">
-            <h2 className="text-4xl font-bold mb-5">KLASSER</h2>
-            <h3 className="text-2xl">Vi har klasser för Barn 7-9år & 9-12 år ungdomar 13-16år, nybörjare, fortsättning & avancerad</h3>
-          </div>
-          
-          {classes.map((item: WorkoutClass, index: number) =>
-            <div className="flex flex-col text-left bg-white p-6 rounded-lg shadow-lg border border-black" key={index}>
-              <h3 className="font-bold text-2xl mb-3">{item.header}</h3>
-              <p className="text-base">{item.description}</p>
-              
-              {item.levels && item.levels.length > 0 && (
-                <div className="mt-4 space-y-3">
-                  {item.levels.map((level, levelIndex) => (
-                    <div key={levelIndex} className="border-t pt-3">
-                      <h4 className="font-bold text-lg">{level.header}</h4>
-                      <p className="text-base">{level.description}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {item.rawHtml && (
-                <div className="mt-4 text-base border-t pt-3" dangerouslySetInnerHTML={{ __html: item.rawHtml }} />
-              )}
-            </div>
-          )}
-        </div>
-      </div>
-    </main>
+        <Section pad="default" className="border-t border-graphite-300">
+          <Container variant="wide">
+            <ol className="flex flex-col">
+              {classes.map((c, i) => (
+                <li key={c.header}>
+                  <ClassEntry
+                    index={i + 1}
+                    total={total}
+                    item={c}
+                    isLast={i === total - 1}
+                  />
+                </li>
+              ))}
+            </ol>
+          </Container>
+        </Section>
+      </main>
+      <Footer />
+    </>
   );
 }
 
+function ClassEntry({
+  item,
+  index,
+  total,
+  isLast,
+}: {
+  item: WorkoutClass;
+  index: number;
+  total: number;
+  isLast: boolean;
+}) {
+  const { header, description, levels, rawHtml } = item;
+  return (
+    <article
+      className={`grid w-900:grid-cols-12 gap-6 w-900:gap-12 py-10 w-900:py-14 ${isLast ? '' : 'border-b border-graphite-300'}`}
+    >
+      <header className="w-900:col-span-4">
+        <p className="eyebrow tabular">
+          {String(index).padStart(2, '0')} / {String(total).padStart(2, '0')}
+        </p>
+        <h2 className="mt-3 font-display text-[1.85rem] w-900:text-[2.5rem] tracking-[-0.025em] leading-[1.05] text-ink">
+          {header}
+        </h2>
+      </header>
+
+      <div className="w-900:col-span-8">
+        {description && (
+          <p className="text-[16px] w-900:text-[17px] leading-relaxed text-ink-soft max-w-prose">
+            {description}
+          </p>
+        )}
+
+        {levels && levels.length > 0 && (
+          <dl className="mt-8 border-t border-graphite-300">
+            {levels.map((level, idx) => (
+              <div
+                key={idx}
+                className="grid w-625:grid-cols-12 gap-2 w-625:gap-6 py-5 border-b border-graphite-300"
+              >
+                <dt className="w-625:col-span-4 font-medium text-[15px] w-900:text-[16px] text-ink">
+                  {level.header}
+                </dt>
+                <dd className="w-625:col-span-8 text-[14.5px] w-900:text-[15.5px] text-ink-soft leading-relaxed max-w-prose">
+                  {level.description}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        )}
+
+        {rawHtml && (
+          <div
+            className="mt-6 text-[15px] text-ink-soft leading-relaxed [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-graphite-300 hover:[&_a]:text-accent hover:[&_a]:decoration-accent"
+            dangerouslySetInnerHTML={{ __html: rawHtml }}
+          />
+        )}
+      </div>
+    </article>
+  );
+}

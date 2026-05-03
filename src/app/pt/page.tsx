@@ -1,57 +1,113 @@
-import MobileNavbar from "@/components/navbar/mobile_navbar";
-import StaffCard from "@/components/staff_card/staff_card";
+import Container from '@/components/ui/container';
+import Section from '@/components/ui/section';
+import Navbar from '@/components/ui/navbar';
+import Footer from '@/components/ui/footer';
+import PageHeader from '@/components/ui/page-header';
+import { TRAINERS, Trainer } from '@/data/trainers';
 
-export default function ContactPage() {
+export const metadata = {
+  title: 'Personlig träning — Kampsportstadion',
+  description:
+    'PT på Kampsportstadion. Erfarna tränare inom styrka, kondition, boxning, thaiboxning, MMA och BJJ.',
+};
+
+export default function PTPage() {
   return (
-    <main className="flex min-h-full min-w-full flex-col items-center justify-between">
-      <MobileNavbar
-        forWhiteBg={true}
-      />
-      <div className="w-full">
-        <div className="w-full h-full flex flex-col mt-40 items-center text-center px-10 w-900:px-40">
-          <h2 className="text-center text-4xl font-bold mb-5">PERSONLIG TRÄNING</h2>
-          <p className="w-900:text-2xl w-900:px-20 mb-10">Är du intresserad av PT har vi ett gäng duktiga, erfarna tränar som kan hjälpa dig.<br></br> Både inom styrka, kondition, boxning, thaiboxning, MMA och BJJ.</p>
-          <StaffCard 
-            name="Rickard Nordstrand"
-            description="Världsmästare i thaiboxning. Vill du slipa dina tekniker eller jobba styrka i gymmet? Rickard är en all around tränare som kan hjälpa dig med det mesta. Thaiboxning är dock hans specialitet."
-            email="rickard@goodsport.se"
-            phoneNumber='0707122201'
-          />
-          <StaffCard 
-            name="Synøve Asplund"
-            description="Personlig träning med mål att motivera och inspirera till fysisk aktivitet och rörelse. Att starka individen och möta personen just där den är för att maximera den personliga utvecklingen. Älskar funktionell styrka, thaiboxning och gym. Vi sätter i hop en plan utifrån dina mål och förutsättningar."
-            email="info@kampsportstadion.se"
-            phoneNumber='0707943873'
-          />
-          <StaffCard 
-            name="Jimmie Jensen"
-            description="Som huvudcoach för vår elitgrupp med bland annat UFC fighters och landslags-fighters kan Jimmie ta din fighting till en ny nivå. Nybörjare som proffs spelar ingen roll-tillsammans lägger vi upp en plan för att ge dig den personliga utvecklingen och resultat du vill åt. Teknik, styrka  kondition för att bygga en stark, hållbar kropp och ett bra fighting game."
-            email="jimmie@murarfirma.se"
-            phoneNumber='0732034060'
-          />
-          <StaffCard 
-            name="Niklas Messing"
-            description="Vill du komma i form eller behöver jobba på dina tekniker i thaiboxning kan Niklas hjälpa dig."
-            email="niklas.messing@outlook.com"
-            phoneNumber='0707866055'
-          />
-          <StaffCard 
-            name="Antoine Constantinedes"
-            description="Strength & condition huvud coach för våra fighters. Jobbar mycket med individuella programmeringar för att hjälpa dig att nå ditt bästa potential inom din fighting och en stark och hållbar kropp!"
-            email="antonyc19@hotmail.com"
-            phoneNumber='0765633111'
-          />
-          <StaffCard 
-            name="Christoffer Nyström"
-            description="Bygg styrka och stabilitet genom hela rörelsebanan. Maximera explosivitet och uthållighet för att utvecklas i din sport.
-            Som blivande fysioterapeut med över 15 års erfarenhet av boxning/träning kan jag hjälpa dig att nå dina mål och bygga en kropp som håller livet ut"
-            email="chris.allen.nystrom@gmail.com"
-          />
-          <p className="w-900:text-2xl w-900:px-20 mt-20">Pris: 900kr per PT-timme. Rabatterat pris om du är medlem på Kampsportstadion.</p>
-          <p className="w-900:text-2xl w-900:px-20 ">(Rickard Nodstrand har egen prislista)</p>
-          <p className="w-900:text-2xl w-900:px-20 pb-20">Kontakta oss på <a href="mailto:info@kampsportstadion.se">info@kampsportstadion.se</a> för mer information</p>
+    <>
+      <Navbar />
+      <main>
+        <PageHeader
+          eyebrow="Personlig träning"
+          title="Personlig träning"
+          description="Är du intresserad av PT har vi ett gäng duktiga, erfarna tränar som kan hjälpa dig — både inom styrka, kondition, boxning, thaiboxning, MMA och BJJ."
+        />
+
+        <Section pad="default" className="border-t border-graphite-300">
+          <Container variant="wide">
+            <ul className="flex flex-col">
+              {TRAINERS.map((t, i) => (
+                <li key={t.name}>
+                  <TrainerEntry trainer={t} index={i + 1} total={TRAINERS.length} isLast={i === TRAINERS.length - 1} />
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </Section>
+
+        <Section pad="default" className="bg-paper-dim border-t border-graphite-300">
+          <Container variant="wide">
+            <div className="grid w-900:grid-cols-12 gap-8">
+              <div className="w-900:col-span-6">
+                <p className="eyebrow">Pris</p>
+                <p
+                  className="font-display mt-3 text-[2rem] w-900:text-[2.75rem] leading-none tracking-[-0.025em] tabular"
+                  style={{ fontVariationSettings: '"opsz" 144, "SOFT" 0' }}
+                >
+                  900:- <span className="text-ink-soft text-[1.25rem]">/ PT-timme</span>
+                </p>
+                <p className="mt-4 text-[15px] text-ink-soft max-w-prose">
+                  Rabatterat pris om du är medlem på Kampsportstadion.<br />
+                  (Rickard Nordstrand har egen prislista.)
+                </p>
+              </div>
+              <div className="w-900:col-span-6">
+                <p className="eyebrow">Kontakt</p>
+                <p className="mt-3 text-[16px] text-ink leading-relaxed max-w-prose">
+                  Kontakta oss på{' '}
+                  <a className="underline underline-offset-4 decoration-graphite-300 hover:text-accent hover:decoration-accent" href="mailto:info@kampsportstadion.se">
+                    info@kampsportstadion.se
+                  </a>{' '}
+                  för mer information.
+                </p>
+              </div>
+            </div>
+          </Container>
+        </Section>
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+function TrainerEntry({ trainer, index, total, isLast }: { trainer: Trainer; index: number; total: number; isLast: boolean }) {
+  return (
+    <article className={`grid w-900:grid-cols-12 gap-6 w-900:gap-12 py-10 w-900:py-14 ${isLast ? '' : 'border-b border-graphite-300'}`}>
+      <header className="w-900:col-span-4">
+        <p className="eyebrow tabular">
+          {String(index).padStart(2, '0')} / {String(total).padStart(2, '0')}
+        </p>
+        <h2 className="mt-3 font-display text-[1.85rem] w-900:text-[2.25rem] tracking-[-0.025em] leading-[1.05] text-ink">
+          {trainer.name}
+        </h2>
+        {trainer.specialty && (
+          <p className="mt-3 text-[13px] text-graphite-500 uppercase tracking-[0.12em]">{trainer.specialty}</p>
+        )}
+      </header>
+      <div className="w-900:col-span-8">
+        <p className="text-[16px] w-900:text-[17px] leading-relaxed text-ink-soft max-w-prose">{trainer.description}</p>
+        <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[14px]">
+          {trainer.email && (
+            <a className="inline-flex items-center gap-2 text-ink hover:text-accent" href={`mailto:${trainer.email}`}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              {trainer.email}
+            </a>
+          )}
+          {trainer.phone && (
+            <a className="inline-flex items-center gap-2 text-ink hover:text-accent tabular" href={`tel:${trainer.phone}`}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 4h3l2 5-2 1a11 11 0 005 5l1-2 5 2v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
+              {formatPhone(trainer.phone)}
+            </a>
+          )}
         </div>
       </div>
-    </main>
-  )
+    </article>
+  );
+}
+
+function formatPhone(p: string) {
+  // 0707122201 -> 070-712 22 01
+  if (p.length === 10 && p.startsWith('0')) {
+    return `${p.slice(0, 3)}-${p.slice(3, 6)} ${p.slice(6, 8)} ${p.slice(8, 10)}`;
+  }
+  return p;
 }

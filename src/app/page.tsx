@@ -55,27 +55,27 @@ export default function Home() {
       <main>
         {/* ─────────────────────────────────  Hero */}
         <section className="relative">
-          <div className="relative w-full">
+          <div className="relative w-full h-[88vh] min-h-[600px] max-h-[860px] overflow-hidden">
             <picture>
               <source media="(min-width: 900px)" srcSet="/bg-lg.jpg" />
               <source media="(min-width: 625px)" srcSet="/bg-md.jpg" />
               <img
                 src="/bg-sm.jpg"
                 alt=""
-                className="w-full h-[80vh] min-h-[560px] max-h-[820px] object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </picture>
-            {/* Bottom paper fade so the page transitions cleanly */}
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-paper to-transparent pointer-events-none" />
-            {/* Subtle bottom-left text — newspaper-page feel, not SaaS-overlay */}
+            {/* Dark veil for legibility, top-down + bottom-up */}
+            <div className="absolute inset-0 bg-gradient-to-b from-ink/35 via-transparent to-ink/75 pointer-events-none" />
+            {/* Bottom-aligned editorial text */}
             <div className="absolute inset-x-0 bottom-0">
               <Container variant="wide">
-                <div className="pb-10 w-900:pb-16 max-w-3xl">
+                <div className="pb-12 w-900:pb-20 max-w-3xl">
                   <p className="eyebrow text-paper/80 mb-4">
                     Djurgårdens IF Kampsport · Stockholm Stadion sedan 1912
                   </p>
                   <h1
-                    className="font-display font-semibold text-paper text-[2.5rem] w-625:text-[3.25rem] w-900:text-[5rem] leading-[0.95] tracking-[-0.03em]"
+                    className="font-display font-semibold text-paper text-[2.75rem] w-625:text-[3.75rem] w-900:text-[5.5rem] leading-[0.95] tracking-[-0.03em]"
                     style={{ fontVariationSettings: '"opsz" 144, "SOFT" 0' }}
                   >
                     Kampsport <br />för alla.
@@ -86,14 +86,14 @@ export default function Home() {
                     Stadion, mitt i staden.
                   </p>
                   <div className="mt-8 flex flex-wrap gap-3">
-                    <Button href="/schema" variant="primary" size="lg">
+                    <Button href="/schema" variant="primary" size="lg" className="bg-paper text-ink border-paper hover:bg-accent hover:border-accent hover:text-paper">
                       Se schema
                     </Button>
                     <Button
                       href="mailto:info@kampsportstadion.se"
                       variant="ghost"
                       size="lg"
-                      className="bg-paper/0 text-paper border-paper/40 hover:bg-paper hover:text-ink hover:border-paper"
+                      className="text-paper border-paper/50 hover:bg-paper hover:text-ink hover:border-paper"
                     >
                       Boka prova på
                     </Button>

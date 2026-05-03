@@ -1,14 +1,24 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import MobileNavbar from '../components/navbar/mobile_navbar'
-import Footer from '@/components/footer/footer'
+import { Inter, Fraunces } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  variable: '--font-fraunces',
+  display: 'swap',
+  axes: ['SOFT', 'opsz'],
+})
 
 export const metadata: Metadata = {
-  title: 'Kampsportstadion',
-  description: 'Kampsport | Kampsportsfys | Personlig träning | Stockholm',
+  title: 'Kampsportstadion — DIF Kampsportsförening på Stockholm Stadion',
+  description:
+    'Kampsportstadion på Stockholm Stadion. Thaiboxning, BJJ, MMA, kampsportsfys och barnträning för alla nivåer. En ideell idrottsförening i Djurgårdens IF.',
 }
 
 export default function RootLayout({
@@ -17,13 +27,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div className="h-full w-full flex flex-col">
+    <html lang="sv" className={`${inter.variable} ${fraunces.variable}`}>
+      <body className="font-sans bg-paper text-ink antialiased">
         {children}
-        <Footer/>
-        </div>
-        </body>
+      </body>
     </html>
   )
 }

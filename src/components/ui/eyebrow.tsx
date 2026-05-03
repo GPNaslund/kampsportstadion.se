@@ -1,0 +1,11 @@
+import { ReactNode } from 'react';
+
+export default function Eyebrow({
+  children,
+  className = '',
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return <p className={`eyebrow ${className}`}>{children}</p>;
+}

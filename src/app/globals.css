@@ -2,28 +2,125 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
+/* ----------------------------------------------------------------------------
+   Design tokens — see DESIGN.md for the canonical reference.
+   All colors in OKLCH, tinted toward 250° (cool) for paper/ink coherence.
+   No #000 / #fff anywhere.
+   ---------------------------------------------------------------------------- */
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --paper: oklch(0.985 0.004 80);
+  --paper-dim: oklch(0.965 0.004 80);
+
+  --ink: oklch(0.18 0.012 250);
+  --ink-soft: oklch(0.30 0.010 250);
+
+  --graphite-100: oklch(0.93 0.005 250);
+  --graphite-300: oklch(0.78 0.006 250);
+  --graphite-500: oklch(0.55 0.008 250);
+  --graphite-700: oklch(0.40 0.010 250);
+
+  --accent: oklch(0.40 0.085 248);
+  --accent-soft: oklch(0.94 0.025 248);
+
+  --cls-fys:  oklch(0.62 0.012 250);
+  --cls-thai: oklch(0.55 0.085 145);
+  --cls-bjj:  oklch(0.55 0.080 240);
+  --cls-mma:  oklch(0.60 0.110 60);
+  --cls-sw:   oklch(0.50 0.110 25);
+  --cls-barn: oklch(0.78 0.140 95);
+  --cls-npf:  oklch(0.55 0.110 305);
+
+  --ease-out-quint: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --content-prose: 65ch;
+  --content-standard: 1120px;
+  --content-wide: 1320px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Base */
+html {
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--paper);
+  color: var(--ink);
 }
-*/
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Tabular numerals everywhere a number lives */
+.tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Display type — Fraunces */
+.font-display {
+  font-family: var(--font-fraunces), "Fraunces", "Times New Roman", serif;
+  font-feature-settings: "ss01" 1, "ss02" 1;
+  font-variation-settings: "opsz" 144, "SOFT" 0;
+}
+
+/* Eyebrow label */
+.eyebrow {
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+@media (min-width: 900px) {
+  .eyebrow { font-size: 0.75rem; }
+}
+
+/* Hairline rule used between sections, headings, list rows */
+.hairline {
+  background: var(--graphite-300);
+  height: 1px;
+  width: 100%;
+  border: 0;
+}
+
+/* Page edge padding rhythm — applied via class on root containers */
+.edge {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+@media (min-width: 640px)  { .edge { padding-left: 2.5rem;  padding-right: 2.5rem; } }
+@media (min-width: 900px)  { .edge { padding-left: 4rem;    padding-right: 4rem; } }
+@media (min-width: 1280px) { .edge { padding-left: 5rem;    padding-right: 5rem; } }
+
+/* Reduced motion — clamp everything */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -24,7 +24,7 @@ const ScheduleprintableInner = forwardRef<HTMLDivElement, {}>((_, ref) => {
         <div>
           <p className="eyebrow mb-3">Veckoschema</p>
           <h2 className="font-display text-[3.25rem] leading-none tracking-[-0.03em]">
-            Kampsport<span className="opacity-60">·</span>stadion
+            Kampsportstadion
           </h2>
           <p className="mt-3 text-[15px] text-ink-soft tabular">
             {SCHEDULE_META.validFrom} · Stockholm Stadion

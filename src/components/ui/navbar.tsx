@@ -63,7 +63,7 @@ export default function Navbar({ overImage = false }: { overImage?: boolean }) {
           <Link href="/" className={`flex items-center gap-3 ${inkColor} transition-colors`} aria-label="Kampsportstadion — startsida">
             <img src="/dif.png" alt="" width={36} height={36} className="w-9 h-9 w-900:w-10 w-900:h-10 object-contain" />
             <span className="font-display text-[1.05rem] w-900:text-[1.2rem] tracking-[-0.02em] leading-none">
-              Kampsport<span className="opacity-60">·</span>stadion
+              Kampsportstadion
             </span>
           </Link>
 
@@ -137,7 +137,7 @@ export default function Navbar({ overImage = false }: { overImage?: boolean }) {
               <Link href="/" className="flex items-center gap-3 text-ink">
                 <img src="/dif.png" alt="" width={36} height={36} className="w-9 h-9 object-contain" />
                 <span className="font-display text-[1.1rem] tracking-[-0.02em] leading-none">
-                  Kampsport<span className="opacity-60">·</span>stadion
+                  Kampsportstadion
                 </span>
               </Link>
               <button

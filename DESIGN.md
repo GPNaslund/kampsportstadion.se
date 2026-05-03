@@ -6,21 +6,21 @@ The visual system. Tokens, type, spacing, motion. Update this file when tokens c
 
 **Strategy:** *Restrained*. Tinted neutrals plus one deep ink accent ≤5% of surface.
 
-All colors expressed in OKLCH. No `#000`. No `#fff`. Every neutral is tinted toward the cool axis (250°) for paper/ink coherence — neutral cool, never warm/cream.
+**Owner intent overrides skill defaults.** The brand is white, black, gray, with DIF-blue as the single accent. No cream, no tint. Neutrals are true neutral.
 
 ### Tokens
 
-| Token | OKLCH | Use |
+| Token | Value | Use |
 |---|---|---|
-| `--paper` | `oklch(0.985 0.002 250)` | Page background. Cool near-white — neutral, no cream. |
-| `--paper-dim` | `oklch(0.96 0.003 250)` | Recessed surfaces (sections, soft contrast bands). |
-| `--ink` | `oklch(0.16 0.008 250)` | Primary text, primary surfaces in inverse. Cool near-black. |
-| `--ink-soft` | `oklch(0.32 0.006 250)` | Secondary text. |
-| `--graphite-300` | `oklch(0.80 0.005 250)` | Hairline borders, dividers. |
-| `--graphite-500` | `oklch(0.56 0.006 250)` | Tertiary text, captions. |
-| `--graphite-700` | `oklch(0.40 0.007 250)` | Strong borders, secondary fills on inverse. |
-| `--accent` | `oklch(0.42 0.060 248)` | Restrained cool-blue accent. Hover, focus rings, single emphasis per page. |
-| `--accent-soft` | `oklch(0.94 0.018 248)` | Selection background only. |
+| `--paper` | `#ffffff` | Page background. Pure white. |
+| `--paper-dim` | `#f4f4f5` | Recessed surfaces, sections, soft contrast bands. Pure light gray. |
+| `--ink` | `#0f1012` | Primary text and primary surfaces in inverse. Near-black. |
+| `--ink-soft` | `#3a3b3f` | Secondary text. |
+| `--graphite-300` | `#d1d1d3` | Hairline borders, dividers. |
+| `--graphite-500` | `#8a8a8d` | Tertiary text, captions. |
+| `--graphite-700` | `#58585c` | Strong borders, inverse fills. |
+| `--accent` | `oklch(0.42 0.110 248)` | DIF blue. Hover, focus, single emphasis per page. ≤5% of any surface. |
+| `--accent-soft` | `oklch(0.94 0.025 248)` | Selection background only. |
 
 ### Schedule class-family colors
 

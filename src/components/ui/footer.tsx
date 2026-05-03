@@ -22,7 +22,7 @@ export default function Footer() {
             <Link href="/" className="inline-flex items-center gap-3">
               <img src="/dif.png" alt="" width={48} height={48} className="w-12 h-12 object-contain" />
               <span className="font-display text-[1.25rem] tracking-[-0.02em] leading-none">
-                Kampsport<span className="opacity-60">·</span>stadion
+                Kampsportstadion
               </span>
             </Link>
             <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-ink-soft">

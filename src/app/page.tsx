@@ -107,15 +107,6 @@ export default function Home() {
               {/* Subtle inset border for editorial frame */}
               <div className="absolute inset-0 ring-1 ring-inset ring-ink/10 pointer-events-none" />
 
-              {/* Caption — bottom-left */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 w-900:p-8 flex items-end justify-between gap-6 bg-gradient-to-t from-ink/80 to-transparent">
-                <p className="text-[12px] text-paper/85 tabular tracking-[0.04em] max-w-xs leading-snug">
-                  Tävlingsgruppen, tisdag kväll. Foto från salen, Stockholm Stadion.
-                </p>
-                <p className="text-[10px] text-paper/60 uppercase tracking-[0.2em]">
-                  KS · 01
-                </p>
-              </div>
             </div>
           </div>
         </section>
@@ -170,7 +161,7 @@ export default function Home() {
               <div className="max-w-xl">
                 <Eyebrow>Träningsutbud</Eyebrow>
                 <Heading size="lg" level={2} className="mt-4">
-                  Sex spår,<br />en mattyta.
+                  Från Kampsportlek<br />till tävlingselit.
                 </Heading>
               </div>
               <Button href="/klasser" variant="link">

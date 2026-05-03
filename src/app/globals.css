@@ -115,6 +115,10 @@ button:focus-visible,
 @media (min-width: 900px)  { .edge { padding-left: 4rem;    padding-right: 4rem; } }
 @media (min-width: 1280px) { .edge { padding-left: 5rem;    padding-right: 5rem; } }
 
+/* Hide scrollbar on horizontal scrollers (mobile day-tab strip) */
+.scrollbar-hide { scrollbar-width: none; -ms-overflow-style: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
 /* Reduced motion — clamp everything */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

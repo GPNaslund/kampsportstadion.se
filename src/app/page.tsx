@@ -1,153 +1,269 @@
-import MobileNavbar from "@/components/navbar/mobile_navbar";
-import BlackButton from "@/components/black_button/black_button";
-import ImageGrid from "@/components/image_grid/image_grid";
-import Footer from "@/components/footer/footer";
+import Link from 'next/link';
+import Container from '@/components/ui/container';
+import Section from '@/components/ui/section';
+import Heading from '@/components/ui/heading';
+import Eyebrow from '@/components/ui/eyebrow';
+import Button from '@/components/ui/button';
+import Divider from '@/components/ui/divider';
+import Navbar from '@/components/ui/navbar';
+import Footer from '@/components/ui/footer';
+import Schedule from '@/components/schedule/schedule';
+
+const CLASS_FAMILIES = [
+  {
+    family: 'Thaiboxning',
+    short: 'Slag, spark, armbåge, knän, clinch.',
+    levels: 'Steg 1 · Steg 2 · Tävling · Ungdom · Barn',
+    color: 'bg-cls-thai',
+  },
+  {
+    family: 'BJJ',
+    short: 'Brasiliansk Jiu-Jitsu. Markkamp, kontroll, submissions.',
+    levels: 'Steg 1 · Steg 2 · Mixgrupp · Sparring · Barn',
+    color: 'bg-cls-bjj',
+  },
+  {
+    family: 'MMA · SW',
+    short: 'Mixed Martial Arts. Stående, mark, sparring.',
+    levels: 'Steg 1 & 2 · Tävling · Mixgrupp',
+    color: 'bg-cls-mma',
+  },
+  {
+    family: 'Kampsportsfys',
+    short: 'Funktionell styrka med kampsportsmoment. Inga förkunskaper krävs.',
+    levels: 'Mor­gon · Lunch · Kväll',
+    color: 'bg-cls-fys',
+  },
+  {
+    family: 'Barngrupp',
+    short: 'Kampsportlek 4–6 år, Thaiboxning 7–12 år, BJJ 7–11 år.',
+    levels: 'Måndag–söndag',
+    color: 'bg-cls-barn',
+  },
+  {
+    family: 'NPF-grupp',
+    short: 'Anpassad träning för barn och unga med NPF-diagnoser.',
+    levels: 'Söndagsmorgon',
+    color: 'bg-cls-npf',
+  },
+];
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen min-w-screen flex-col items-center justify-between bg-white text-gray-800">
-      <MobileNavbar forWhiteBg={false} />
-      <div className="w-full">
-        <div className="w-full flex flex-col items-center justify-center relative">
-          {/* This container now lets the image define its height, fixing the crop issue */}
-          <div className="w-full relative flex flex-col items-center justify-center">
-            {/* Responsive background images using original paths and styling */}
-            <img
-              alt="Thaiboxing background"
-              src="/bg-sm.jpg"
-              style={{ width: "100%", height: "auto", objectFit: "cover" }}
-              className="w-625:hidden"
-            />
-            <img
-              alt="Thaiboxing background"
-              src="/bg-md.jpg"
-              style={{ width: "100%", height: "auto", objectFit: "cover" }}
-              className="hidden w-625:block w-900:hidden"
-            />
-            <img
-              alt="Thaiboxing background"
-              src="/bg-lg.jpg"
-               style={{ width: "100%", height: "auto", objectFit: "cover" }}
-              className="hidden w-900:block"
-            />
-            {/* Overlays for text readability */}
-            <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-            <div className="absolute bottom-0 left-0 w-full h-[40%] bg-gradient-to-t from-white to-transparent"></div>
-
-            {/* Centered hero content container - Adjusted to be higher */}
-            <div className="absolute inset-0 flex flex-col items-center justify-start pt-32 md:pt-40 px-4 text-center">
-
-
-              <div>
-                <h2 className="text-white text-4xl md:text-7xl font-bold">
-                  KAMPSPORT <br />
-                  FÖR ALLA
-                </h2>
-                <p className="text-white text-lg md:text-2xl px-4 md:px-12 mt-4 max-w-3xl mx-auto">
-                  Välkommen till DIF Kampsportsförening. Vi är en ideell
-                  idrottsförening som brinner för kampsport för både stora och
-                  små, erfarna som nybörjare.
-                </p>
-              </div>
-
-
-              {/* --- START: Restyled Free Trial Announcement Box --- */}
-              <div className="bg-black bg-opacity-50 backdrop-blur-sm text-white p-4 rounded-lg shadow-xl mt-8 w-11/12 max-w-md border border-gray-700">
-                <h3 className="text-xl md:text-2xl font-bold">
-                  Prova på Gratis!
-                </h3>
-                <p className="text-base md:text-lg mt-1 text-gray-200">
-                  Just nu bjuder vi på en gratis provträning. Maila oss för att boka din plats!
-                </p>
-                <div>
-                  <a
-                    href="mailto:info@kampsportstadion.se"
-                    className="font-semibold underline hover:text-white mt-2 inline-block"
+    <>
+      <Navbar overImage />
+      <main>
+        {/* ─────────────────────────────────  Hero */}
+        <section className="relative">
+          <div className="relative w-full">
+            <picture>
+              <source media="(min-width: 900px)" srcSet="/bg-lg.jpg" />
+              <source media="(min-width: 625px)" srcSet="/bg-md.jpg" />
+              <img
+                src="/bg-sm.jpg"
+                alt=""
+                className="w-full h-[80vh] min-h-[560px] max-h-[820px] object-cover"
+              />
+            </picture>
+            {/* Bottom paper fade so the page transitions cleanly */}
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-paper to-transparent pointer-events-none" />
+            {/* Subtle bottom-left text — newspaper-page feel, not SaaS-overlay */}
+            <div className="absolute inset-x-0 bottom-0">
+              <Container variant="wide">
+                <div className="pb-10 w-900:pb-16 max-w-3xl">
+                  <p className="eyebrow text-paper/80 mb-4">
+                    Djurgårdens IF Kampsport · Stockholm Stadion sedan 1912
+                  </p>
+                  <h1
+                    className="font-display font-semibold text-paper text-[2.5rem] w-625:text-[3.25rem] w-900:text-[5rem] leading-[0.95] tracking-[-0.03em]"
+                    style={{ fontVariationSettings: '"opsz" 144, "SOFT" 0' }}
                   >
-                    info@kampsportstadion.se
-                  </a>
+                    Kampsport <br />för alla.
+                  </h1>
+                  <p className="mt-6 max-w-xl text-[16px] w-900:text-[19px] text-paper/85 leading-relaxed">
+                    En ideell idrottsförening som brinner för kampsport, för
+                    både stora och små, erfarna som nybörjare. På Stockholm
+                    Stadion, mitt i staden.
+                  </p>
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    <Button href="/schema" variant="primary" size="lg">
+                      Se schema
+                    </Button>
+                    <Button
+                      href="mailto:info@kampsportstadion.se"
+                      variant="ghost"
+                      size="lg"
+                      className="bg-paper/0 text-paper border-paper/40 hover:bg-paper hover:text-ink hover:border-paper"
+                    >
+                      Boka prova på
+                    </Button>
+                  </div>
                 </div>
-                <div>
-                  <a
-                    href="https://www.kampsportstadion.se/schema"
-                    className="font-semibold underline hover:text-white mt-2 inline-block"
-                  >
-                    Se schema här
-                  </a>
-                </div>
-              </div>
-              {/* --- END: Restyled Free Trial Announcement Box --- */}
+              </Container>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Main content section */}
-        <div className="w-full flex flex-col px-6 md:px-10 items-center md:px-40 mt-20">
-          <h2 className="text-center text-3xl md:text-4xl font-bold">
-            Kampsport på Stockholm Stadion
-          </h2>
-          <p className="text-center text-lg md:text-2xl mt-4 max-w-4xl">
-            I fina lokaler inne på Stockholm Stadion hittar du Kampsportstadion.
-            Med en 400 kvm stor sal och fantastiska tränare kan vi erbjuda
-            kampsport för alla. Som medlem hos oss kan du köra alla pass på
-            schemat och du har fri tillgång till gymmet 06.30-20.00 vardagar och
-            09.00-13.00 på helgen.
-          </p>
-          <p className="text-center text-lg md:text-2xl mt-2 max-w-4xl">
-            Vi har klasser i{" "}
-            <span className="font-bold">
-              Kampsportfys, Cirkelträning, Muay Thai, MMA, Barnträning, Yoga och
-              BJJ.
-            </span>
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-6">
-            <BlackButton text="Se alla klasser" href="/klasser" />
-            <BlackButton text="Medlemskap" href="/medlemskap" />
-            <BlackButton text="Online coachning" href="https://kampsportstadion-online.se/"/>
-          </div>
-        </div>
+        {/* ─────────────────────────────────  Intro / about */}
+        <Section pad="marquee">
+          <Container variant="wide">
+            <div className="grid w-900:grid-cols-12 gap-10 w-900:gap-16">
+              <div className="w-900:col-span-7">
+                <Eyebrow>Om Kampsportstadion</Eyebrow>
+                <Heading size="lg" level={2} className="mt-4 max-w-2xl">
+                  Kampsport på Stockholm Stadion.
+                </Heading>
+                <p className="mt-6 text-[17px] w-900:text-[20px] leading-relaxed text-ink-soft max-w-prose">
+                  I fina lokaler inne på Stockholm Stadion hittar du
+                  Kampsportstadion. Med en 400 kvm stor sal och fantastiska
+                  tränare kan vi erbjuda kampsport för alla. Som medlem hos oss
+                  kan du köra alla pass på schemat och du har fri tillgång
+                  till gymmet 06.30–20.00 vardagar och 09.00–13.00 på helgen.
+                </p>
+                <p className="mt-4 text-[17px] w-900:text-[20px] leading-relaxed text-ink-soft max-w-prose">
+                  Vi har klasser i{' '}
+                  <span className="text-ink font-medium">
+                    Kampsportfys, Cirkelträning, Muay Thai, MMA, Barnträning,
+                    Yoga och BJJ.
+                  </span>
+                </p>
+                <div className="mt-10 flex flex-wrap gap-3">
+                  <Button href="/klasser" variant="primary" size="md">Se alla klasser</Button>
+                  <Button href="/medlemskap" variant="ghost" size="md">Medlemskap</Button>
+                  <Button href="https://kampsportstadion-online.se/" external variant="link">Online coachning →</Button>
+                </div>
+              </div>
 
-        {/* Schedule Section */}
-        <div id="schema" className="w-full flex flex-col items-center mt-20 md:mt-40 px-6">
-          <h2 className="text-center text-3xl md:text-4xl font-bold">
-            Schema
-          </h2>
-          <p className="px-5 text-center text-lg md:text-xl">
-            Gäller från v2
-          </p>
-          <div className="flex flex-col w-full items-center mt-6">
-            {/* Adjusted schema image width to be larger */}
-            <img
-              src="/schema-vt26.jpg"
-              className="w-full md:w-11/12 lg:w-4/5 h-auto"
-              alt="schema"
-            />
-            <a
-              href="/schema-vt26.jpg"
-              download
-              className="text-lg md:text-xl underline mt-4"
-            >
-              Ladda ner schema
-            </a>
-            <p className="px-5 text-center text-lg md:text-xl mt-4">
-              Inga pass under skollov för barngrupperna!
-            </p>
-          </div>
-        </div>
+              <aside className="w-900:col-span-5 w-900:pl-10 w-900:border-l w-900:border-graphite-300 flex flex-col gap-8">
+                <Stat label="Grundat" value="1912" sub="Stockholm Stadion" />
+                <Divider />
+                <Stat label="Salyta" value="400 m²" sub="dedikerad mattyta" />
+                <Divider />
+                <Stat label="Åldersspann" value="4 → 60+" sub="från Kampsportlek till tävlingselit" />
+                <Divider />
+                <Stat label="Pass / vecka" value="40+" sub="Thai · BJJ · MMA · SW · Fys · NPF" />
+              </aside>
+            </div>
+          </Container>
+        </Section>
 
-        {/* Image Grid Section */}
-        <div className="w-full mt-20 md:mt-40">
-          <ImageGrid
-            srcs={[
-              "./grid_image1.jpg",
-              "./grid_image2.jpg",
-              "./grid_image3.jpg",
-              "./grid_image4.jpg",
-            ]}
-          />
-        </div>
-      </div>
+        {/* ─────────────────────────────────  Class families */}
+        <Section pad="marquee" className="bg-paper-dim border-y border-graphite-300">
+          <Container variant="wide">
+            <div className="flex flex-col w-900:flex-row w-900:items-end w-900:justify-between gap-6 mb-12">
+              <div className="max-w-xl">
+                <Eyebrow>Träningsutbud</Eyebrow>
+                <Heading size="lg" level={2} className="mt-4">
+                  Sex spår,<br />en mattyta.
+                </Heading>
+              </div>
+              <Button href="/klasser" variant="link">
+                Alla klasser med detaljer →
+              </Button>
+            </div>
+
+            <ul className="border-t border-graphite-300">
+              {CLASS_FAMILIES.map((c, i) => (
+                <li
+                  key={c.family}
+                  className="group border-b border-graphite-300 grid w-900:grid-cols-12 gap-3 w-900:gap-6 items-baseline py-6 w-900:py-8 transition-colors hover:bg-paper"
+                >
+                  <span className="w-900:col-span-1 tabular text-[12px] text-graphite-500 flex items-center gap-2">
+                    <span className={`block w-2.5 h-2.5 ${c.color}`} aria-hidden="true" />
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <h3 className="w-900:col-span-3 font-display text-[1.6rem] w-900:text-[2.1rem] tracking-[-0.025em] leading-[1.05]">
+                    {c.family}
+                  </h3>
+                  <p className="w-900:col-span-5 text-[15px] w-900:text-[16px] text-ink-soft leading-relaxed">
+                    {c.short}
+                  </p>
+                  <p className="w-900:col-span-3 text-[12.5px] text-graphite-500 tabular leading-snug">
+                    {c.levels}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </Section>
+
+        {/* ─────────────────────────────────  Schedule preview */}
+        <Section pad="marquee" id="schema">
+          <Container variant="wide">
+            <div className="flex flex-col w-900:flex-row w-900:items-end w-900:justify-between gap-6 mb-10">
+              <div>
+                <Eyebrow>Veckoschema</Eyebrow>
+                <Heading size="lg" level={2} className="mt-4">
+                  Varje pass, varje dag.
+                </Heading>
+              </div>
+              <Button href="/schema" variant="link">
+                Öppna fullt schema →
+              </Button>
+            </div>
+            <Schedule />
+          </Container>
+        </Section>
+
+        {/* ─────────────────────────────────  Image grid */}
+        <Section pad="default" className="bg-paper-dim border-t border-graphite-300">
+          <Container variant="wide">
+            <div className="grid grid-cols-2 w-900:grid-cols-4 gap-3 w-900:gap-4">
+              {[1, 2, 3, 4].map((n) => (
+                <figure key={n} className="aspect-[4/5] overflow-hidden bg-paper">
+                  <img
+                    src={`/grid_image${n}.jpg`}
+                    alt=""
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out-quint hover:scale-[1.04]"
+                  />
+                </figure>
+              ))}
+            </div>
+          </Container>
+        </Section>
+
+        {/* ─────────────────────────────────  Closing CTA */}
+        <Section pad="marquee">
+          <Container variant="wide">
+            <div className="border border-ink p-10 w-900:p-16 grid w-900:grid-cols-12 gap-8 items-center">
+              <div className="w-900:col-span-8">
+                <Eyebrow>Prova på, gratis</Eyebrow>
+                <Heading size="lg" level={2} className="mt-3">
+                  Kom in och kör ett pass.<br />Vi bjuder.
+                </Heading>
+                <p className="mt-5 max-w-prose text-[16px] text-ink-soft leading-relaxed">
+                  Skriv en rad så bokar vi in dig på ett pass som passar din
+                  nivå. Ingen utrustning behövs första gången.
+                </p>
+              </div>
+              <div className="w-900:col-span-4 flex flex-col gap-3 w-900:items-end">
+                <Button href="mailto:info@kampsportstadion.se" variant="primary" size="lg">
+                  info@kampsportstadion.se
+                </Button>
+                <Button href="tel:0766082803" variant="link">
+                  076-608 28 03
+                </Button>
+              </div>
+            </div>
+          </Container>
+        </Section>
+      </main>
       <Footer />
-    </main>
+    </>
+  );
+}
+
+function Stat({ label, value, sub }: { label: string; value: string; sub: string }) {
+  return (
+    <div>
+      <p className="eyebrow">{label}</p>
+      <p
+        className="font-display text-[2.5rem] w-900:text-[3.5rem] tracking-[-0.03em] leading-none mt-2 tabular"
+        style={{ fontVariationSettings: '"opsz" 144, "SOFT" 0' }}
+      >
+        {value}
+      </p>
+      <p className="mt-2 text-[14px] text-ink-soft">{sub}</p>
+    </div>
   );
 }

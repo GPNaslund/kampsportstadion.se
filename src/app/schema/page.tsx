@@ -1,49 +1,44 @@
-import MobileNavbar from "@/components/navbar/mobile_navbar";
+import Container from '@/components/ui/container';
+import Footer from '@/components/ui/footer';
+import Heading from '@/components/ui/heading';
+import Eyebrow from '@/components/ui/eyebrow';
+import Navbar from '@/components/ui/navbar';
+import Section from '@/components/ui/section';
+import Schedule from '@/components/schedule/schedule';
+
+export const metadata = {
+  title: 'Schema — Kampsportstadion',
+  description:
+    'Veckoschema för Kampsportstadion på Stockholm Stadion. Thaiboxning, BJJ, MMA, kampsportsfys och barngrupper.',
+};
 
 export default function SchemaPage() {
   return (
-    <main className="flex min-h-screen min-w-screen flex-col items-center">
-      <MobileNavbar forWhiteBg={true} />
-      <div className="w-full">
-        <div className="w-full h-full flex flex-col mt-32 items-center">
-          <h2 className="text-center text-4xl font-bold">SCHEMA</h2>
-          <p className="px-5 mb-5 text-center text-xl w-900:text-2xl">
-            Gäller från v2
-          </p>
-          <img
-            src="/schema-vt26.jpg"
-            className="w-900:hidden"
-            alt="schema"
-            style={{
-              width: "80%",
-              height: "auto",
-            }}
-          />
-          <img
-            src="/schema-vt26.jpg"
-            className="hidden w-900:block"
-            alt="schema"
-            style={{
-              width: "80%",
-              height: "auto",
-            }}
-          />
-          <a
-            href="/schema-vt26.jpg"
-            download="/schema-vt26.jpg"
-            className="w-900:text-2xl underline"
-          >
-            Ladda ner schema
-          </a>
-          <p className="px-5 mt-10 text-center text-xl w-900:text-2xl">
-            Vid aktuell förändring på enstaka pass informeras medlemmen via
-            GymControl och e-mail!
-          </p>
-          <p className="px-5 text-center text-xl w-900:text-2xl">
-            Inga pass under skollov för barngrupperna!
-          </p>
-        </div>
-      </div>
-    </main>
+    <>
+      <Navbar />
+      <main className="pt-24 w-900:pt-32">
+        <Section pad="tight">
+          <Container variant="wide">
+            <div className="max-w-prose">
+              <Eyebrow>Veckoschema</Eyebrow>
+              <Heading level={1} size="xl" className="mt-3">
+                Schema
+              </Heading>
+              <p className="mt-5 text-[17px] w-900:text-[19px] leading-relaxed text-ink-soft">
+                Hela veckans pass i en vy. Filtrera efter klass, hoppa till en
+                viss dag, eller ladda ner schemat som bild att dela vidare.
+              </p>
+            </div>
+          </Container>
+        </Section>
+
+        <Section pad="default" className="border-t border-graphite-300">
+          <Container variant="wide">
+            <Schedule />
+          </Container>
+        </Section>
+      </main>
+      <Footer />
+    </>
   );
 }

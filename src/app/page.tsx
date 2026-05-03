@@ -229,31 +229,37 @@ export default function Home() {
           </Container>
         </Section>
 
-        {/* ─────────────────────────────────  Closing CTA */}
-        <Section pad="marquee">
+        {/* ─────────────────────────────────  Closing CTA (inverted band) */}
+        <section className="bg-ink-deep text-paper">
           <Container variant="wide">
-            <div className="border border-ink p-10 w-900:p-16 grid w-900:grid-cols-12 gap-8 items-center">
+            <div className="py-20 w-900:py-32 grid w-900:grid-cols-12 gap-8 items-center">
               <div className="w-900:col-span-8">
-                <Eyebrow>Prova på, gratis</Eyebrow>
-                <Heading size="lg" level={2} className="mt-3">
+                <p className="eyebrow text-paper/55">Prova på, gratis</p>
+                <h2 className="mt-4 font-display font-extrabold text-paper text-[2.25rem] w-625:text-[2.75rem] w-900:text-[3.75rem] leading-[1.0] tracking-[-0.04em]">
                   Kom in och kör ett pass.<br />Vi bjuder.
-                </Heading>
-                <p className="mt-5 max-w-prose text-[16px] text-ink-soft leading-relaxed">
+                </h2>
+                <p className="mt-6 max-w-prose text-[16px] w-900:text-[17px] text-paper/70 leading-relaxed">
                   Skriv en rad så bokar vi in dig på ett pass som passar din
                   nivå. Ingen utrustning behövs första gången.
                 </p>
               </div>
-              <div className="w-900:col-span-4 flex flex-col gap-3 w-900:items-end">
-                <Button href="mailto:info@kampsportstadion.se" variant="primary" size="lg">
+              <div className="w-900:col-span-4 flex flex-col gap-4 w-900:items-end">
+                <a
+                  href="mailto:info@kampsportstadion.se"
+                  className="inline-flex items-center justify-center h-14 w-900:h-16 px-7 w-900:px-9 text-base w-900:text-lg font-medium rounded-full bg-paper text-ink hover:bg-accent hover:text-paper transition-colors duration-200 ease-out-quint"
+                >
                   info@kampsportstadion.se
-                </Button>
-                <Button href="tel:0766082803" variant="link">
+                </a>
+                <a
+                  href="tel:0766082803"
+                  className="text-paper underline underline-offset-4 decoration-paper/30 hover:decoration-accent hover:text-accent tabular transition-colors"
+                >
                   076-608 28 03
-                </Button>
+                </a>
               </div>
             </div>
           </Container>
-        </Section>
+        </section>
       </main>
       <Footer />
     </>

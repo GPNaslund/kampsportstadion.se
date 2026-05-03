@@ -13,8 +13,9 @@ The visual system. Tokens, type, spacing, motion. Update this file when tokens c
 | Token | Value | Use |
 |---|---|---|
 | `--paper` | `#ffffff` | Page background. Pure white. |
-| `--paper-dim` | `#f4f4f5` | Recessed surfaces, sections, soft contrast bands. Pure light gray. |
+| `--paper-dim` | `#ebebec` | Recessed surfaces, soft contrast bands. Clearly light gray, never cream. |
 | `--ink` | `#0f1012` | Primary text and primary surfaces in inverse. Near-black. |
+| `--ink-deep` | `#08090a` | Inverted dark bands (footer, closing CTA) — read as "true black" against paper. |
 | `--ink-soft` | `#3a3b3f` | Secondary text. |
 | `--graphite-300` | `#d1d1d3` | Hairline borders, dividers. |
 | `--graphite-500` | `#8a8a8d` | Tertiary text, captions. |

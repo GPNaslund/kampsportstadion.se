@@ -11,6 +11,7 @@ module.exports = {
         paper:   'var(--paper)',
         'paper-dim': 'var(--paper-dim)',
         ink:     'var(--ink)',
+        'ink-deep': 'var(--ink-deep)',
         'ink-soft': 'var(--ink-soft)',
         graphite: {
           100: 'var(--graphite-100)',

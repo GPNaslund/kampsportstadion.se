@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 
 const PRIMARY = [
+  { href: '/', label: 'Hem' },
   { href: '/klasser', label: 'Klasser' },
   { href: '/schema', label: 'Schema' },
   { href: '/medlemskap', label: 'Medlemskap' },
@@ -15,10 +16,9 @@ const SECONDARY = [
   { href: '/foretag', label: 'Företag' },
   { href: '/sociala-projekt', label: 'Sociala projekt' },
   { href: '/kontakt', label: 'Kontakt' },
-  { href: 'https://kampsportstadion-online.se/', label: 'Online coachning', external: true },
 ];
 
-const ALL = [{ href: '/', label: 'Hem' }, ...PRIMARY, ...SECONDARY];
+const ALL = [...PRIMARY, ...SECONDARY];
 
 const MEMBERSHIP_URL =
   'https://www.gymcontrol.se/global/webshop/index.php?uid=8975&action=home';
@@ -58,13 +58,17 @@ export default function Navbar({ overImage = false }: { overImage?: boolean }) {
       <header
         className={`fixed top-0 left-0 right-0 z-40 border-b transition-colors duration-300 ease-out-quint ${surface}`}
       >
-        <div className="max-w-wide mx-auto edge h-16 w-900:h-20 flex items-center justify-between gap-6">
+        <div className="max-w-wide mx-auto edge h-20 w-900:h-24 flex items-center justify-between gap-6">
           {/* Wordmark */}
-          <Link href="/" className={`flex items-center gap-3 ${inkColor} transition-colors`} aria-label="Kampsportstadion — startsida">
-            <img src="/dif.png" alt="" width={36} height={36} className="w-9 h-9 w-900:w-10 w-900:h-10 object-contain" />
-            <span className="font-display text-[1.05rem] w-900:text-[1.2rem] tracking-[-0.02em] leading-none">
-              Kampsportstadion
-            </span>
+          <Link href="/" className={`flex items-center gap-3 w-900:gap-4 ${inkColor} transition-colors`} aria-label="Kampsportstadion — startsida">
+            <img src="/dif.png" alt="" width={56} height={56} className="w-12 h-12 w-900:w-14 w-900:h-14 object-contain" />
+            <img
+              src={overImage && !scrolled ? '/ks-logo-vector-white.svg' : '/ks-logo-vector.svg'}
+              alt="Kampsportstadion"
+              width={386}
+              height={208}
+              className="h-12 w-900:h-14 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -130,15 +134,19 @@ export default function Navbar({ overImage = false }: { overImage?: boolean }) {
           tabIndex={open ? 0 : -1}
         />
         <div
-          className={`absolute top-0 right-0 left-0 bg-paper border-b border-graphite-300 shadow-[0_30px_80px_-30px_rgba(20,24,40,0.25)] transition-transform duration-500 ease-out-quint ${open ? 'translate-y-0' : '-translate-y-full'}`}
+          className={`absolute top-0 right-0 left-0 bg-paper border-b border-graphite-300 shadow-[0_30px_80px_-30px_rgba(15,16,18,0.30)] transition-transform duration-500 ease-out-quint ${open ? 'translate-y-0' : '-translate-y-full'}`}
         >
           <div className="max-w-wide mx-auto edge pt-6 pb-10 w-900:pt-8 w-900:pb-16">
-            <div className="flex items-center justify-between h-12">
+            <div className="flex items-center justify-between h-14">
               <Link href="/" className="flex items-center gap-3 text-ink">
-                <img src="/dif.png" alt="" width={36} height={36} className="w-9 h-9 object-contain" />
-                <span className="font-display text-[1.1rem] tracking-[-0.02em] leading-none">
-                  Kampsportstadion
-                </span>
+                <img src="/dif.png" alt="" width={56} height={56} className="w-12 h-12 object-contain" />
+                <img
+                  src="/ks-logo-vector.svg"
+                  alt="Kampsportstadion"
+                  width={386}
+                  height={208}
+                  className="h-11 w-auto object-contain"
+                />
               </Link>
               <button
                 onClick={() => setOpen(false)}

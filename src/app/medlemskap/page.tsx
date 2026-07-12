@@ -57,7 +57,7 @@ export default function MembershipPage() {
           </Container>
         </Section>
 
-        <Section pad="marquee" className="bg-paper-dim border-t border-graphite-300">
+        <Section pad="marquee" className="border-t border-graphite-300">
           <Container variant="wide">
             <div className="grid w-900:grid-cols-12 gap-10 w-900:gap-16">
               <div className="w-900:col-span-4">
@@ -116,7 +116,7 @@ function PlanCard({ plan }: { plan: MembershipPlan }) {
   return (
     <article className={`relative h-full p-6 w-900:p-7 flex flex-col ${accent ? 'bg-ink text-paper' : ''}`}>
       {accent && (
-        <span className="eyebrow mb-3 text-paper/70">Mest valda</span>
+        <span className="eyebrow mb-3 text-paper/85">Mest valda</span>
       )}
       <h3 className={`font-display text-[1.4rem] w-900:text-[1.6rem] leading-[1.1] tracking-[-0.02em] ${accent ? 'text-paper' : 'text-ink'}`}>
         {plan.title}
@@ -128,7 +128,7 @@ function PlanCard({ plan }: { plan: MembershipPlan }) {
             <span className={`font-display text-[1.65rem] leading-none ${accent ? 'text-paper' : 'text-ink'}`}>
               {p.amount}
             </span>
-            <span className={`text-[12.5px] ${accent ? 'text-paper/70' : 'text-ink-soft'}`}>
+            <span className={`text-[12.5px] ${accent ? 'text-paper/85' : 'text-ink-soft'}`}>
               {p.cadence}
             </span>
           </p>
@@ -136,7 +136,7 @@ function PlanCard({ plan }: { plan: MembershipPlan }) {
       </div>
 
       {plan.body.length > 0 && (
-        <ul className={`mt-6 space-y-2 text-[13.5px] leading-relaxed ${accent ? 'text-paper/80' : 'text-ink-soft'}`}>
+        <ul className={`mt-6 space-y-2 text-[13.5px] leading-relaxed ${accent ? 'text-paper/90' : 'text-ink-soft'}`}>
           {plan.body.map((b, i) => (
             <li key={i}>{b}</li>
           ))}

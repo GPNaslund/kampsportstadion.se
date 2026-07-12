@@ -20,7 +20,7 @@ export default function ClassesPage() {
         <PageHeader
           eyebrow="Träningsutbud"
           title="Klasser"
-          description="Vi har klasser för Barn 7–9 år & 9–12 år, ungdomar 13–16 år, nybörjare, fortsättning & avancerad."
+          description="Vi har klasser för Barn 4–6 år, 7–9 år & 9–12 år, ungdomar 13–16 år, nybörjare, fortsättning & avancerad."
         />
 
         <Section pad="default" className="border-t border-graphite-300">

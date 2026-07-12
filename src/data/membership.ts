@@ -41,16 +41,6 @@ export const MEMBERSHIP_PLANS: MembershipPlan[] = [
   },
   {
     group: 'voksen',
-    title: 'Guld Medlemskap',
-    prices: [{ amount: '1 499:-', cadence: '/månad autogiro' }],
-    body: [
-      'Träna så mycket du vill. Välj bland alla pass. Tillgång till gymmet.',
-      'Medlemskapet inkluderar även en 50 min behandling hos Proaktiv Idrottscenter varje månad. Behandlingen måste nyttjas månaden dragningen gäller och kan inte sparas.',
-      '6 månaders bindningstid.',
-    ],
-  },
-  {
-    group: 'voksen',
     title: 'Halvår',
     prices: [{ amount: '5 400:-', cadence: '/halvår swish eller kort' }],
     body: ['6 månaders bindningstid.'],

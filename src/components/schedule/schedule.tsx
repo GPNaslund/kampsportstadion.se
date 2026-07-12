@@ -49,6 +49,18 @@ export default function Schedule() {
 
   const byDay = useMemo(() => sessionsByDay(SCHEDULE), []);
   const printableRef = useRef<HTMLDivElement>(null);
+  const dayStripRef = useRef<HTMLDivElement>(null);
+  const dayTabRefs = useRef<Partial<Record<Day, HTMLButtonElement | null>>>({});
+
+  useEffect(() => {
+    const tab = dayTabRefs.current[activeDay];
+    const strip = dayStripRef.current;
+    if (!tab || !strip) return;
+    const stripRect = strip.getBoundingClientRect();
+    const tabRect = tab.getBoundingClientRect();
+    const delta = (tabRect.left + tabRect.width / 2) - (stripRect.left + stripRect.width / 2);
+    strip.scrollBy({ left: delta, behavior: 'smooth' });
+  }, [activeDay]);
 
   const totalCount = SCHEDULE.length;
   const visibleCount = SCHEDULE.filter((s) => matchesFilter(s, filter)).length;
@@ -66,7 +78,7 @@ export default function Schedule() {
       const dataUrl = await toPng(node, {
         pixelRatio: 2,
         cacheBust: true,
-        backgroundColor: '#fbfaf6',
+        backgroundColor: '#ffffff',
       });
       const link = document.createElement('a');
       link.download = `kampsportstadion-schema-${SCHEDULE_META.validFrom.replace(/[^\w]+/g, '-').toLowerCase()}.png`;
@@ -154,12 +166,13 @@ export default function Schedule() {
 
       {/* MOBILE: day tabs + single-day list */}
       <div className="w-900:hidden">
-        <div className="flex gap-1.5 overflow-x-auto pb-3 -mx-6 px-6 scrollbar-hide" role="tablist" aria-label="Välj dag">
+        <div ref={dayStripRef} className="flex gap-1.5 overflow-x-auto pb-3 -mx-6 px-6 scrollbar-hide" role="tablist" aria-label="Välj dag">
           {DAY_ORDER.map((d) => {
             const active = d === activeDay;
             return (
               <button
                 key={d}
+                ref={(el) => { dayTabRefs.current[d] = el; }}
                 role="tab"
                 aria-selected={active}
                 onClick={() => setActiveDay(d)}

@@ -113,20 +113,6 @@ const kampsportsFys: WorkoutClass = {
   rawHtml: null
 };
 
-const bootcamp: WorkoutClass = {
-  header: "Bootcamp",
-  description: "En härlig blandning av fys, funktionell, box och styrketräning. Rolig och utmanande och alla kan vara med-inga förkunskaper krävs. Man behöver inte vara medlem för att delta!",
-  levels: [],
-  rawHtml: `Maila till <a href="mailto:info@kampsportstadion.se">info@kampsportstadion.se</a> och skriv Bootcamp för mera information!`
-};
-
-const onlineCoachning: WorkoutClass = {
-  header: "Online Coachning",
-  description: "Få tillgång till Kampsportstadions community direkt i en app där du får träningspass, veckoutmaningar, kost, inspiration & stöd. Du hittar även mat och träningsprogram, samt möjlighet finns för individuell coachning.",
-  levels: [],
-  rawHtml: `Besök <a href="https://kampsportstadion-online.se">kampsportstadion-online.se</a> för mer information.`
-};
-
 const dunkarDax: WorkoutClass = {
   header: "Dunkardax/Cirkelfys",
   description: "90 minuter cirkelträning med kampsport moment. Ett fyspass med högt tempo, styrka och flås! Passar för alla och inga förkunskaper krävs.",
@@ -177,8 +163,6 @@ const classes: WorkoutClass[] = [
   kampsportstadionUngdom,
   kampsportstadionBarngrupp,
   kampsportsFys,
-  bootcamp,
-  onlineCoachning,
   dunkarDax,
   gym,
   awAfterWork,

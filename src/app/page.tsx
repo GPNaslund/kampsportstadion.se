@@ -65,7 +65,7 @@ export default function Home() {
 
                 <div className="my-12 w-900:my-0">
                   <p className="eyebrow mb-6">Djurgårdens IF Kampsport</p>
-                  <h1 className="font-display font-black text-ink text-[3.25rem] w-625:text-[4rem] w-900:text-[5.25rem] leading-[0.92] tracking-[-0.05em] uppercase">
+                  <h1 className="font-display font-black text-ink text-[3.25rem] w-625:text-[4rem] w-900:text-[5.25rem] leading-[1.02] tracking-[-0.05em] uppercase">
                     Kampsport<br />
                     <span className="text-graphite-500">för</span> alla.
                   </h1>
@@ -93,20 +93,23 @@ export default function Home() {
               </Container>
             </div>
 
-            {/* Image panel */}
-            <div className="w-900:col-span-7 relative bg-ink min-h-[60vh] w-900:min-h-0">
-              <picture>
-                <source media="(min-width: 900px)" srcSet="/bg-lg.jpg" />
-                <source media="(min-width: 625px)" srcSet="/bg-md.jpg" />
+            {/* Logo panel */}
+            <div className="w-900:col-span-7 relative bg-paper min-h-[60vh] w-900:min-h-0 overflow-hidden border-t border-graphite-300 w-900:border-t-0 w-900:border-l">
+              <div className="absolute inset-0 flex items-center justify-center p-10">
                 <img
-                  src="/bg-sm.jpg"
-                  alt="Träning på Kampsportstadion"
-                  className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.05]"
+                  src="/ks-logo-vector.svg"
+                  alt="Kampsportstadion"
+                  className="w-full max-w-[420px] w-900:max-w-[560px] h-auto object-contain"
                 />
-              </picture>
-              {/* Subtle inset border for editorial frame */}
-              <div className="absolute inset-0 ring-1 ring-inset ring-ink/10 pointer-events-none" />
+              </div>
 
+              {/* Location caption */}
+              <div className="absolute left-6 bottom-6 w-900:left-10 w-900:bottom-10">
+                <span className="flex items-center gap-2 text-[11px] tabular uppercase tracking-[0.18em] text-graphite-500">
+                  <span className="block w-2 h-2 bg-accent" aria-hidden="true" />
+                  Stockholms Stadion · Est. 1912
+                </span>
+              </div>
             </div>
           </div>
         </section>
@@ -137,7 +140,6 @@ export default function Home() {
                 <div className="mt-10 flex flex-wrap gap-3">
                   <Button href="/klasser" variant="primary" size="md">Se alla klasser</Button>
                   <Button href="/medlemskap" variant="ghost" size="md">Medlemskap</Button>
-                  <Button href="https://kampsportstadion-online.se/" external variant="link">Online coachning →</Button>
                 </div>
               </div>
 
@@ -155,7 +157,7 @@ export default function Home() {
         </Section>
 
         {/* ─────────────────────────────────  Class families */}
-        <Section pad="marquee" className="bg-paper-dim border-y border-graphite-300">
+        <Section pad="marquee" className="border-y border-graphite-300">
           <Container variant="wide">
             <div className="flex flex-col w-900:flex-row w-900:items-end w-900:justify-between gap-6 mb-12">
               <div className="max-w-xl">
@@ -173,7 +175,7 @@ export default function Home() {
               {CLASS_FAMILIES.map((c, i) => (
                 <li
                   key={c.family}
-                  className="group border-b border-graphite-300 grid w-900:grid-cols-12 gap-3 w-900:gap-6 items-baseline py-6 w-900:py-8 transition-colors hover:bg-paper"
+                  className="group border-b border-graphite-300 grid w-900:grid-cols-12 gap-3 w-900:gap-6 items-baseline py-6 w-900:py-8"
                 >
                   <span className="w-900:col-span-1 tabular text-[12px] text-graphite-500 flex items-center gap-2">
                     <span className={`block w-2.5 h-2.5 ${c.color}`} aria-hidden="true" />
@@ -212,16 +214,16 @@ export default function Home() {
           </Container>
         </Section>
 
-        {/* ─────────────────────────────────  Image grid */}
-        <Section pad="default" className="bg-paper-dim border-t border-graphite-300">
+        {/* ─────────────────────────────────  Image grid (gym black band) */}
+        <Section pad="default" className="bg-ink-deep text-paper border-t border-ink-deep">
           <Container variant="wide">
-            <div className="grid grid-cols-2 w-900:grid-cols-4 gap-3 w-900:gap-4">
+            <div className="grid grid-cols-2 w-900:grid-cols-4 gap-px bg-graphite-500">
               {[1, 2, 3, 4].map((n) => (
-                <figure key={n} className="aspect-[4/5] overflow-hidden bg-ink">
+                <figure key={n} className="relative aspect-[4/5] overflow-hidden bg-ink-deep">
                   <img
                     src={`/grid_image${n}.jpg`}
                     alt=""
-                    className="w-full h-full object-cover grayscale transition-transform duration-700 ease-out-quint hover:scale-[1.04]"
+                    className="w-full h-full object-cover grayscale contrast-[1.1] transition-transform duration-700 ease-out-quint hover:scale-[1.04]"
                   />
                 </figure>
               ))}
@@ -234,11 +236,11 @@ export default function Home() {
           <Container variant="wide">
             <div className="py-20 w-900:py-32 grid w-900:grid-cols-12 gap-8 items-center">
               <div className="w-900:col-span-8">
-                <p className="eyebrow text-paper/55">Prova på, gratis</p>
+                <p className="eyebrow text-paper/85">Prova på, gratis</p>
                 <h2 className="mt-4 font-display font-extrabold text-paper text-[2.25rem] w-625:text-[2.75rem] w-900:text-[3.75rem] leading-[1.0] tracking-[-0.04em]">
                   Kom in och kör ett pass.<br />Vi bjuder.
                 </h2>
-                <p className="mt-6 max-w-prose text-[16px] w-900:text-[17px] text-paper/70 leading-relaxed">
+                <p className="mt-6 max-w-prose text-[16px] w-900:text-[17px] text-paper/85 leading-relaxed">
                   Skriv en rad så bokar vi in dig på ett pass som passar din
                   nivå. Ingen utrustning behövs första gången.
                 </p>
@@ -252,7 +254,7 @@ export default function Home() {
                 </a>
                 <a
                   href="tel:0766082803"
-                  className="text-paper underline underline-offset-4 decoration-paper/30 hover:decoration-accent hover:text-accent tabular transition-colors"
+                  className="text-paper underline underline-offset-4 decoration-paper/50 hover:decoration-accent hover:text-accent tabular transition-colors"
                 >
                   076-608 28 03
                 </a>

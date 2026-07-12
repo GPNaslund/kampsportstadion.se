@@ -19,13 +19,17 @@ export default function Footer() {
         <div className="grid w-900:grid-cols-12 gap-12">
           {/* Brand */}
           <div className="w-900:col-span-5">
-            <Link href="/" className="inline-flex items-center gap-3 text-paper">
-              <img src="/dif.png" alt="" width={48} height={48} className="w-12 h-12 object-contain" />
-              <span className="font-display font-extrabold text-[1.25rem] tracking-[-0.035em] leading-none uppercase">
-                Kampsportstadion
-              </span>
+            <Link href="/" className="inline-flex items-center gap-4 text-paper">
+              <img src="/dif.png" alt="" width={72} height={72} className="w-16 h-16 w-900:w-[72px] w-900:h-[72px] object-contain" />
+              <img
+                src="/ks-logo.svg"
+                alt="Kampsportstadion"
+                width={240}
+                height={129}
+                className="h-14 w-900:h-16 w-auto object-contain"
+              />
             </Link>
-            <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-paper/65">
+            <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-paper/85">
               En ideell idrottsförening i Djurgårdens IF. Kampsport för alla, från barngrupp till tävlingselit, på Stockholm Stadion sedan över ett decennium.
             </p>
             <div className="mt-6 flex items-center gap-3">
@@ -43,7 +47,7 @@ export default function Footer() {
 
           {/* Sitemap */}
           <div className="w-900:col-span-3">
-            <p className="eyebrow text-paper/50 mb-4">Sidor</p>
+            <p className="eyebrow text-paper/85 mb-4">Sidor</p>
             <ul className="space-y-2 text-[15px]">
               {NAV.map((l) => (
                 <li key={l.href}>
@@ -57,24 +61,24 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="w-900:col-span-4">
-            <p className="eyebrow text-paper/50 mb-4">Kontakt</p>
+            <p className="eyebrow text-paper/85 mb-4">Kontakt</p>
             <ul className="space-y-2 text-[15px]">
               <li><a className="text-paper hover:text-accent" href="mailto:info@kampsportstadion.se">info@kampsportstadion.se</a></li>
               <li><a className="text-paper hover:text-accent" href="tel:0766082803">076-608 28 03</a></li>
-              <li className="text-paper/65">Lidingövägen 1, 114 33 Stockholm</li>
+              <li className="text-paper/85">Lidingövägen 1, 114 33 Stockholm</li>
             </ul>
 
-            <p className="eyebrow text-paper/50 mt-8 mb-4">Öppettider</p>
-            <ul className="space-y-1 text-[14px] text-paper/65 tabular">
+            <p className="eyebrow text-paper/85 mt-8 mb-4">Öppettider</p>
+            <ul className="space-y-1 text-[14px] text-paper/85 tabular">
               <li className="flex gap-3"><span className="w-28">Mån–Tor</span><span>16.30 – 19.30</span></li>
               <li className="flex gap-3"><span className="w-28">Lördag</span><span>09.30 – 13.30</span></li>
               <li className="flex gap-3"><span className="w-28">Söndag</span><span>10.30 – 13.30</span></li>
-              <li className="text-paper/40 mt-1">Stängt röda dagar samt sommar och jul.</li>
+              <li className="text-paper/75 mt-1">Stängt röda dagar samt sommar och jul.</li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-16 pt-6 border-t border-paper/15 flex flex-col w-625:flex-row gap-3 w-625:justify-between text-[12px] text-paper/45 tabular">
+        <div className="mt-16 pt-6 border-t border-paper/30 flex flex-col w-625:flex-row gap-3 w-625:justify-between text-[12px] text-paper/75 tabular">
           <p>© {year} Djurgårdens IF Kampsport · Idrottsförening · Stockholm Stadion sedan 1912</p>
           <p>Org.nr · 802004-2426</p>
         </div>
@@ -90,7 +94,7 @@ function SocialIcon({ href, label, children }: { href: string; label: string; ch
       target="_blank"
       rel="noopener noreferrer"
       aria-label={label}
-      className="w-9 h-9 inline-flex items-center justify-center rounded-full border border-paper/25 text-paper hover:border-accent hover:text-accent transition-colors"
+      className="w-9 h-9 inline-flex items-center justify-center rounded-full border border-paper/35 text-paper hover:border-accent hover:text-accent transition-colors"
     >
       {children}
     </a>

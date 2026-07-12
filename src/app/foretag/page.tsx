@@ -62,7 +62,7 @@ export default function CompanyPage() {
           </Container>
         </Section>
 
-        <Section pad="marquee" className="bg-paper-dim border-t border-graphite-300">
+        <Section pad="marquee" className="border-t border-graphite-300">
           <Container variant="wide">
             <div className="grid w-900:grid-cols-12 gap-10">
               <div className="w-900:col-span-5">

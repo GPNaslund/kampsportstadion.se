@@ -2,13 +2,16 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
-  SCHEDULE,
-  SCHEDULE_META,
+  ACTIVE_TERM,
+  TERMS,
+  TERM_ORDER,
   DAY_ORDER,
   DAY_LABELS,
   FAMILY_LABELS,
   ClassFamily,
   Day,
+  Session,
+  TermId,
   sessionsByDay,
 } from '@/data/schedule';
 import ScheduleCard from './schedule-card';
@@ -17,29 +20,31 @@ import SchedulePrintable from './schedule-printable';
 
 type Filter = ClassFamily | 'all' | 'barn';
 
-const FILTERS: { value: Filter; label: string }[] = [
-  { value: 'all',  label: 'Alla' },
-  { value: 'thai', label: FAMILY_LABELS.thai },
-  { value: 'bjj',  label: FAMILY_LABELS.bjj },
-  { value: 'mma',  label: FAMILY_LABELS.mma },
-  { value: 'sw',   label: FAMILY_LABELS.sw },
-  { value: 'fys',  label: FAMILY_LABELS.fys },
-  { value: 'npf',  label: FAMILY_LABELS.npf },
-  { value: 'barn', label: 'Barnpass' },
-];
+const FAMILY_ORDER: ClassFamily[] = ['thai', 'bjj', 'mma', 'sw', 'fys', 'npf'];
+
+function filtersFor(sessions: Session[]): { value: Filter; label: string }[] {
+  const families = new Set(sessions.map((s) => s.family));
+  const chips: { value: Filter; label: string }[] = [{ value: 'all', label: 'Alla' }];
+  for (const f of FAMILY_ORDER) {
+    if (families.has(f)) chips.push({ value: f, label: FAMILY_LABELS[f] });
+  }
+  if (sessions.some((s) => s.isKids)) chips.push({ value: 'barn', label: 'Barnpass' });
+  return chips;
+}
 
 function todayAsDay(): Day {
   const idx = (new Date().getDay() + 6) % 7;          // Mon=0..Sun=6
   return DAY_ORDER[idx] as Day;
 }
 
-function matchesFilter(session: ReturnType<typeof sessionsByDay>[Day][number], f: Filter) {
+function matchesFilter(session: Session, f: Filter) {
   if (f === 'all') return true;
   if (f === 'barn') return !!session.isKids;
   return session.family === f;
 }
 
 export default function Schedule() {
+  const [termId, setTermId] = useState<TermId>(ACTIVE_TERM);
   const [filter, setFilter] = useState<Filter>('all');
   const [activeDay, setActiveDay] = useState<Day>('mon');
   const [downloading, setDownloading] = useState(false);
@@ -47,7 +52,11 @@ export default function Schedule() {
   // After mount, jump to today (avoids hydration mismatch from new Date() at render)
   useEffect(() => { setActiveDay(todayAsDay()); }, []);
 
-  const byDay = useMemo(() => sessionsByDay(SCHEDULE), []);
+  const term = TERMS[termId];
+  const isInEffect = termId === ACTIVE_TERM;
+
+  const byDay = useMemo(() => sessionsByDay(term.sessions), [term]);
+  const filters = useMemo(() => filtersFor(term.sessions), [term]);
   const printableRef = useRef<HTMLDivElement>(null);
   const dayStripRef = useRef<HTMLDivElement>(null);
   const dayTabRefs = useRef<Partial<Record<Day, HTMLButtonElement | null>>>({});
@@ -62,8 +71,14 @@ export default function Schedule() {
     strip.scrollBy({ left: delta, behavior: 'smooth' });
   }, [activeDay]);
 
-  const totalCount = SCHEDULE.length;
-  const visibleCount = SCHEDULE.filter((s) => matchesFilter(s, filter)).length;
+  const totalCount = term.sessions.length;
+  const visibleCount = term.sessions.filter((s) => matchesFilter(s, filter)).length;
+
+  function switchTerm(next: TermId) {
+    setTermId(next);
+    // The other term may not run this class at all — don't leave an empty view behind.
+    if (!filtersFor(TERMS[next].sessions).some((f) => f.value === filter)) setFilter('all');
+  }
 
   async function handleDownload() {
     if (!printableRef.current) return;
@@ -81,7 +96,7 @@ export default function Schedule() {
         backgroundColor: '#ffffff',
       });
       const link = document.createElement('a');
-      link.download = `kampsportstadion-schema-${SCHEDULE_META.validFrom.replace(/[^\w]+/g, '-').toLowerCase()}.png`;
+      link.download = `kampsportstadion-schema-${term.validFrom.replace(/[^\w]+/g, '-').toLowerCase()}.png`;
       link.href = dataUrl;
       link.click();
     } catch (err) {
@@ -95,9 +110,9 @@ export default function Schedule() {
   return (
     <div className="w-full">
       {/* Toolbar */}
-      <div className="flex flex-col w-900:flex-row w-900:items-end w-900:justify-between gap-6 mb-8">
+      <div className="flex flex-col w-900:flex-row w-900:items-end w-900:justify-between gap-6 mb-6">
         <div>
-          <p className="eyebrow mb-2">Veckoschema · {SCHEDULE_META.validFrom}</p>
+          <p className="eyebrow mb-2">Veckoschema · {term.validFrom}</p>
           <p className="text-[15px] text-ink-soft max-w-prose">
             {visibleCount} av {totalCount} pass i veckan. Tryck på en dag för att fokusera, eller filtrera per klass nedan.
           </p>
@@ -117,9 +132,40 @@ export default function Schedule() {
         </div>
       </div>
 
+      {/* Term switcher */}
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-3 mb-6">
+        <div className="inline-flex items-center p-0.5 rounded-full border border-graphite-300" role="tablist" aria-label="Välj schema">
+          {TERM_ORDER.map((id) => {
+            const selected = id === termId;
+            return (
+              <button
+                key={id}
+                type="button"
+                role="tab"
+                aria-selected={selected}
+                onClick={() => switchTerm(id)}
+                className={`inline-flex items-center gap-2 h-9 px-4 rounded-full text-[12.5px] transition-colors ${
+                  selected ? 'bg-ink text-paper' : 'text-ink-soft hover:text-ink'
+                }`}
+              >
+                {id === ACTIVE_TERM && (
+                  <span className="w-[6px] h-[6px] rounded-full bg-accent shrink-0" aria-hidden="true" />
+                )}
+                <span>{TERMS[id].label}</span>
+              </button>
+            );
+          })}
+        </div>
+        <p className="text-[12.5px] text-graphite-500">
+          {isInEffect
+            ? `Gäller ${term.period}.`
+            : `Visas som förhandsvisning — gäller ${term.period}.`}
+        </p>
+      </div>
+
       {/* Filter chips */}
-      <div className="flex flex-wrap gap-1.5 mb-8">
-        {FILTERS.map((f) => {
+      <div className="flex flex-wrap gap-1.5 mb-6">
+        {filters.map((f) => {
           const active = filter === f.value;
           return (
             <button
@@ -137,6 +183,26 @@ export default function Schedule() {
           );
         })}
       </div>
+
+      {/* Inactive-term band */}
+      {!isInEffect && (
+        <div className="mb-6 bg-ink-deep text-paper px-5 py-3.5 flex flex-col w-625:flex-row w-625:items-center gap-2 w-625:gap-4">
+          <p className="text-[13px] leading-snug text-paper/70">
+            <span className="font-semibold uppercase tracking-[0.14em] text-[11px] text-paper mr-2">
+              Ej aktivt
+            </span>
+            {term.inactiveNote}
+          </p>
+          <button
+            type="button"
+            onClick={() => switchTerm(ACTIVE_TERM)}
+            className="group inline-flex items-center justify-center gap-2 h-9 px-4 text-[12.5px] font-medium rounded-full bg-paper text-ink hover:bg-accent hover:text-paper transition-colors w-625:ml-auto shrink-0"
+          >
+            Visa {TERMS[ACTIVE_TERM].label.toLowerCase()}
+            <span className="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">→</span>
+          </button>
+        </div>
+      )}
 
       {/* DESKTOP: 7-column grid */}
       <div className="hidden w-900:grid grid-cols-7 gap-3">
@@ -214,10 +280,10 @@ export default function Schedule() {
         </ul>
       </div>
 
-      <ScheduleLegend className="mt-10" />
+      <ScheduleLegend sessions={term.sessions} className="mt-10" />
 
-      {SCHEDULE_META.note && (
-        <p className="mt-6 text-[13px] text-ink-soft max-w-prose">{SCHEDULE_META.note}</p>
+      {term.note && (
+        <p className="mt-6 text-[13px] text-ink-soft max-w-prose">{term.note}</p>
       )}
 
       {/* Off-screen printable variant for image export */}
@@ -231,7 +297,7 @@ export default function Schedule() {
           pointerEvents: 'none',
         }}
       >
-        <SchedulePrintable ref={printableRef} />
+        <SchedulePrintable ref={printableRef} term={term} />
       </div>
     </div>
   );

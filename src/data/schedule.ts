@@ -1,5 +1,6 @@
 // Source of truth for the weekly class schedule.
-// Autumn term (HT 2026). Edit here, the site updates everywhere.
+// Two terms live side by side: the summer schedule and the regular one.
+// Flip ACTIVE_TERM when the summer term ends — everything else follows.
 
 export type ClassFamily = 'thai' | 'bjj' | 'mma' | 'sw' | 'fys' | 'npf';
 
@@ -17,15 +18,17 @@ export interface Session {
   location?: string;      // for off-site sessions ("Majoren")
 }
 
-export interface ScheduleMeta {
-  validFrom: string;      // human-readable, e.g. "v.2 · 2026"
-  note?: string;
-}
+export type TermId = 'summer' | 'regular';
 
-export const SCHEDULE_META: ScheduleMeta = {
-  validFrom: 'HT · 2026',
-  note: 'Inga pass under skollov för barngrupperna. Vid förändring av enstaka pass informeras medlemmen via GymControl och e-mail.',
-};
+export interface Term {
+  id: TermId;
+  label: string;          // switcher label, e.g. "Sommarschema"
+  validFrom: string;      // human-readable, e.g. "HT · 2026"
+  period: string;         // when this term runs, e.g. "13 juli – 23 augusti"
+  inactiveNote: string;   // shown when the term is being viewed but isn't the one in effect
+  note?: string;
+  sessions: Session[];
+}
 
 export const DAY_ORDER: Day[] = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
@@ -58,7 +61,31 @@ export const FAMILY_DOT: Record<ClassFamily, string> = {
   npf:  'bg-cls-npf',
 };
 
-export const SCHEDULE: Session[] = [
+const SUMMER_SESSIONS: Session[] = [
+  // ── Måndag
+  { day: 'mon', start: '17.30', end: '18.30', title: 'Thaiboxning Mixgrupp + Ungdom', family: 'thai' },
+  { day: 'mon', start: '18.00', end: '19.30', title: 'BJJ Mixgrupp',                  family: 'bjj' },
+
+  // ── Tisdag
+  { day: 'tue', start: '17.30', end: '18.30', title: 'Kampsportfys + Ungdom', family: 'fys' },
+  { day: 'tue', start: '18.30', end: '20.00', title: 'SW / MMA Mixgrupp',     family: 'sw' },
+
+  // ── Onsdag
+  { day: 'wed', start: '17.30', end: '18.30', title: 'Thaiboxning Mixgrupp + Ungdom', family: 'thai' },
+  { day: 'wed', start: '17.30', end: '18.30', title: 'Kampsportfys + Ungdom',         family: 'fys' },
+  { day: 'wed', start: '18.00', end: '19.30', title: 'BJJ Mixgrupp',                  family: 'bjj' },
+
+  // ── Torsdag
+  { day: 'thu', start: '18.30', end: '20.00', title: 'SW / MMA Mixgrupp', family: 'sw' },
+
+  // ── Fredag
+  { day: 'fri', start: '17.00', end: '18.00', title: 'BJJ Sparring', family: 'bjj' },
+
+  // ── Lördag
+  { day: 'sat', start: '10.00', end: '11.30', title: 'Dunkardax fys', family: 'fys', location: 'Majoren' },
+];
+
+const REGULAR_SESSIONS: Session[] = [
   // ── Måndag
   { day: 'mon', start: '12.00', end: '12.45', title: 'Kampsportfys',        family: 'fys' },
   { day: 'mon', start: '17.00', end: '18.00', title: 'BJJ Barn Steg 2',     family: 'bjj',  isKids: true },
@@ -116,8 +143,34 @@ export const SCHEDULE: Session[] = [
   { day: 'sun', start: '12.00', end: '13.00', title: 'MMA Tävling',         family: 'mma' },
 ];
 
+export const TERMS: Record<TermId, Term> = {
+  summer: {
+    id: 'summer',
+    label: 'Sommarschema',
+    validFrom: 'Sommar · 2026',
+    period: 'till och med 23 augusti',
+    inactiveNote: 'Sommarschemat är slut. Ordinarie schema gäller igen.',
+    note: 'Sommarschemat gäller till och med 23 augusti. Från 24 augusti kör vi ordinarie schema igen.',
+    sessions: SUMMER_SESSIONS,
+  },
+  regular: {
+    id: 'regular',
+    label: 'Ordinarie schema',
+    validFrom: 'HT · 2026',
+    period: 'från 24 augusti',
+    inactiveNote: 'Ordinarie schema gäller inte just nu — vi kör sommarschema till och med 23 augusti.',
+    note: 'Inga pass under skollov för barngrupperna. Vid förändring av enstaka pass informeras medlemmen via GymControl och e-mail.',
+    sessions: REGULAR_SESSIONS,
+  },
+};
+
+export const TERM_ORDER: TermId[] = ['summer', 'regular'];
+
+// The term currently in effect. Change to 'regular' when the summer term ends.
+export const ACTIVE_TERM: TermId = 'summer';
+
 // Helpers
-export function sessionsByDay(sessions: Session[] = SCHEDULE) {
+export function sessionsByDay(sessions: Session[]) {
   const map = {} as Record<Day, Session[]>;
   for (const d of DAY_ORDER) map[d] = [];
   for (const s of sessions) map[s.day].push(s);

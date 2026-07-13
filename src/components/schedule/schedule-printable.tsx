@@ -1,9 +1,8 @@
 import { forwardRef } from 'react';
 import {
-  SCHEDULE,
-  SCHEDULE_META,
   DAY_ORDER,
   DAY_LABELS,
+  Term,
   sessionsByDay,
 } from '@/data/schedule';
 import ScheduleCard from './schedule-card';
@@ -12,8 +11,8 @@ import ScheduleLegend from './schedule-legend';
 // 1600 × 1100 landscape, intended to be rasterised by html-to-image and downloaded.
 // Visually richer than the on-screen variant: full 7-column grid, branded header + footer.
 
-const ScheduleprintableInner = forwardRef<HTMLDivElement, {}>((_, ref) => {
-  const byDay = sessionsByDay(SCHEDULE);
+const ScheduleprintableInner = forwardRef<HTMLDivElement, { term: Term }>(({ term }, ref) => {
+  const byDay = sessionsByDay(term.sessions);
   return (
     <div
       ref={ref}
@@ -22,12 +21,12 @@ const ScheduleprintableInner = forwardRef<HTMLDivElement, {}>((_, ref) => {
     >
       <header className="flex items-end justify-between border-b border-graphite-300 pb-6">
         <div>
-          <p className="eyebrow mb-3">Veckoschema</p>
+          <p className="eyebrow mb-3">{term.label}</p>
           <h2 className="font-display text-[3.25rem] leading-none tracking-[-0.03em]">
             Kampsportstadion
           </h2>
           <p className="mt-3 text-[15px] text-ink-soft tabular">
-            {SCHEDULE_META.validFrom} · Stockholm Stadion
+            {term.validFrom} · Stockholm Stadion
           </p>
         </div>
         <div className="text-right">
@@ -61,9 +60,9 @@ const ScheduleprintableInner = forwardRef<HTMLDivElement, {}>((_, ref) => {
       </div>
 
       <footer className="border-t border-graphite-300 pt-6 flex items-end justify-between">
-        <ScheduleLegend />
+        <ScheduleLegend sessions={term.sessions} />
         <p className="text-[12px] text-graphite-500 tabular text-right max-w-md">
-          {SCHEDULE_META.note}
+          {term.note}
         </p>
       </footer>
     </div>

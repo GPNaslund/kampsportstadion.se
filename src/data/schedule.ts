@@ -72,7 +72,6 @@ const SUMMER_SESSIONS: Session[] = [
 
   // ── Onsdag
   { day: 'wed', start: '17.30', end: '18.30', title: 'Thaiboxning Mixgrupp + Ungdom', family: 'thai' },
-  { day: 'wed', start: '17.30', end: '18.30', title: 'Kampsportfys + Ungdom',         family: 'fys' },
   { day: 'wed', start: '18.00', end: '19.30', title: 'BJJ Mixgrupp',                  family: 'bjj' },
 
   // ── Torsdag

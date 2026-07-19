@@ -1,0 +1,19 @@
+# Ensure mod_rewrite is enabled
+RewriteEngine On
+
+# Force HTTPS for all traffic
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Redirect non-www to www with HTTPS
+RewriteCond %{HTTP_HOST} ^kampsportstadion\.se [NC]
+RewriteRule ^ https://www.kampsportstadion.se%{REQUEST_URI} [L,R=301]
+
+# Check if .html version of the requested resource exists
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# Fallback: Serve index.html for any other request
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]

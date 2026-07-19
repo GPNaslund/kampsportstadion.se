@@ -7,6 +7,7 @@ import Divider from '@/components/ui/divider';
 import Navbar from '@/components/ui/navbar';
 import Footer from '@/components/ui/footer';
 import Schedule from '@/components/schedule/schedule';
+import PromoBadge from '@/components/ui/promo-badge';
 
 const CLASS_FAMILIES = [
   {
@@ -51,12 +52,17 @@ export default function Home() {
   return (
     <>
       <Navbar />
+
+      {/* ─────────────────────────────────  Promo badge (frontpage only) */}
+      <PromoBadge />
+
       <main>
         {/* ─────────────────────────────────  Hero — split panel */}
-        <section className="pt-16 w-900:pt-20 border-b border-graphite-300">
-          <div className="grid w-900:grid-cols-12 min-h-[calc(100vh-5rem)]">
+        {/* Top padding clears the fixed promo banner (navbar 5rem + banner height) */}
+        <section className="pt-[11.5rem] w-625:pt-[10.5rem] w-900:pt-40 border-b border-graphite-300">
+          <div className="grid w-900:grid-cols-12 min-h-[calc(100vh-11.5rem)] w-625:min-h-[calc(100vh-10.5rem)] w-900:min-h-[calc(100vh-10rem)]">
             {/* Text panel */}
-            <div className="w-900:col-span-5 w-1280:col-span-5 bg-paper flex flex-col">
+            <div className="w-900:col-span-6 w-1280:col-span-6 bg-paper flex flex-col">
               <Container variant="standard" as="div" className="flex-1 flex flex-col justify-between py-12 w-900:py-16">
                 <div className="flex items-center gap-2 text-[11px] tabular text-graphite-500">
                   <span className="block w-2 h-2 bg-ink" aria-hidden="true" />
@@ -93,19 +99,20 @@ export default function Home() {
               </Container>
             </div>
 
-            {/* Logo panel */}
-            <div className="w-900:col-span-7 relative bg-paper min-h-[60vh] w-900:min-h-0 overflow-hidden border-t border-graphite-300 w-900:border-t-0 w-900:border-l">
-              <div className="absolute inset-0 flex items-center justify-center p-10">
-                <img
-                  src="/ks-logo-vector.svg"
-                  alt="Kampsportstadion"
-                  className="w-full max-w-[420px] w-900:max-w-[560px] h-auto object-contain"
-                />
-              </div>
+            {/* Image panel */}
+            <div className="w-900:col-span-6 relative bg-ink-deep min-h-[60vh] w-900:min-h-0 overflow-hidden border-t border-graphite-300 w-900:border-t-0 w-900:border-l">
+              <img
+                src="/thai-bg.jpg"
+                alt="Thaiboxningsträning på Kampsportstadion"
+                className="absolute inset-0 w-full h-full object-cover grayscale contrast-[1.1]"
+              />
+
+              {/* Bottom scrim keeps the caption legible over the photo */}
+              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink-deep/70 to-transparent" aria-hidden="true" />
 
               {/* Location caption */}
               <div className="absolute left-6 bottom-6 w-900:left-10 w-900:bottom-10">
-                <span className="flex items-center gap-2 text-[11px] tabular uppercase tracking-[0.18em] text-graphite-500">
+                <span className="flex items-center gap-2 text-[11px] tabular uppercase tracking-[0.18em] text-paper/85">
                   <span className="block w-2 h-2 bg-accent" aria-hidden="true" />
                   Stockholms Stadion · Est. 1912
                 </span>

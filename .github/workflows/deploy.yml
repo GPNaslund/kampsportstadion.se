@@ -47,3 +47,16 @@ jobs:
           mirror --reverse --delete --verbose ./out "${SFTP_DIR}"
           bye
           SCRIPT
+
+      # Fail the deploy if the freshly-published site isn't reachable.
+      - name: Smoke-check the live site
+        run: |
+          url="https://www.kampsportstadion.se/"
+          for i in 1 2 3; do
+            code=$(curl -sSL -o /dev/null -w '%{http_code}' "$url" || echo "000")
+            echo "attempt $i: GET $url -> HTTP $code"
+            [ "$code" = "200" ] && exit 0
+            sleep 5
+          done
+          echo "::error::Smoke check failed — $url did not return 200"
+          exit 1

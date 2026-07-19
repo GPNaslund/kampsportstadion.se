@@ -18,7 +18,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - run: npm ci
@@ -26,13 +26,37 @@ jobs:
       # next.config.js sets output:'export', so this writes the static site to ./out
       - run: npm run build
 
-      - name: Upload ./out to one.com over FTPS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          port: 21
-          local-dir: ./out/
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y lftp
+
+      # Mirror ./out onto the server over SFTP. --delete makes the remote an
+      # exact copy of the build (removing orphaned old files, first run
+      # included); .htaccess ships inside ./out so it is always re-uploaded.
+      # cmd:fail-exit makes the job fail if any transfer errors.
+      - name: Deploy ./out to one.com over SFTP
+        env:
+          SFTP_HOST: ${{ secrets.FTP_SERVER }}
+          SFTP_USER: ${{ secrets.FTP_USERNAME }}
+          SFTP_PASS: ${{ secrets.FTP_PASSWORD }}
+          SFTP_DIR: ${{ secrets.FTP_SERVER_DIR }}
+        run: |
+          lftp "sftp://${SFTP_HOST}" <<SCRIPT
+          set cmd:fail-exit yes
+          set sftp:auto-confirm yes
+          user "${SFTP_USER}" "${SFTP_PASS}"
+          mirror --reverse --delete --verbose ./out "${SFTP_DIR}"
+          bye
+          SCRIPT
+
+      # Fail the deploy if the freshly-published site isn't reachable.
+      - name: Smoke-check the live site
+        run: |
+          url="https://www.kampsportstadion.se/"
+          for i in 1 2 3; do
+            code=$(curl -sSL -o /dev/null -w '%{http_code}' "$url" || echo "000")
+            echo "attempt $i: GET $url -> HTTP $code"
+            [ "$code" = "200" ] && exit 0
+            sleep 5
+          done
+          echo "::error::Smoke check failed — $url did not return 200"
+          exit 1

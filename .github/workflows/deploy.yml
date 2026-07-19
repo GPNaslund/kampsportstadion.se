@@ -1,18 +1,38 @@
 name: Deploy to one.com
+
 on:
   push:
-    branches:
-      - main 
+    branches: [prod]
+  workflow_dispatch: {}
+
+# Never run two deploys at once; a newer push cancels an in-flight one.
+concurrency:
+  group: deploy-prod
+  cancel-in-progress: true
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: FTP Deploy
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
-      with:
-        ftp-server: ftp://ftp.one.com
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ../../.next
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # next.config.js sets output:'export', so this writes the static site to ./out
+      - run: npm run build
+
+      - name: Upload ./out to one.com over FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./out/
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}

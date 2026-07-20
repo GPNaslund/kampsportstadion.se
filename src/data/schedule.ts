@@ -75,7 +75,8 @@ const SUMMER_SESSIONS: Session[] = [
   { day: 'wed', start: '18.00', end: '19.30', title: 'BJJ Mixgrupp',                  family: 'bjj' },
 
   // ── Torsdag
-  { day: 'thu', start: '18.30', end: '20.00', title: 'SW / MMA Mixgrupp', family: 'sw' },
+  { day: 'thu', start: '17.30', end: '18.30', title: 'Kampsportfys + Ungdom', family: 'fys' },
+  { day: 'thu', start: '18.30', end: '20.00', title: 'SW / MMA Mixgrupp',     family: 'sw' },
 
   // ── Fredag
   { day: 'fri', start: '17.00', end: '18.00', title: 'BJJ Sparring', family: 'bjj' },

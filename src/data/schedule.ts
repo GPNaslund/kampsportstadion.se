@@ -148,17 +148,17 @@ export const TERMS: Record<TermId, Term> = {
     id: 'summer',
     label: 'Sommarschema',
     validFrom: 'Sommar · 2026',
-    period: 'till och med 25 augusti',
-    inactiveNote: 'Sommarschemat är slut. Ordinarie schema gäller igen.',
-    note: 'Sommarschemat gäller till och med 25 augusti. Från 26 augusti kör vi ordinarie schema igen.',
+    period: 'till och med 24 augusti',
+    inactiveNote: 'Sommarschemat är slut. Ordinarie schema gäller från 25 augusti.',
+    note: 'Sommarschemat är slut. Från 25 augusti kör vi ordinarie schema igen.',
     sessions: SUMMER_SESSIONS,
   },
   regular: {
     id: 'regular',
     label: 'Ordinarie schema',
     validFrom: 'HT · 2026',
-    period: 'från 26 augusti',
-    inactiveNote: 'Ordinarie schema gäller inte just nu — vi kör sommarschema till och med 25 augusti.',
+    period: 'från 25 augusti',
+    inactiveNote: 'Ordinarie schema gäller inte just nu.',
     note: 'Inga pass under skollov för barngrupperna. Vid förändring av enstaka pass informeras medlemmen via GymControl och e-mail.',
     sessions: REGULAR_SESSIONS,
   },
@@ -166,8 +166,8 @@ export const TERMS: Record<TermId, Term> = {
 
 export const TERM_ORDER: TermId[] = ['summer', 'regular'];
 
-// The term currently in effect. Change to 'regular' when the summer term ends.
-export const ACTIVE_TERM: TermId = 'summer';
+// The term currently in effect. Change to 'summer' when the summer term starts.
+export const ACTIVE_TERM: TermId = 'regular';
 
 // Helpers
 export function sessionsByDay(sessions: Session[]) {

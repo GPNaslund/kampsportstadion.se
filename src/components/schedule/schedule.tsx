@@ -2,16 +2,13 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import {
-  ACTIVE_TERM,
-  TERMS,
-  TERM_ORDER,
+  TERM,
   DAY_ORDER,
   DAY_LABELS,
   FAMILY_LABELS,
   ClassFamily,
   Day,
   Session,
-  TermId,
   sessionsByDay,
 } from '@/data/schedule';
 import ScheduleCard from './schedule-card';
@@ -44,7 +41,6 @@ function matchesFilter(session: Session, f: Filter) {
 }
 
 export default function Schedule() {
-  const [termId, setTermId] = useState<TermId>(ACTIVE_TERM);
   const [filter, setFilter] = useState<Filter>('all');
   const [activeDay, setActiveDay] = useState<Day>('mon');
   const [downloading, setDownloading] = useState(false);
@@ -52,8 +48,7 @@ export default function Schedule() {
   // After mount, jump to today (avoids hydration mismatch from new Date() at render)
   useEffect(() => { setActiveDay(todayAsDay()); }, []);
 
-  const term = TERMS[termId];
-  const isInEffect = termId === ACTIVE_TERM;
+  const term = TERM;
 
   const byDay = useMemo(() => sessionsByDay(term.sessions), [term]);
   const filters = useMemo(() => filtersFor(term.sessions), [term]);
@@ -73,12 +68,6 @@ export default function Schedule() {
 
   const totalCount = term.sessions.length;
   const visibleCount = term.sessions.filter((s) => matchesFilter(s, filter)).length;
-
-  function switchTerm(next: TermId) {
-    setTermId(next);
-    // The other term may not run this class at all — don't leave an empty view behind.
-    if (!filtersFor(TERMS[next].sessions).some((f) => f.value === filter)) setFilter('all');
-  }
 
   async function handleDownload() {
     if (!printableRef.current) return;
@@ -132,36 +121,7 @@ export default function Schedule() {
         </div>
       </div>
 
-      {/* Term switcher */}
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-3 mb-6">
-        <div className="inline-flex items-center p-0.5 rounded-full border border-graphite-300" role="tablist" aria-label="Välj schema">
-          {TERM_ORDER.map((id) => {
-            const selected = id === termId;
-            return (
-              <button
-                key={id}
-                type="button"
-                role="tab"
-                aria-selected={selected}
-                onClick={() => switchTerm(id)}
-                className={`inline-flex items-center gap-2 h-9 px-4 rounded-full text-[12.5px] transition-colors ${
-                  selected ? 'bg-ink text-paper' : 'text-ink-soft hover:text-ink'
-                }`}
-              >
-                {id === ACTIVE_TERM && (
-                  <span className="w-[6px] h-[6px] rounded-full bg-accent shrink-0" aria-hidden="true" />
-                )}
-                <span>{TERMS[id].label}</span>
-              </button>
-            );
-          })}
-        </div>
-        <p className="text-[12.5px] text-graphite-500">
-          {isInEffect
-            ? `Gäller ${term.period}.`
-            : `Visas som förhandsvisning — gäller ${term.period}.`}
-        </p>
-      </div>
+      <p className="text-[12.5px] text-graphite-500 mb-6">Gäller {term.period}.</p>
 
       {/* Filter chips */}
       <div className="flex flex-wrap gap-1.5 mb-6">
@@ -183,26 +143,6 @@ export default function Schedule() {
           );
         })}
       </div>
-
-      {/* Inactive-term band */}
-      {!isInEffect && (
-        <div className="mb-6 bg-ink-deep text-paper px-5 py-3.5 flex flex-col w-625:flex-row w-625:items-center gap-2 w-625:gap-4">
-          <p className="text-[13px] leading-snug text-paper/70">
-            <span className="font-semibold uppercase tracking-[0.14em] text-[11px] text-paper mr-2">
-              Ej aktivt
-            </span>
-            {term.inactiveNote}
-          </p>
-          <button
-            type="button"
-            onClick={() => switchTerm(ACTIVE_TERM)}
-            className="group inline-flex items-center justify-center gap-2 h-9 px-4 text-[12.5px] font-medium rounded-full bg-paper text-ink hover:bg-accent hover:text-paper transition-colors w-625:ml-auto shrink-0"
-          >
-            Visa {TERMS[ACTIVE_TERM].label.toLowerCase()}
-            <span className="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden="true">→</span>
-          </button>
-        </div>
-      )}
 
       {/* DESKTOP: 7-column grid */}
       <div className="hidden w-900:grid grid-cols-7 gap-3">

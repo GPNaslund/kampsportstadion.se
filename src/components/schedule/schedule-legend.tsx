@@ -16,8 +16,8 @@ interface Props {
   className?: string;
 }
 
-// Only legend what the shown term actually runs — a summer term with no kids'
-// classes shouldn't advertise a barn swatch.
+// Only legend what the schedule actually runs — no barn swatch if there are no
+// kids' classes.
 export default function ScheduleLegend({ sessions, className = '' }: Props) {
   const families = new Set(sessions.map((s) => s.family));
   const hasKids = sessions.some((s) => s.isKids);

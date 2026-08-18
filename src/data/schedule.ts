@@ -1,6 +1,4 @@
 // Source of truth for the weekly class schedule.
-// Two terms live side by side: the summer schedule and the regular one.
-// Flip ACTIVE_TERM when the summer term ends — everything else follows.
 
 export type ClassFamily = 'thai' | 'bjj' | 'mma' | 'sw' | 'fys' | 'npf';
 
@@ -18,14 +16,10 @@ export interface Session {
   location?: string;      // for off-site sessions ("Majoren")
 }
 
-export type TermId = 'summer' | 'regular';
-
 export interface Term {
-  id: TermId;
-  label: string;          // switcher label, e.g. "Sommarschema"
+  label: string;          // e.g. "Ordinarie schema"
   validFrom: string;      // human-readable, e.g. "HT · 2026"
-  period: string;         // when this term runs, e.g. "13 juli – 23 augusti"
-  inactiveNote: string;   // shown when the term is being viewed but isn't the one in effect
+  period: string;         // when the term runs, e.g. "från 25 augusti"
   note?: string;
   sessions: Session[];
 }
@@ -61,31 +55,7 @@ export const FAMILY_DOT: Record<ClassFamily, string> = {
   npf:  'bg-cls-npf',
 };
 
-const SUMMER_SESSIONS: Session[] = [
-  // ── Måndag
-  { day: 'mon', start: '17.30', end: '18.30', title: 'Thaiboxning Mixgrupp + Ungdom', family: 'thai' },
-  { day: 'mon', start: '18.00', end: '19.30', title: 'BJJ Mixgrupp',                  family: 'bjj' },
-
-  // ── Tisdag
-  { day: 'tue', start: '17.30', end: '18.30', title: 'Kampsportfys + Ungdom', family: 'fys' },
-  { day: 'tue', start: '18.30', end: '20.00', title: 'SW / MMA Mixgrupp',     family: 'sw' },
-
-  // ── Onsdag
-  { day: 'wed', start: '17.30', end: '18.30', title: 'Thaiboxning Mixgrupp + Ungdom', family: 'thai' },
-  { day: 'wed', start: '18.00', end: '19.30', title: 'BJJ Mixgrupp',                  family: 'bjj' },
-
-  // ── Torsdag
-  { day: 'thu', start: '17.30', end: '18.30', title: 'Kampsportfys + Ungdom', family: 'fys' },
-  { day: 'thu', start: '18.30', end: '20.00', title: 'SW / MMA Mixgrupp',     family: 'sw' },
-
-  // ── Fredag
-  { day: 'fri', start: '17.00', end: '18.00', title: 'BJJ Sparring', family: 'bjj' },
-
-  // ── Lördag
-  { day: 'sat', start: '10.00', end: '11.30', title: 'Dunkardax fys', family: 'fys', location: 'Majoren' },
-];
-
-const REGULAR_SESSIONS: Session[] = [
+const SESSIONS: Session[] = [
   // ── Måndag
   { day: 'mon', start: '12.00', end: '12.45', title: 'Kampsportfys',        family: 'fys' },
   { day: 'mon', start: '17.00', end: '18.00', title: 'BJJ Barn Steg 2',     family: 'bjj',  isKids: true },
@@ -143,31 +113,13 @@ const REGULAR_SESSIONS: Session[] = [
   { day: 'sun', start: '12.00', end: '13.00', title: 'MMA Tävling',         family: 'mma' },
 ];
 
-export const TERMS: Record<TermId, Term> = {
-  summer: {
-    id: 'summer',
-    label: 'Sommarschema',
-    validFrom: 'Sommar · 2026',
-    period: 'till och med 24 augusti',
-    inactiveNote: 'Sommarschemat är slut. Ordinarie schema gäller från 25 augusti.',
-    note: 'Sommarschemat är slut. Från 25 augusti kör vi ordinarie schema igen.',
-    sessions: SUMMER_SESSIONS,
-  },
-  regular: {
-    id: 'regular',
-    label: 'Ordinarie schema',
-    validFrom: 'HT · 2026',
-    period: 'från 25 augusti',
-    inactiveNote: 'Ordinarie schema gäller inte just nu.',
-    note: 'Inga pass under skollov för barngrupperna. Vid förändring av enstaka pass informeras medlemmen via GymControl och e-mail.',
-    sessions: REGULAR_SESSIONS,
-  },
+export const TERM: Term = {
+  label: 'Ordinarie schema',
+  validFrom: 'HT · 2026',
+  period: 'från 25 augusti',
+  note: 'Inga pass under skollov för barngrupperna. Vid förändring av enstaka pass informeras medlemmen via GymControl och e-mail.',
+  sessions: SESSIONS,
 };
-
-export const TERM_ORDER: TermId[] = ['summer', 'regular'];
-
-// The term currently in effect. Change to 'summer' when the summer term starts.
-export const ACTIVE_TERM: TermId = 'regular';
 
 // Helpers
 export function sessionsByDay(sessions: Session[]) {

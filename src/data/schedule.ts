@@ -74,15 +74,14 @@ const SESSIONS: Session[] = [
   { day: 'tue', start: '19.00', end: '20.00', title: 'Thaiboxning Steg 1 & 2', family: 'thai' },
 
   // ── Onsdag
-  { day: 'wed', start: '06.45', end: '07.40', title: 'Kampsportfys',          family: 'fys' },
+  { day: 'wed', start: '06.45', end: '07.30', title: 'Kampsportfys',          family: 'fys' },
   { day: 'wed', start: '12.00', end: '12.45', title: 'Kampsportfys',          family: 'fys' },
   { day: 'wed', start: '16.15', end: '17.00', title: 'BJJ barn Steg 1',       family: 'bjj',  isKids: true },
   { day: 'wed', start: '16.30', end: '17.15', title: 'Barn Thaiboxning',      family: 'thai', isKids: true, ageNote: '7–9 år' },
   { day: 'wed', start: '17.00', end: '18.00', title: 'BJJ Barn Steg 2 + Ungdom', family: 'bjj', isKids: true },
   { day: 'wed', start: '17.30', end: '18.30', title: 'Thaiboxning Steg 2',    family: 'thai' },
-  { day: 'wed', start: '18.00', end: '19.00', title: 'BJJ Steg 2',            family: 'bjj' },
+  { day: 'wed', start: '18.00', end: '19.30', title: 'BJJ Mixgrupp',          family: 'bjj' },
   { day: 'wed', start: '18.30', end: '19.30', title: 'Thaiboxning Steg 1',    family: 'thai' },
-  { day: 'wed', start: '19.00', end: '20.00', title: 'BJJ Steg 1',            family: 'bjj' },
 
   // ── Torsdag
   { day: 'thu', start: '15.00', end: '16.00', title: 'After School',                    family: 'thai', isKids: true },

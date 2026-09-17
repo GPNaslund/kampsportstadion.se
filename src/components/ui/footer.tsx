@@ -80,7 +80,7 @@ export default function Footer() {
 
         <div className="mt-16 pt-6 border-t border-paper/30 flex flex-col w-625:flex-row gap-3 w-625:justify-between text-[12px] text-paper/75 tabular">
           <p>© {year} Djurgårdens IF Kampsport · Idrottsförening · Stockholm Stadion sedan 1912</p>
-          <p>Org.nr · 802004-2426</p>
+          <p>Org.nr · 802468-1754</p>
         </div>
       </Container>
     </footer>
